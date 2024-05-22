@@ -1,0 +1,53 @@
+digraph {
+
+    subgraph cluster_tidblog {
+        label = "tidb日志"
+        rw_conflict[label="读写冲突"];
+        ww_conflict[label="写写冲突"];
+        "??" -> rw_conflict -> "行上有其它会话\nprewrite的锁" ;
+        "key is locked\n(will clean up)" -> ww_conflict -> "乐观事务\n上锁失败会重试";
+
+    }
+    
+    subgraph cluster_grafana {
+        label = "grafana监控"
+
+        subgraph cluster_gf_tidb {
+            label = "TiDB监控, kv相关"
+            kv_err1[label = "KV Backoff OPS\ntikvLockFast"];
+            kv_err2[label = "Lock Resolve OPS\nresolve"]
+            kv_err1 -> kv_err2 [style=invis]
+            //  | {KV Backoff OPS |Lock Resolve OPS}"]
+        }
+        
+        subgraph cluster_gf_tikv {
+            label = "TiKV监控, cop相关"
+            cop_view[label = "Total Request Err\nmeet_lock"];
+        }
+    }
+
+    subgraph cluster_execinfo {
+        label = "sql执行的 exec info"
+
+        "resolve_lock高" -> "大量并发的更新请求"
+    }
+    "乐观事务\n上锁失败会重试" -> cop_view [style=invis]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+digraph {
+    graph[imagepath="./"];
+    // node [style="filled", fillcolor="#f0f0f0"];
+    // node[margin=0.1]
+    errorName1[label="TxnLockNotFound\n报错", style="filled", fillcolor=lightpink]
+    problem1[label="隐式事务、load data之类\nstart与commit ts才差几秒\n有时系统负载也不高"];
+    problem2[label="悲观并发批处理\n系统负载一般较大"];
+    parallel[label="并发commit太多而阻塞\n并发有限制(128)"];
+    // pic_commit_token[label="Commit Token Wait图\n用时较多,如几秒",style="dashed,filled", fillcolor="#d8d8ff"]; 
+    sysbusy[label="系统慢、硬件慢\nserver is busy\n触发流控 等等"];
+
+    errorName1 -> {problem1 problem2} 
+        -> "乐观或悲观事务\nTTL超出就会被清锁" 
+            -> "为什么有时TTL值只有几秒" 
+                -> "为什么从prewrite到\ncommit的时间久(超出TTL)" 
+                    -> { "prewrite处理key多" sysbusy   parallel};
+    // {rank=same; parallel -> pic_commit_token};
+    {rank=same; "为什么有时TTL值只有几秒" -> "TTL值不是固定的\n和事务大小相关"};
+
+    parallel -> "建议 调大commit并发参数\n(效果有限)";
+    "prewrite处理key多" -> "建议 减小处理线程每批的量"
+    sysbusy -> "建议 找出性能的瓶颈并优化";
+
+    problem1 -> parallel [style=dashed];
+    problem2 -> sysbusy [style=dashed];
+
+    errorName2[label="PessimisticLockNotFound\n类似报错",style="filled", fillcolor=lightpink, margin=0];
+    
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

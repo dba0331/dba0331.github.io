@@ -1,0 +1,213 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="620pt" height="758pt" viewBox="0.00 0.00 619.67 758.05">
+<g id="graph0" class="graph" transform="translate(4,754.0499877929688) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-754.05 615.67,-754.05 615.67,4 -4,4"/>
+<!-- quest -->
+<g id="node1" class="node" pointer-events="visible" data-name="quest">
+
+<text text-anchor="middle" x="107.83" y="-727.85" font-family="Times,serif" font-size="14.00">提问者</text>
+</g>
+<!-- answer -->
+<g id="node2" class="node" pointer-events="visible" data-name="answer">
+
+<text text-anchor="middle" x="431.67" y="-727.85" font-family="Times,serif" font-size="14.00">回答者</text>
+</g>
+<!-- quest&#45;&gt;answer -->
+<!-- desc1 -->
+<g id="node3" class="node" pointer-events="visible" data-name="desc1">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-659.05" rx="99.05" ry="37.1"/>
+<text text-anchor="middle" x="107.83" y="-671.65" font-family="Times,serif" font-size="14.00">一条小dml用了几秒,</text>
+<text text-anchor="middle" x="107.83" y="-654.85" font-family="Times,serif" font-size="14.00">耗时在prewrite,有backoff,</text>
+<text text-anchor="middle" x="107.83" y="-638.05" font-family="Times,serif" font-size="14.00">autocommit,可能是乐观</text>
+</g>
+<!-- quest&#45;&gt;desc1 -->
+<g id="edge8" class="edge" data-name="quest-&gt;desc1">
+
+<path fill="none" stroke="black" d="M107.83,-714.23C107.83,-712.1 107.83,-709.96 107.83,-707.83"/>
+<polygon fill="black" stroke="black" points="111.33,-707.92 107.83,-697.92 104.33,-707.92 111.33,-707.92"/>
+</g>
+<!-- answ1 -->
+<g id="node4" class="node" pointer-events="visible" data-name="answ1">
+
+<polygon fill="none" stroke="black" points="251.67,-630.05 251.67,-688.05 611.67,-688.05 611.67,-630.05 251.67,-630.05"/>
+<text text-anchor="start" x="258.67" y="-654.95" font-family="Times,serif" font-size="14.00">注意, 这是隐式, 且默认先以乐观事务自动提交。</text>
+</g>
+<!-- desc1&#45;&gt;answ1 -->
+<g id="edge1" class="edge" data-name="desc1-&gt;answ1">
+
+<path fill="none" stroke="black" d="M207.14,-659.05C217.89,-659.05 229.07,-659.05 240.46,-659.05"/>
+<polygon fill="black" stroke="black" points="240.4,-662.55 250.4,-659.05 240.4,-655.55 240.4,-662.55"/>
+</g>
+<!-- desc2 -->
+<g id="node5" class="node" pointer-events="visible" data-name="desc2">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-575.05" rx="82.59" ry="29.33"/>
+<text text-anchor="middle" x="107.83" y="-579.25" font-family="Times,serif" font-size="14.00">sql的信息说backoff</text>
+<text text-anchor="middle" x="107.83" y="-562.45" font-family="Times,serif" font-size="14.00">类型是txnLock</text>
+</g>
+<!-- desc1&#45;&gt;desc2 -->
+<g id="edge9" class="edge" data-name="desc1-&gt;desc2">
+
+<path fill="none" stroke="black" d="M107.83,-621.61C107.83,-619.74 107.83,-617.88 107.83,-616.02"/>
+<polygon fill="black" stroke="black" points="111.33,-616.1 107.83,-606.1 104.33,-616.1 111.33,-616.1"/>
+</g>
+<!-- answ2 -->
+<g id="node6" class="node" pointer-events="visible" data-name="answ2">
+
+<polygon fill="none" stroke="black" points="251.67,-546.05 251.67,-604.05 611.67,-604.05 611.67,-546.05 251.67,-546.05"/>
+<text text-anchor="start" x="258.67" y="-579.45" font-family="Times,serif" font-size="14.00">表明是乐观事务在prewrite时的写写冲突。</text>
+<text text-anchor="start" x="258.67" y="-562.65" font-family="Times,serif" font-size="14.00">悲观事务不会有prewrite写写冲突,因为prewrite前就上锁了。</text>
+</g>
+<!-- desc2&#45;&gt;answ2 -->
+<g id="edge2" class="edge" data-name="desc2-&gt;answ2">
+
+<path fill="none" stroke="black" d="M190.88,-575.05C206.38,-575.05 223.19,-575.05 240.46,-575.05"/>
+<polygon fill="black" stroke="black" points="240.35,-578.55 250.35,-575.05 240.35,-571.55 240.35,-578.55"/>
+</g>
+<!-- desc3 -->
+<g id="node7" class="node" pointer-events="visible" data-name="desc3">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-486.05" rx="82.26" ry="41.09"/>
+<text text-anchor="middle" x="107.83" y="-498.65" font-family="Times,serif" font-size="14.00">官网说,写写冲突的</text>
+<text text-anchor="middle" x="107.83" y="-481.85" font-family="Times,serif" font-size="14.00">重试机制是默认关闭的,</text>
+<text text-anchor="middle" x="107.83" y="-465.05" font-family="Times,serif" font-size="14.00">所以不应该有backoff</text>
+</g>
+<!-- desc2&#45;&gt;desc3 -->
+<g id="edge10" class="edge" data-name="desc2-&gt;desc3">
+
+<path fill="none" stroke="black" d="M107.83,-545.29C107.83,-543.15 107.83,-541.01 107.83,-538.87"/>
+<polygon fill="black" stroke="black" points="111.33,-538.94 107.83,-528.94 104.33,-538.94 111.33,-538.94"/>
+</g>
+<!-- answ3 -->
+<g id="node8" class="node" pointer-events="visible" data-name="answ3">
+
+<polygon fill="none" stroke="black" points="251.67,-450.05 251.67,-522.05 611.67,-522.05 611.67,-450.05 251.67,-450.05"/>
+<text text-anchor="middle" x="431.67" y="-506.95" font-family="Times,serif" font-size="14.00">官网是这么说的</text>
+<text text-anchor="start" x="258.67" y="-490.15" font-family="Times,serif" font-size="14.00">显式乐观事务 不重试 tidb_disable_txn_auto_retry;</text>
+<text text-anchor="start" x="258.67" y="-473.35" font-family="Times,serif" font-size="14.00">隐式乐观事务, 默认重试10次 tidb_retry_limit;</text>
+<text text-anchor="start" x="258.67" y="-456.55" font-family="Times,serif" font-size="14.00">本例是隐式乐观, 写写冲突(txnLock)会自动backoff重试;</text>
+</g>
+<!-- desc3&#45;&gt;answ3 -->
+<g id="edge3" class="edge" data-name="desc3-&gt;answ3">
+
+<path fill="none" stroke="black" d="M190.46,-486.05C206.04,-486.05 222.95,-486.05 240.33,-486.05"/>
+<polygon fill="black" stroke="black" points="240.29,-489.55 250.29,-486.05 240.29,-482.55 240.29,-489.55"/>
+</g>
+<!-- desc4 -->
+<g id="node9" class="node" pointer-events="visible" data-name="desc4">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-385.05" rx="78.47" ry="41.09"/>
+<text text-anchor="middle" x="107.83" y="-397.65" font-family="Times,serif" font-size="14.00">官网说,prewrite阶段</text>
+<text text-anchor="middle" x="107.83" y="-380.85" font-family="Times,serif" font-size="14.00">有 [写写冲突检测]</text>
+<text text-anchor="middle" x="107.83" y="-364.05" font-family="Times,serif" font-size="14.00">和 [锁冲突检测]</text>
+</g>
+<!-- desc3&#45;&gt;desc4 -->
+<g id="edge11" class="edge" data-name="desc3-&gt;desc4">
+
+<path fill="none" stroke="black" d="M107.83,-444.63C107.83,-442.36 107.83,-440.09 107.83,-437.82"/>
+<polygon fill="black" stroke="black" points="111.33,-437.99 107.83,-427.99 104.33,-437.99 111.33,-437.99"/>
+</g>
+<!-- answ4 -->
+<g id="node10" class="node" pointer-events="visible" data-name="answ4">
+
+<polygon fill="none" stroke="black" points="251.67,-344.05 251.67,-430.05 611.67,-430.05 611.67,-344.05 251.67,-344.05"/>
+<text text-anchor="middle" x="431.67" y="-408.45" font-family="Times,serif" font-size="14.00">个人这么理解文档</text>
+<text text-anchor="start" x="258.67" y="-391.65" font-family="Times,serif" font-size="14.00">“prewrite第一步检查写写冲突, 第二步检查key是否上锁”。</text>
+<text text-anchor="start" x="258.67" y="-374.85" font-family="Times,serif" font-size="14.00">[检查写写冲突]是指 tikv scheduler latch, 不是 txnLock,</text>
+<text text-anchor="start" x="258.67" y="-358.05" font-family="Times,serif" font-size="14.00">[检查key的锁]时冲突才是真正的 txnLock。</text>
+</g>
+<!-- desc4&#45;&gt;answ4 -->
+<g id="edge4" class="edge" data-name="desc4-&gt;answ4">
+
+<path fill="none" stroke="black" d="M186.74,-385.54C203.38,-385.64 221.65,-385.75 240.47,-385.87"/>
+<polygon fill="black" stroke="black" points="240.4,-389.37 250.42,-385.93 240.44,-382.37 240.4,-389.37"/>
+</g>
+<!-- desc5 -->
+<g id="node11" class="node" pointer-events="visible" data-name="desc5">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-282.05" rx="83.17" ry="29.33"/>
+<text text-anchor="middle" x="107.83" y="-286.25" font-family="Times,serif" font-size="14.00">所以到底是</text>
+<text text-anchor="middle" x="107.83" y="-269.45" font-family="Times,serif" font-size="14.00">写写冲突, 还是锁冲突</text>
+</g>
+<!-- desc4&#45;&gt;desc5 -->
+<g id="edge12" class="edge" data-name="desc4-&gt;desc5">
+
+<path fill="none" stroke="black" d="M107.83,-343.58C107.83,-336.8 107.83,-330.02 107.83,-323.24"/>
+<polygon fill="black" stroke="black" points="111.33,-323.34 107.83,-313.34 104.33,-323.34 111.33,-323.34"/>
+</g>
+<!-- answ5 -->
+<g id="node12" class="node" pointer-events="visible" data-name="answ5">
+
+<polygon fill="none" stroke="black" points="251.67,-239.05 251.67,-325.05 611.67,-325.05 611.67,-239.05 251.67,-239.05"/>
+<text text-anchor="start" x="258.67" y="-310.95" font-family="Times,serif" font-size="14.00">逻辑乱了,</text>
+<text text-anchor="start" x="258.67" y="-294.15" font-family="Times,serif" font-size="14.00">他认为不应该有txnLock, 也不清楚 [锁冲突检查]是什么。</text>
+<text text-anchor="start" x="258.67" y="-261.35" font-family="Times,serif" font-size="14.00">本案就是一个隐式乐观事务prewrite上锁时遇到写写冲突,</text>
+<text text-anchor="start" x="258.67" y="-244.55" font-family="Times,serif" font-size="14.00">然后通过backoff, 最终事务提交成功, 但花了好几秒钟。</text>
+</g>
+<!-- desc5&#45;&gt;answ5 -->
+<g id="edge5" class="edge" data-name="desc5-&gt;answ5">
+
+<path fill="none" stroke="black" d="M191.3,-282.05C206.73,-282.05 223.43,-282.05 240.59,-282.05"/>
+<polygon fill="black" stroke="black" points="240.42,-285.55 250.41,-282.05 240.41,-278.55 240.42,-285.55"/>
+</g>
+<!-- desc6 -->
+<g id="node13" class="node" pointer-events="visible" data-name="desc6">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-177.05" rx="96.04" ry="29.33"/>
+<text text-anchor="middle" x="107.83" y="-181.25" font-family="Times,serif" font-size="14.00">tikv日志key is locked,</text>
+<text text-anchor="middle" x="107.83" y="-164.45" font-family="Times,serif" font-size="14.00">will clean up什么意思</text>
+</g>
+<!-- desc5&#45;&gt;desc6 -->
+<g id="edge13" class="edge" data-name="desc5-&gt;desc6">
+
+<path fill="none" stroke="black" d="M107.83,-252.28C107.83,-240.86 107.83,-229.43 107.83,-218.01"/>
+<polygon fill="black" stroke="black" points="111.33,-218.1 107.83,-208.1 104.33,-218.1 111.33,-218.1"/>
+</g>
+<!-- answ6 -->
+<g id="node14" class="node" pointer-events="visible" data-name="answ6">
+
+<polygon fill="none" stroke="black" points="251.67,-134.05 251.67,-220.05 611.67,-220.05 611.67,-134.05 251.67,-134.05"/>
+<text text-anchor="start" x="258.67" y="-189.95" font-family="Times,serif" font-size="14.00">[key is locked]说明是写写冲突, 因为读写冲突不是这个。</text>
+<text text-anchor="start" x="258.67" y="-173.15" font-family="Times,serif" font-size="14.00">will clean up是说这个锁可能过一会儿就会被锁主人清理,</text>
+<text text-anchor="start" x="258.67" y="-156.35" font-family="Times,serif" font-size="14.00">这只是假设, 如果锁主人出了什么意外, 就不会马上解锁。</text>
+</g>
+<!-- desc6&#45;&gt;answ6 -->
+<g id="edge6" class="edge" data-name="desc6-&gt;answ6">
+
+<path fill="none" stroke="black" d="M204.09,-177.05C215.72,-177.05 227.91,-177.05 240.35,-177.05"/>
+<polygon fill="black" stroke="black" points="240.31,-180.55 250.31,-177.05 240.31,-173.55 240.31,-180.55"/>
+</g>
+<!-- desc7 -->
+<g id="node15" class="node" pointer-events="visible" data-name="desc7">
+
+<ellipse fill="none" stroke="black" cx="107.83" cy="-65.05" rx="107.67" ry="65.11"/>
+<text text-anchor="middle" x="107.83" y="-94.45" font-family="Times,serif" font-size="14.00">说点题外话</text>
+<text text-anchor="middle" x="107.83" y="-77.65" font-family="Times,serif" font-size="14.00">想改的xx行都被别人先改了</text>
+<text text-anchor="middle" x="107.83" y="-60.85" font-family="Times,serif" font-size="14.00">为什么还要重试?</text>
+<text text-anchor="middle" x="107.83" y="-44.05" font-family="Times,serif" font-size="14.00">会不会把别人的修改抹去?</text>
+<text text-anchor="middle" x="107.83" y="-27.25" font-family="Times,serif" font-size="14.00">文档中说重试会导致丢失更新</text>
+</g>
+<!-- desc6&#45;&gt;desc7 -->
+<g id="edge14" class="edge" data-name="desc6-&gt;desc7">
+
+<path fill="none" stroke="black" d="M107.83,-147.43C107.83,-145.46 107.83,-143.49 107.83,-141.52"/>
+<polygon fill="black" stroke="black" points="111.33,-141.75 107.83,-131.75 104.33,-141.75 111.33,-141.75"/>
+</g>
+<!-- answ7 -->
+<g id="node16" class="node" pointer-events="visible" data-name="answ7">
+
+<polygon fill="none" stroke="black" points="251.67,-13.55 251.67,-114.55 611.67,-114.55 611.67,-13.55 251.67,-13.55"/>
+<text text-anchor="start" x="258.67" y="-93.45" font-family="Times,serif" font-size="14.00">是业务上让大家处理同一行才有冲突, 说明业务允许重试,</text>
+<text text-anchor="start" x="258.67" y="-76.65" font-family="Times,serif" font-size="14.00">比如业务sql是, update tab set x=x+1, xdate=now() where ...。</text>
+<text text-anchor="start" x="258.67" y="-59.85" font-family="Times,serif" font-size="14.00">而且, 重试是重跑sql,包括start_ts,假如有now(),是取新值</text>
+<text text-anchor="start" x="258.67" y="-27.05" font-family="Times,serif" font-size="14.00">关于重试与丢失更新，已经在《上锁与重试》中讲过了。</text>
+</g>
+<!-- desc7&#45;&gt;answ7 -->
+<g id="edge7" class="edge" data-name="desc7-&gt;answ7">
+
+<path fill="none" stroke="black" d="M215.55,-64.72C223.6,-64.7 231.86,-64.67 240.23,-64.65"/>
+<polygon fill="black" stroke="black" points="240.19,-68.15 250.18,-64.61 240.17,-61.15 240.19,-68.15"/>
+</g>
+</g>
+</svg>

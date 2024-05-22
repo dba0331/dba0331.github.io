@@ -1,0 +1,89 @@
+digraph demo {
+    // graph[bgcolor="#557aab"];
+    // node [style="filled", fillcolor="#f0f0f0"];
+
+    subgraph cluster_dml{
+        label = "会话内存"
+        pessi_rw[label="修改数据"];
+        opti_rw[label="修改数据"]
+        dirtydata [label="脏数据都在内存", style="dashed"];
+        // opti_rw -> dirtydata [style=dashed];
+    };
+
+    subgraph cluster_commit{
+        label = "事务提交"
+        {rank=same; "乐观commit" "悲观commit"}
+        "悲观commit" -> {"超大事务" "事务成功"};
+        "超大事务" -> {"binlog超2G" "超出事务限制"};
+        "binlog超2G" -> "grpc报文失败" -> "DM /kafka失败 (事务成功)";
+        "超出事务限制" -> "提交事务失败";
+        
+        "乐观commit" -> {"超大事务"  "锁冲突backoff" "事务成功"}
+        "锁冲突backoff" -> "重试成功(慢)";
+        "锁冲突backoff"  -> "重试失败/或不重试" -> "提交事务失败";
+        "提交事务失败"[fillcolor=lightpink, style="filled"];
+        "事务成功"[fillcolor=greenyellow, style="filled"];
+        "重试成功(慢)"[fillcolor=greenyellow, style="filled"];
+    };
+    dirtydata -> "超大事务" [style=dashed];
+    dirtydata -> {"乐观commit" "悲观commit"} [style="invis"];
+
+    /******** 主要起始点: 乐观事务 ********/
+    "乐观事务" -> opti_rw -> "乐观commit";
+    "乐观事务" -> dirtydata [style="invis"];
+
+    /******** 主要起始点: 悲观事务 ********/
+    subgraph cluster_lock {
+        label = "事务锁相关"
+        "上锁lock_CF" -> {"上锁成功" "目标已经有锁"};
+        "目标已经有锁" -> "过期的锁\n/清理" -> "上锁成功";
+        "目标已经有锁" -> "有效的锁\n/等待" -> "上锁成功";
+
+
+        "上锁成功"[fillcolor=greenyellow, style="filled"];
+    }
+    subgraph cluster_lockerr {
+        "等待超时50s" -> lockwait;
+        "持锁超时1h"-> ttlmgr;
+        {lockwait ttlmgr} -> "事务因锁失败";
+        lockwait [label="Lock wait\ntimeout", margin=0];
+        ttlmgr [label ="TTL manager\ntimeout", margin=0];
+        
+        "事务因锁失败"[fillcolor=lightpink, style="filled"];
+    }
+    "悲观事务" -> "时长超gc_life" -> "事务超长失败";
+    "悲观事务" -> "上锁lock_CF";
+
+    "事务超长失败"[fillcolor=lightpink, style="filled"];
+
+    "上锁成功" -> pessi_rw;
+    pessi_rw -> "悲观commit";
+    "上锁成功" -> "MDL锁\n阻止DDL" [style=dashed];
+    "上锁成功" -> "持锁超时1h"[style=dashed];
+    "有效的锁\n/等待" -> "等待超时50s";
+    "MDL锁\n阻止DDL"[shape=note];
+    /******** 乐观事务的backoff ********/
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

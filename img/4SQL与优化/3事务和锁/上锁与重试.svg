@@ -1,0 +1,495 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="826pt" height="1344pt" viewBox="0.00 0.00 826 1343.63">
+<g id="graph0" class="graph" transform="translate(4,1339.6300048828125) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-1339.63 822,-1339.63 822,4 -4,4"/>
+<g id="clust1" class="cluster" data-name="cluster_oprd">
+
+<polygon fill="none" stroke="black" points="424,-1145.17 424,-1268.8 810,-1268.8 810,-1145.17 424,-1145.17"/>
+<text text-anchor="middle" x="617" y="-1252.2" font-family="Times,serif" font-size="14.00">读阶段 start_ts</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_op_prew">
+
+<polygon fill="none" stroke="black" points="411,-930.02 411,-1137.17 689,-1137.17 689,-930.02 411,-930.02"/>
+<text text-anchor="middle" x="550" y="-1120.57" font-family="Times,serif" font-size="14.00">prewrite阶段  start_ts</text>
+</g>
+<g id="clust5" class="cluster" data-name="cluster_op_commit">
+
+<polygon fill="none" stroke="black" points="523,-714.4 523,-922.02 715,-922.02 715,-714.4 523,-714.4"/>
+<text text-anchor="middle" x="619" y="-905.42" font-family="Times,serif" font-size="14.00">commit阶段 commit_ts</text>
+</g>
+<g id="clust7" class="cluster" data-name="cluster_pesi_rd">
+
+<polygon fill="none" stroke="black" points="30,-1145.17 30,-1268.8 416,-1268.8 416,-1145.17 30,-1145.17"/>
+<text text-anchor="middle" x="223" y="-1252.2" font-family="Times,serif" font-size="14.00">读阶段 start_ts</text>
+</g>
+<g id="clust9" class="cluster" data-name="cluster_pesi_lock">
+
+<polygon fill="none" stroke="black" points="12,-935.67 12,-1131.41 333,-1131.41 333,-935.67 12,-935.67"/>
+<text text-anchor="middle" x="172.5" y="-1114.81" font-family="Times,serif" font-size="14.00">上锁阶段  start_ts</text>
+</g>
+<g id="clust10" class="cluster" data-name="cluster_pesi_2pc">
+
+<polygon fill="none" stroke="black" points="8,-703.11 8,-904.26 398,-904.26 398,-703.11 8,-703.11"/>
+<text text-anchor="middle" x="203" y="-887.66" font-family="Times,serif" font-size="14.00">prewrite&amp;commit阶段</text>
+</g>
+<g id="clust13" class="cluster" data-name="cluster_retry">
+
+<polygon fill="none" stroke="black" points="252,-139.39 252,-695.11 679,-695.11 679,-139.39 252,-139.39"/>
+<text text-anchor="middle" x="465.5" y="-678.51" font-family="Times,serif" font-size="14.00">悲观锁的重试 (悲观事务提交失败不会重试),</text>
+<text text-anchor="middle" x="465.5" y="-661.71" font-family="Times,serif" font-size="14.00">乐观事务提交失败(prewrite冲突或commit出错)</text>
+</g>
+<g id="clust15" class="cluster" data-name="cluster_case1">
+
+<polygon fill="none" stroke="black" points="60,-8 60,-131.39 664,-131.39 664,-8 60,-8"/>
+<text text-anchor="middle" x="362" y="-114.79" font-family="Times,serif" font-size="14.00">乐观事务重试可能导致奇怪的现象</text>
+</g>
+<!-- tikvLockFast -->
+<g id="node1" class="node" pointer-events="visible" data-name="tikvLockFast">
+
+<ellipse fill="rgb(216, 216, 255)" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" cx="500" cy="-1194.58" rx="56.16" ry="23.52"/>
+<text text-anchor="middle" x="500" y="-1198.78" font-family="Times,serif" font-size="14.00">KV Backoff图</text>
+<text text-anchor="middle" x="500" y="-1181.98" font-family="Times,serif" font-size="14.00">tikvLockFast</text>
+</g>
+<!-- query -->
+<g id="node2" class="node" pointer-events="visible" data-name="query">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="632" cy="-1194.58" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="632" y="-1190.38" font-family="Times,serif" font-size="14.00">读写冲突</text>
+</g>
+<!-- tikvLockFast&#45;&gt;query -->
+<g id="edge1" class="edge" data-name="tikvLockFast-&gt;query">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M567.71,-1194.58C575.66,-1194.58 583.62,-1194.58 591.57,-1194.58"/>
+<polygon fill="black" stroke="black" points="567.97,-1191.08 557.97,-1194.58 567.97,-1198.08 567.97,-1191.08"/>
+</g>
+<!-- opti_rw_retry -->
+<g id="node3" class="node" pointer-events="visible" data-name="opti_rw_retry">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="749" cy="-1194.58" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="749" y="-1198.78" font-family="Times,serif" font-size="14.00">自动重试</text>
+<text text-anchor="middle" x="749" y="-1181.98" font-family="Times,serif" font-size="14.00">最多20s</text>
+</g>
+<!-- query&#45;&gt;opti_rw_retry -->
+<g id="edge2" class="edge" data-name="query-&gt;opti_rw_retry">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M672.22,-1194.58C680.24,-1194.58 688.26,-1194.58 696.27,-1194.58"/>
+<polygon fill="black" stroke="black" points="696.1,-1198.08 706.1,-1194.58 696.1,-1191.08 696.1,-1198.08"/>
+</g>
+<!-- prewrite -->
+<g id="node6" class="node" pointer-events="visible" data-name="prewrite">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="628" cy="-1068.61" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="628" y="-1064.41" font-family="Times,serif" font-size="14.00">写写冲突</text>
+</g>
+<!-- query&#45;&gt;prewrite -->
+<g id="edge9" class="edge" data-name="query-&gt;prewrite">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M631.44,-1176.34C630.79,-1156.19 629.71,-1122.54 628.93,-1098.4"/>
+<polygon fill="black" stroke="black" points="632.43,-1098.49 628.61,-1088.61 625.44,-1098.72 632.43,-1098.49"/>
+</g>
+<!-- sch_latch -->
+<g id="node4" class="node" pointer-events="visible" data-name="sch_latch">
+
+<ellipse fill="rgb(216, 216, 255)" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" cx="491" cy="-979.43" rx="59.79" ry="23.52"/>
+<text text-anchor="middle" x="491" y="-983.63" font-family="Times,serif" font-size="14.00">tikv监控图</text>
+<text text-anchor="middle" x="491" y="-966.83" font-family="Times,serif" font-size="14.00">scheduler latch</text>
+</g>
+<!-- lockNotFound -->
+<g id="node8" class="node" pointer-events="visible" data-name="lockNotFound">
+
+<ellipse fill="rgb(255, 182, 193)" stroke="rgb(0, 0, 0)" cx="619" cy="-853.46" rx="76.38" ry="23.52"/>
+<text text-anchor="middle" x="619" y="-857.66" font-family="Times,serif" font-size="14.00">TxnLockNotFound</text>
+<text text-anchor="middle" x="619" y="-840.86" font-family="Times,serif" font-size="14.00">或其它错误</text>
+</g>
+<!-- sch_latch&#45;&gt;lockNotFound -->
+<!-- tikvLock -->
+<g id="node5" class="node" pointer-events="visible" data-name="tikvLock">
+
+<ellipse fill="rgb(216, 216, 255)" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" cx="493" cy="-1068.61" rx="56.16" ry="23.52"/>
+<text text-anchor="middle" x="493" y="-1072.81" font-family="Times,serif" font-size="14.00">KV Backoff图</text>
+<text text-anchor="middle" x="493" y="-1056.01" font-family="Times,serif" font-size="14.00">tikvLock</text>
+</g>
+<!-- tikvLock&#45;&gt;sch_latch -->
+<!-- prewrite&#45;&gt;sch_latch -->
+<g id="edge6" class="edge" data-name="prewrite-&gt;sch_latch">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M605.68,-1053.41C585.63,-1040.64 555.68,-1021.59 531.41,-1006.15"/>
+<polygon fill="black" stroke="black" points="533.34,-1003.23 523.03,-1000.81 529.58,-1009.13 533.34,-1003.23"/>
+</g>
+<!-- prewrite&#45;&gt;tikvLock -->
+<g id="edge5" class="edge" data-name="prewrite-&gt;tikvLock">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M587.79,-1068.61C578.8,-1068.61 569.81,-1068.61 560.82,-1068.61"/>
+<polygon fill="black" stroke="black" points="560.94,-1065.11 550.94,-1068.61 560.94,-1072.11 560.94,-1065.11"/>
+</g>
+<!-- ww_conflict -->
+<g id="node7" class="node" pointer-events="visible" data-name="ww_conflict">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="628" cy="-979.43" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="628" y="-983.63" font-family="Times,serif" font-size="14.00">自动重试</text>
+<text text-anchor="middle" x="628" y="-966.83" font-family="Times,serif" font-size="14.00">最多20s</text>
+</g>
+<!-- prewrite&#45;&gt;ww_conflict -->
+<g id="edge3" class="edge" data-name="prewrite-&gt;ww_conflict">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M628,-1050.38C628,-1041.71 628,-1030.81 628,-1020.21"/>
+<polygon fill="black" stroke="black" points="631.5,-1020.46 628,-1010.46 624.5,-1020.46 631.5,-1020.46"/>
+</g>
+<!-- prewrite&#45;&gt;lockNotFound -->
+<g id="edge12" class="edge" data-name="prewrite-&gt;lockNotFound">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M649.47,-1053.18C663.04,-1042.68 679.4,-1027.14 687,-1008.85 700.44,-976.49 699.55,-962.73 687,-930.02 680.26,-912.45 667.33,-896.4 654.55,-883.66"/>
+<polygon fill="black" stroke="black" points="657,-881.16 647.33,-876.83 652.18,-886.24 657,-881.16"/>
+</g>
+<!-- ww_conflict&#45;&gt;lockNotFound -->
+<!-- 重试或不重试 -->
+<g id="node9" class="node" pointer-events="visible" data-name="重试或不重试">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="616" cy="-752.4" rx="54.49" ry="18"/>
+<text text-anchor="middle" x="616" y="-748.2" font-family="Times,serif" font-size="14.00">重试或不重试</text>
+</g>
+<!-- lockNotFound&#45;&gt;重试或不重试 -->
+<g id="edge7" class="edge" data-name="lockNotFound-&gt;重试或不重试">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M618.3,-829.48C617.88,-815.32 617.32,-797.05 616.86,-781.96"/>
+<polygon fill="black" stroke="black" points="620.37,-782.09 616.57,-772.2 613.37,-782.3 620.37,-782.09"/>
+</g>
+<!-- txn_op3 -->
+<g id="node21" class="node" pointer-events="visible" data-name="txn_op3">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="608" cy="-616.09" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="608" y="-620.29" font-family="Times,serif" font-size="14.00">乐观事务</text>
+<text text-anchor="middle" x="608" y="-603.49" font-family="Times,serif" font-size="14.00">提交失败</text>
+</g>
+<!-- 重试或不重试&#45;&gt;txn_op3 -->
+<!-- 乐观事务\n可能遇到的问题 -->
+<g id="node10" class="node" pointer-events="visible" data-name="乐观事务\n可能遇到的问题">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="632" cy="-1306.21" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="632" y="-1310.41" font-family="Times,serif" font-size="14.00">乐观事务</text>
+<text text-anchor="middle" x="632" y="-1293.61" font-family="Times,serif" font-size="14.00">可能遇到的问题</text>
+</g>
+<!-- 乐观事务\n可能遇到的问题&#45;&gt;query -->
+<g id="edge8" class="edge" data-name="乐观事务\n可能遇到的问题-&gt;query">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M632,-1276.41C632,-1260.33 632,-1240.37 632,-1224.31"/>
+<polygon fill="black" stroke="black" points="635.5,-1224.42 632,-1214.42 628.5,-1224.42 635.5,-1224.42"/>
+</g>
+<!-- pesi_tikvLockFast -->
+<g id="node11" class="node" pointer-events="visible" data-name="pesi_tikvLockFast">
+
+<ellipse fill="rgb(216, 216, 255)" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" cx="106" cy="-1194.58" rx="56.16" ry="23.52"/>
+<text text-anchor="middle" x="106" y="-1198.78" font-family="Times,serif" font-size="14.00">KV Backoff图</text>
+<text text-anchor="middle" x="106" y="-1181.98" font-family="Times,serif" font-size="14.00">tikvLockFast</text>
+</g>
+<!-- pesi_query -->
+<g id="node12" class="node" pointer-events="visible" data-name="pesi_query">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="238" cy="-1194.58" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="238" y="-1190.38" font-family="Times,serif" font-size="14.00">读写冲突</text>
+</g>
+<!-- pesi_tikvLockFast&#45;&gt;pesi_query -->
+<g id="edge13" class="edge" data-name="pesi_tikvLockFast-&gt;pesi_query">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M173.71,-1194.58C181.66,-1194.58 189.62,-1194.58 197.57,-1194.58"/>
+<polygon fill="black" stroke="black" points="173.97,-1191.08 163.97,-1194.58 173.97,-1198.08 173.97,-1191.08"/>
+</g>
+<!-- pesi_rw_retry -->
+<g id="node13" class="node" pointer-events="visible" data-name="pesi_rw_retry">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="355" cy="-1194.58" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="355" y="-1198.78" font-family="Times,serif" font-size="14.00">自动重试</text>
+<text text-anchor="middle" x="355" y="-1181.98" font-family="Times,serif" font-size="14.00">最多20s</text>
+</g>
+<!-- pesi_query&#45;&gt;pesi_rw_retry -->
+<g id="edge14" class="edge" data-name="pesi_query-&gt;pesi_rw_retry">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M278.22,-1194.58C286.24,-1194.58 294.26,-1194.58 302.27,-1194.58"/>
+<polygon fill="black" stroke="black" points="302.1,-1198.08 312.1,-1194.58 302.1,-1191.08 302.1,-1198.08"/>
+</g>
+<!-- pesilock -->
+<g id="node15" class="node" pointer-events="visible" data-name="pesilock">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="246" cy="-1068.61" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="246" y="-1064.41" font-family="Times,serif" font-size="14.00">上锁冲突</text>
+</g>
+<!-- pesi_query&#45;&gt;pesilock -->
+<g id="edge19" class="edge" data-name="pesi_query-&gt;pesilock">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M239.11,-1176.34C240.41,-1156.19 242.58,-1122.54 244.14,-1098.4"/>
+<polygon fill="black" stroke="black" points="247.62,-1098.81 244.77,-1088.61 240.64,-1098.36 247.62,-1098.81"/>
+</g>
+<!-- pesi_sch_latch -->
+<g id="node14" class="node" pointer-events="visible" data-name="pesi_sch_latch">
+
+<ellipse fill="rgb(216, 216, 255)" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" cx="92" cy="-979.43" rx="59.79" ry="23.52"/>
+<text text-anchor="middle" x="92" y="-983.63" font-family="Times,serif" font-size="14.00">tikv监控图</text>
+<text text-anchor="middle" x="92" y="-966.83" font-family="Times,serif" font-size="14.00">scheduler latch</text>
+</g>
+<!-- prewrite问题不多 -->
+<g id="node19" class="node" pointer-events="visible" data-name="prewrite问题不多">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="276" cy="-853.46" rx="72.36" ry="18"/>
+<text text-anchor="middle" x="276" y="-849.26" font-family="Times,serif" font-size="14.00">prewrite问题不多</text>
+</g>
+<!-- pesi_sch_latch&#45;&gt;prewrite问题不多 -->
+<!-- pesilock&#45;&gt;pesi_sch_latch -->
+<g id="edge16" class="edge" data-name="pesilock-&gt;pesi_sch_latch">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M221.94,-1053.99C198.81,-1040.89 163.33,-1020.81 135.28,-1004.93"/>
+<polygon fill="black" stroke="black" points="137.06,-1001.92 126.64,-1000.04 133.62,-1008.01 137.06,-1001.92"/>
+</g>
+<!-- pesi_conflict -->
+<g id="node16" class="node" pointer-events="visible" data-name="pesi_conflict">
+
+<polygon fill="none" stroke="black" points="306.63,-1000.03 187.37,-1000.03 187.37,-958.83 312.63,-958.83 312.63,-994.03 306.63,-1000.03"/>
+<polyline fill="none" stroke="black" points="306.63,-1000.03 306.63,-994.03"/>
+<polyline fill="none" stroke="black" points="312.63,-994.03 306.63,-994.03"/>
+<text text-anchor="middle" x="250" y="-983.63" font-family="Times,serif" font-size="14.00">等锁或</text>
+<text text-anchor="middle" x="250" y="-966.83" font-family="Times,serif" font-size="14.00">Write conflict后重试</text>
+</g>
+<!-- pesilock&#45;&gt;pesi_conflict -->
+<g id="edge15" class="edge" data-name="pesilock-&gt;pesi_conflict">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M246.79,-1050.38C247.3,-1039.37 247.97,-1024.75 248.56,-1011.73"/>
+<polygon fill="black" stroke="black" points="252.05,-1012.03 249.02,-1001.88 245.06,-1011.71 252.05,-1012.03"/>
+</g>
+<!-- pesilock&#45;&gt;prewrite问题不多 -->
+<g id="edge20" class="edge" data-name="pesilock-&gt;prewrite问题不多">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M275.36,-1056.05C295.01,-1046.58 319.34,-1031.09 331,-1008.85 347.27,-977.82 341.84,-963.33 331,-930.02 324.9,-911.29 312.22,-893.33 300.57,-879.62"/>
+<polygon fill="black" stroke="black" points="303.4,-877.54 294.15,-872.39 298.17,-882.19 303.4,-877.54"/>
+</g>
+<!-- pesi_conflict&#45;&gt;prewrite问题不多 -->
+<!-- pesi_locknotfound -->
+<g id="node17" class="node" pointer-events="visible" data-name="pesi_locknotfound">
+
+<ellipse fill="rgb(255, 182, 193)" stroke="rgb(0, 0, 0)" cx="302" cy="-752.4" rx="87.51" ry="29.33"/>
+<text text-anchor="middle" x="302" y="-756.6" font-family="Times,serif" font-size="14.00">commit时可能有</text>
+<text text-anchor="middle" x="302" y="-739.8" font-family="Times,serif" font-size="14.00">TxnLockNotFound</text>
+</g>
+<!-- txn_pe3 -->
+<g id="node22" class="node" pointer-events="visible" data-name="txn_pe3">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="305" cy="-616.09" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="305" y="-620.29" font-family="Times,serif" font-size="14.00">悲观事务</text>
+<text text-anchor="middle" x="305" y="-603.49" font-family="Times,serif" font-size="14.00">加锁</text>
+</g>
+<!-- pesi_locknotfound&#45;&gt;txn_pe3 -->
+<!-- err_reason -->
+<g id="node18" class="node" pointer-events="visible" data-name="err_reason">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="97" cy="-752.4" rx="81.31" ry="41.09"/>
+<text text-anchor="middle" x="97" y="-765" font-family="Times,serif" font-size="14.00">上了锁到提交隔很久</text>
+<text text-anchor="middle" x="97" y="-748.2" font-family="Times,serif" font-size="14.00">TTL异常未续约</text>
+<text text-anchor="middle" x="97" y="-731.4" font-family="Times,serif" font-size="14.00">commit并发限制 等</text>
+</g>
+<!-- err_reason&#45;&gt;pesi_locknotfound -->
+<g id="edge18" class="edge" data-name="err_reason-&gt;pesi_locknotfound">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M178.68,-752.4C186.76,-752.4 194.83,-752.4 202.91,-752.4"/>
+<polygon fill="black" stroke="black" points="202.81,-755.9 212.81,-752.4 202.81,-748.9 202.81,-755.9"/>
+</g>
+<!-- ttlcomment -->
+<g id="node32" class="node" pointer-events="visible" data-name="ttlcomment">
+
+<text text-anchor="middle" x="97" y="-628.69" font-family="Times,serif" font-size="14.00">悲观锁TTL会自动续约</text>
+<text text-anchor="middle" x="97" y="-611.89" font-family="Times,serif" font-size="14.00">TTL和事务大小有关</text>
+<text text-anchor="middle" x="97" y="-595.09" font-family="Times,serif" font-size="14.00">小事务是3s ~ 大事务20s</text>
+</g>
+<!-- err_reason&#45;&gt;ttlcomment -->
+<!-- prewrite问题不多&#45;&gt;pesi_locknotfound -->
+<g id="edge17" class="edge" data-name="prewrite问题不多-&gt;pesi_locknotfound">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M280.53,-835.2C283.59,-823.54 287.76,-807.65 291.61,-792.98"/>
+<polygon fill="black" stroke="black" points="294.93,-794.11 294.09,-783.55 288.16,-792.34 294.93,-794.11"/>
+</g>
+<!-- 悲观事务\n可能遇到的问题 -->
+<g id="node20" class="node" pointer-events="visible" data-name="悲观事务\n可能遇到的问题">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="238" cy="-1306.21" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="238" y="-1310.41" font-family="Times,serif" font-size="14.00">悲观事务</text>
+<text text-anchor="middle" x="238" y="-1293.61" font-family="Times,serif" font-size="14.00">可能遇到的问题</text>
+</g>
+<!-- 悲观事务\n可能遇到的问题&#45;&gt;pesi_query -->
+<g id="edge23" class="edge" data-name="悲观事务\n可能遇到的问题-&gt;pesi_query">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M238,-1276.41C238,-1260.33 238,-1240.37 238,-1224.31"/>
+<polygon fill="black" stroke="black" points="241.5,-1224.42 238,-1214.42 234.5,-1224.42 241.5,-1224.42"/>
+</g>
+<!-- expl_op_retry -->
+<g id="node23" class="node" pointer-events="visible" data-name="expl_op_retry">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="451" cy="-515.04" rx="58.06" ry="35.78"/>
+<text text-anchor="middle" x="451" y="-527.64" font-family="Times,serif" font-size="14.00">显式事务 不重试</text>
+<text text-anchor="middle" x="451" y="-510.84" font-family="Times,serif" font-size="14.00">tidb_disable_</text>
+<text text-anchor="middle" x="451" y="-494.04" font-family="Times,serif" font-size="14.00">txn_auto_retry</text>
+</g>
+<!-- txn_op3&#45;&gt;expl_op_retry -->
+<g id="edge24" class="edge" data-name="txn_op3-&gt;expl_op_retry">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M577.73,-595.99C555.84,-582.19 525.79,-563.23 500.44,-547.23"/>
+<polygon fill="black" stroke="black" points="502.59,-544.45 492.27,-542.07 498.86,-550.37 502.59,-544.45"/>
+</g>
+<!-- impl_op_retry -->
+<g id="node25" class="node" pointer-events="visible" data-name="impl_op_retry">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="608" cy="-515.04" rx="62.88" ry="23.52"/>
+<text text-anchor="middle" x="608" y="-519.24" font-family="Times,serif" font-size="14.00">隐式事务 重试</text>
+<text text-anchor="middle" x="608" y="-502.44" font-family="Times,serif" font-size="14.00">tidb_retry_limit</text>
+</g>
+<!-- txn_op3&#45;&gt;impl_op_retry -->
+<g id="edge25" class="edge" data-name="txn_op3-&gt;impl_op_retry">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M608,-586.44C608,-575.13 608,-562.04 608,-550.23"/>
+<polygon fill="black" stroke="black" points="611.5,-550.49 608,-540.49 604.5,-550.49 611.5,-550.49"/>
+</g>
+<!-- 加锁时冲突\n进入队列等 -->
+<g id="node29" class="node" pointer-events="visible" data-name="加锁时冲突\n进入队列等">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="308" cy="-515.04" rx="48.37" ry="29.33"/>
+<text text-anchor="middle" x="308" y="-519.24" font-family="Times,serif" font-size="14.00">加锁时冲突</text>
+<text text-anchor="middle" x="308" y="-502.44" font-family="Times,serif" font-size="14.00">进入队列等</text>
+</g>
+<!-- txn_pe3&#45;&gt;加锁时冲突\n进入队列等 -->
+<g id="edge28" class="edge" data-name="txn_pe3-&gt;加锁时冲突\n进入队列等">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M305.87,-586.44C306.16,-576.89 306.48,-566.08 306.79,-555.84"/>
+<polygon fill="black" stroke="black" points="310.28,-556.24 307.09,-546.14 303.29,-556.03 310.28,-556.24"/>
+</g>
+<!-- conflict -->
+<g id="node24" class="node" pointer-events="visible" data-name="conflict">
+
+<ellipse fill="rgb(255, 182, 193)" stroke="rgb(0, 0, 0)" cx="573" cy="-390.23" rx="81.32" ry="29.33"/>
+<text text-anchor="middle" x="573" y="-394.43" font-family="Times,serif" font-size="14.00">返回Write conflict</text>
+<text text-anchor="middle" x="573" y="-377.63" font-family="Times,serif" font-size="14.00">或其它错误</text>
+</g>
+<!-- expl_op_retry&#45;&gt;conflict -->
+<g id="edge26" class="edge" data-name="expl_op_retry-&gt;conflict">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M480.84,-484C498.22,-466.51 520.2,-444.38 538.34,-426.12"/>
+<polygon fill="black" stroke="black" points="540.74,-428.67 545.3,-419.11 535.77,-423.74 540.74,-428.67"/>
+</g>
+<!-- impl_op_retry&#45;&gt;conflict -->
+<g id="edge27" class="edge" data-name="impl_op_retry-&gt;conflict">
+
+<path fill="none" stroke="rgb(0, 0, 0)" stroke-dasharray="5,2" d="M601.5,-491.23C596.65,-474.22 589.91,-450.56 584.2,-430.53"/>
+<polygon fill="black" stroke="black" points="587.59,-429.64 581.48,-420.99 580.86,-431.56 587.59,-429.64"/>
+</g>
+<!-- lock_waiter -->
+<g id="node26" class="node" pointer-events="visible" data-name="lock_waiter">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="369" cy="-390.23" rx="70.92" ry="53.35"/>
+<text text-anchor="middle" x="369" y="-411.23" font-family="Times,serif" font-size="14.00">持锁者释放</text>
+<text text-anchor="middle" x="369" y="-394.43" font-family="Times,serif" font-size="14.00">等锁者唤醒</text>
+<text text-anchor="middle" x="369" y="-377.63" font-family="Times,serif" font-size="14.00">如有多个会话争抢</text>
+<text text-anchor="middle" x="369" y="-360.83" font-family="Times,serif" font-size="14.00">则继续等待retry</text>
+</g>
+<!-- max&#45;retry&#45;count=256\nretry记录在tidb和slow日志 -->
+<g id="node30" class="node" pointer-events="visible" data-name="max-retry-count=256\nretry记录在tidb和slow日志">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="369" cy="-271.64" rx="108.8" ry="29.33"/>
+<text text-anchor="middle" x="369" y="-275.84" font-family="Times,serif" font-size="14.00">max-retry-count=256</text>
+<text text-anchor="middle" x="369" y="-259.04" font-family="Times,serif" font-size="14.00">retry记录在tidb和slow日志</text>
+</g>
+<!-- lock_waiter&#45;&gt;max&#45;retry&#45;count=256\nretry记录在tidb和slow日志 -->
+<g id="edge30" class="edge" data-name="lock_waiter-&gt;max-retry-count=256\nretry记录在tidb和slow日志">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M369,-336.39C369,-328.48 369,-320.44 369,-312.85"/>
+<polygon fill="black" stroke="black" points="372.5,-312.9 369,-302.9 365.5,-312.9 372.5,-312.9"/>
+</g>
+<!-- 等待久了\n超时限制50s -->
+<g id="node31" class="node" pointer-events="visible" data-name="等待久了\n超时限制50s">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="569" cy="-271.64" rx="54.53" ry="29.33"/>
+<text text-anchor="middle" x="569" y="-275.84" font-family="Times,serif" font-size="14.00">等待久了</text>
+<text text-anchor="middle" x="569" y="-259.04" font-family="Times,serif" font-size="14.00">超时限制50s</text>
+</g>
+<!-- lock_waiter&#45;&gt;等待久了\n超时限制50s -->
+<g id="edge32" class="edge" data-name="lock_waiter-&gt;等待久了\n超时限制50s">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M424.71,-356.75C455.52,-338.79 493.36,-316.73 522.56,-299.71"/>
+<polygon fill="black" stroke="black" points="524.32,-302.74 531.19,-294.68 520.79,-296.69 524.32,-302.74"/>
+</g>
+<!-- retry_limit -->
+<g id="node27" class="node" pointer-events="visible" data-name="retry_limit">
+
+<ellipse fill="rgb(255, 182, 193)" stroke="rgb(0, 0, 0)" cx="368" cy="-176.81" rx="84.35" ry="29.33"/>
+<text text-anchor="middle" x="368" y="-181.01" font-family="Times,serif" font-size="14.00">pessimistic lock</text>
+<text text-anchor="middle" x="368" y="-164.21" font-family="Times,serif" font-size="14.00">retry limit reached</text>
+</g>
+<!-- lock_timeout -->
+<g id="node28" class="node" pointer-events="visible" data-name="lock_timeout">
+
+<ellipse fill="rgb(255, 182, 193)" stroke="rgb(0, 0, 0)" cx="569" cy="-176.81" rx="80.7" ry="29.33"/>
+<text text-anchor="middle" x="569" y="-181.01" font-family="Times,serif" font-size="14.00">Lock wait</text>
+<text text-anchor="middle" x="569" y="-164.21" font-family="Times,serif" font-size="14.00">timeout exceeded</text>
+</g>
+<!-- quest_pointget -->
+<g id="node33" class="node" pointer-events="visible" data-name="quest_pointget">
+
+<ellipse fill="rgb(173, 216, 230)" stroke="rgb(0, 0, 0)" cx="569" cy="-57.3" rx="87.41" ry="41.09"/>
+<text text-anchor="middle" x="569" y="-69.9" font-family="Times,serif" font-size="14.00">(如果只看表面)</text>
+<text text-anchor="middle" x="569" y="-53.1" font-family="Times,serif" font-size="14.00">点查的DML要3秒多?</text>
+<text text-anchor="middle" x="569" y="-36.3" font-family="Times,serif" font-size="14.00">又没有锁冲突?</text>
+</g>
+<!-- lock_timeout&#45;&gt;quest_pointget -->
+<!-- 加锁时冲突\n进入队列等&#45;&gt;lock_waiter -->
+<g id="edge29" class="edge" data-name="加锁时冲突\n进入队列等-&gt;lock_waiter">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M321.69,-486.48C327.01,-475.76 333.33,-463.05 339.58,-450.46"/>
+<polygon fill="black" stroke="black" points="342.58,-452.3 343.89,-441.78 336.31,-449.18 342.58,-452.3"/>
+</g>
+<!-- max&#45;retry&#45;count=256\nretry记录在tidb和slow日志&#45;&gt;retry_limit -->
+<g id="edge31" class="edge" data-name="max-retry-count=256\nretry记录在tidb和slow日志-&gt;retry_limit">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M368.69,-242.03C368.61,-234.35 368.52,-225.91 368.43,-217.74"/>
+<polygon fill="black" stroke="black" points="371.93,-217.96 368.33,-207.99 364.93,-218.03 371.93,-217.96"/>
+</g>
+<!-- 等待久了\n超时限制50s&#45;&gt;lock_timeout -->
+<g id="edge33" class="edge" data-name="等待久了\n超时限制50s-&gt;lock_timeout">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M569,-242.03C569,-234.35 569,-225.91 569,-217.74"/>
+<polygon fill="black" stroke="black" points="572.5,-217.99 569,-207.99 565.5,-217.99 572.5,-217.99"/>
+</g>
+<!-- 隐式DML\n(点查一条) -->
+<g id="node34" class="node" pointer-events="visible" data-name="隐式DML\n(点查一条)">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="116" cy="-57.3" rx="48.32" ry="29.33"/>
+<text text-anchor="middle" x="116" y="-61.5" font-family="Times,serif" font-size="14.00">隐式DML</text>
+<text text-anchor="middle" x="116" y="-44.7" font-family="Times,serif" font-size="14.00">(点查一条)</text>
+</g>
+<!-- lock TTL超出\n(3秒被清) -->
+<g id="node35" class="node" pointer-events="visible" data-name="lock TTL超出\n(3秒被清)">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="264" cy="-57.3" rx="63.65" ry="29.33"/>
+<text text-anchor="middle" x="264" y="-61.5" font-family="Times,serif" font-size="14.00">lock TTL超出</text>
+<text text-anchor="middle" x="264" y="-44.7" font-family="Times,serif" font-size="14.00">(3秒被清)</text>
+</g>
+<!-- 隐式DML\n(点查一条)&#45;&gt;lock TTL超出\n(3秒被清) -->
+<g id="edge37" class="edge" data-name="隐式DML\n(点查一条)-&gt;lock TTL超出\n(3秒被清)">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M164.56,-57.3C172.57,-57.3 180.58,-57.3 188.59,-57.3"/>
+<polygon fill="black" stroke="black" points="188.4,-60.8 198.4,-57.3 188.4,-53.8 188.4,-60.8"/>
+</g>
+<!-- 自动重试\n成功 -->
+<g id="node36" class="node" pointer-events="visible" data-name="自动重试\n成功">
+
+<ellipse fill="none" stroke="rgb(0, 0, 0)" cx="405" cy="-57.3" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="405" y="-61.5" font-family="Times,serif" font-size="14.00">自动重试</text>
+<text text-anchor="middle" x="405" y="-44.7" font-family="Times,serif" font-size="14.00">成功</text>
+</g>
+<!-- lock TTL超出\n(3秒被清)&#45;&gt;自动重试\n成功 -->
+<g id="edge38" class="edge" data-name="lock TTL超出\n(3秒被清)-&gt;自动重试\n成功">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M327.89,-57.3C336.01,-57.3 344.13,-57.3 352.25,-57.3"/>
+<polygon fill="black" stroke="black" points="352.22,-60.8 362.22,-57.3 352.22,-53.8 352.22,-60.8"/>
+</g>
+<!-- 自动重试\n成功&#45;&gt;quest_pointget -->
+<g id="edge39" class="edge" data-name="自动重试\n成功-&gt;quest_pointget">
+
+<path fill="none" stroke="rgb(0, 0, 0)" d="M446.32,-57.3C454.16,-57.3 461.99,-57.3 469.82,-57.3"/>
+<polygon fill="black" stroke="black" points="469.79,-60.8 479.79,-57.3 469.79,-53.8 469.79,-60.8"/>
+</g>
+</g>
+</svg>

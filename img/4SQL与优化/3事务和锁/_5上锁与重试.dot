@@ -1,0 +1,134 @@
+digraph {
+    nodesep=0.5
+    // node [style="filled", fillcolor="#f0f0f0"];
+
+    subgraph cluster_oprd {
+        label = "读阶段 start_ts";
+        margin =20
+        tikvLockFast[label="KV Backoff图\ntikvLockFast", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        query[label="读写冲突"];
+        opti_rw_retry[label="自动重试\n最多20s", ];
+        {rank=same; tikvLockFast -> query [dir=back, style=dashed] ;
+        query -> opti_rw_retry ; };
+    }
+    subgraph cluster_op_prew {
+        label = "prewrite阶段  start_ts";
+        margin =20
+        sch_latch[label="tikv监控图\nscheduler latch", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        tikvLock[label="KV Backoff图\ntikvLock", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        prewrite[label="写写冲突"];
+        ww_conflict[label="自动重试\n最多20s"];
+
+        prewrite -> ww_conflict;
+        tikvLock -> sch_latch [style=invis];
+        {rank=same; prewrite ->  tikvLock[style=dashed]};
+        prewrite ->  sch_latch[style=dashed] ;
+    }
+       
+    subgraph cluster_op_commit {
+        label = "commit阶段 commit_ts"
+        margin =20
+        lockNotFound[label="TxnLockNotFound\n或其它错误",style="filled", fillcolor=lightpink, margin=0];
+        lockNotFound -> "重试或不重试"
+    }
+
+    "乐观事务\n可能遇到的问题" -> query -> prewrite;
+    {ww_conflict sch_latch} -> lockNotFound [style=invis];
+    prewrite -> lockNotFound;
+    
+
+    ######################################
+    subgraph cluster_pesi_rd {
+        label = "读阶段 start_ts";
+        margin =20
+        pesi_tikvLockFast[label="KV Backoff图\ntikvLockFast", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        pesi_query[label="读写冲突"];
+        pesi_rw_retry[label="自动重试\n最多20s", ];
+        {rank=same; pesi_tikvLockFast -> pesi_query [dir=back, style=dashed];
+         pesi_query -> pesi_rw_retry ; };
+    }
+
+    subgraph cluster_pesi_lock {
+        label = "上锁阶段  start_ts";
+        margin =20
+        pesi_sch_latch[label="tikv监控图\nscheduler latch", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        // pesi_tikvLock[label="KV Backoff图\ntikvLock", margin=0, style="dashed,filled", fillcolor="#d8d8ff"];
+        pesilock[label="上锁冲突"];
+        pesi_conflict[shape=note, label="等锁或\nWrite conflict后重试"];
+
+        pesilock -> pesi_conflict;
+        // pesi_tikvLock -> pesi_sch_latch [style=invis];
+        // {rank=same; pesilock ->  pesi_tikvLock[style=dashed]};
+        pesilock ->  pesi_sch_latch[style=dashed] ;
+    }
+
+    subgraph cluster_pesi_2pc {
+        label = "prewrite&commit阶段"
+        pesi_locknotfound[label="commit时可能有\nTxnLockNotFound", style="filled", fillcolor=lightpink];
+        err_reason[label="上了锁到提交隔很久\nTTL异常未续约\ncommit并发限制 等"];
+        "prewrite问题不多" -> pesi_locknotfound;
+        {rank=same; err_reason -> pesi_locknotfound}
+    }
+    pesi_query -> pesilock -> "prewrite问题不多";
+    {pesi_sch_latch  pesi_conflict } -> "prewrite问题不多" [style=invis];
+    "悲观事务\n可能遇到的问题" -> pesi_query;
+
+    // "Batch DML" -> "看进度\nPROCESSLIST";
+    subgraph cluster_retry {
+        label = "悲观锁的重试 (悲观事务提交失败不会重试),\n乐观事务提交失败(prewrite冲突或commit出错)"
+        // style=dashed
+        txn_op3 [label="乐观事务\n提交失败"];
+        txn_pe3 [label="悲观事务\n加锁"];
+        expl_op_retry[label="显式事务 不重试\ntidb_disable_\ntxn_auto_retry", margin=0];
+        conflict[label="返回Write conflict\n或其它错误",style="filled", fillcolor=lightpink  ]
+        impl_op_retry[label="隐式事务 重试\ntidb_retry_limit", margin=0]
+        txn_op3 -> {expl_op_retry impl_op_retry};
+        expl_op_retry -> conflict;
+        impl_op_retry -> conflict[style=dashed];
+
+
+        // "失败后用悲观事务重试" -> { txn_pe3  [style=invis];
+        lock_waiter[label="持锁者释放\n等锁者唤醒\n如有多个会话争抢\n则继续等待retry"];
+        retry_limit [label="pessimistic lock\nretry limit reached",style="filled", fillcolor=lightpink ]
+        lock_timeout[label="Lock wait\ntimeout exceeded",style="filled", fillcolor=lightpink]
+        txn_pe3 -> 
+            "加锁时冲突\n进入队列等" -> 
+                lock_waiter -> 
+                    "max-retry-count=256\nretry记录在tidb和slow日志" -> 
+                        retry_limit;
+                lock_waiter -> 
+                    "等待久了\n超时限制50s" -> lock_timeout;
+    }
+
+    "重试或不重试" -> txn_op3 [style=invis];
+    pesi_locknotfound -> txn_pe3[style=invis];
+    err_reason -> ttlcomment[style=invis];
+    ttlcomment[label="悲观锁TTL会自动续约\nTTL和事务大小有关\n小事务是3s ~ 大事务20s",shape=plaintext, style=""]
+
+    subgraph cluster_case1 {
+        label = "乐观事务重试可能导致奇怪的现象"
+
+        quest_pointget[label="(如果只看表面)\n点查的DML要3秒多?\n又没有锁冲突?", style="filled", fillcolor=lightblue]
+        
+        {rank=same; "隐式DML\n(点查一条)" -> "lock TTL超出\n(3秒被清)" -> "自动重试\n成功"  -> quest_pointget }
+    }
+    lock_timeout -> quest_pointget[style=invis];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

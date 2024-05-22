@@ -1,0 +1,77 @@
+digraph {
+    graph [ ranksep="0.5" nodesep=0.5];
+    // graph [ margin=20.5];
+
+    subgraph cluster_quest1 {
+        label="情况一"
+        style=dashed
+        need_estsize[label="能否估算事务的大小?", style="filled", fillcolor=lightskyblue];
+
+        subgraph cluster_case1 {
+            label = "业务场景"
+            style=none
+
+            {"大表复制\n数据装载";
+            "批量DML\n如清理数据"
+            "业务跑批\n其它批处理"} -> "怎么划分批次"
+        }
+        "怎么划分批次" -> need_estsize;
+        subgraph cluster_case2 {
+            label = "运行报错"
+            style=none
+
+            txn_size_err[label="事务大小\n超出限制", style="filled", fillcolor=lightpink]
+            txn_omq_err[label="sql报错out of\nmemroy quota", style="filled", fillcolor=lightpink]
+            binlog_err[label="binlog很大\ngrpc上限2G", style="filled", fillcolor=lightpink]
+            {txn_size_err txn_omq_err binlog_err} -> "故障分析\n事务为什么大"
+        }
+        "故障分析\n事务为什么大" -> need_estsize
+
+        need_estsize -> {
+            "delete只记录key\n大小相对好估算"
+            "insert/update要记录kv\n大小和字段数量有关"
+            "表上的索引数量\n影响事务大小"
+        }
+        {"insert/update要记录kv\n大小和字段数量有关"
+            "表上的索引数量\n影响事务大小"} -> "难以估算";
+    }
+
+    subgraph cluster_quest2 {
+        label="情况二"
+        style=dashed
+        dead_txn [label="长时间未关闭的事务", style="filled", fillcolor=lightskyblue]
+        dead_txn -> {"可能阻止gc safepoint推进" "可能阻塞其它DDL操作"}
+    }
+
+    {"难以估算" } -> dead_txn[style=invis]
+
+    subgraph cluster_quest3 {
+        label="情况三"; style=dashed;
+        
+        txn_resolved_ts [label="resolved-ts的\nlock heap size增大", style="filled", fillcolor=lightskyblue]
+        {rank=same; "大事务" -> txn_resolved_ts -> "tikv OOM"; "tikv OOM" -> "tikv OOM"[label=不断重启]
+        }
+    }
+    "可能阻止gc safepoint推进"-> txn_resolved_ts[style=invis]
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

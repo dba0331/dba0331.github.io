@@ -1,0 +1,192 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="660pt" height="683pt" viewBox="0.00 0.00 659.79 683.34">
+<g id="graph0" class="graph" transform="translate(4,679.3400268554688) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-679.34 655.79,-679.34 655.79,4 -4,4" style=""/>
+<!-- errorName1 -->
+<g id="node1" class="node" pointer-events="visible" data-name="errorName1">
+
+<ellipse fill="lightpink" stroke="black" cx="290.43" cy="-645.92" rx="87.51" ry="29.33" style=""/>
+<text text-anchor="middle" x="290.43" y="-650.12" font-family="Times,serif" font-size="14.00" style="">TxnLockNotFound</text>
+<text text-anchor="middle" x="290.43" y="-633.32" font-family="Times,serif" font-size="14.00" style="">报错</text>
+</g>
+<!-- problem1 -->
+<g id="node2" class="node" pointer-events="visible" data-name="problem1">
+
+<ellipse fill="none" stroke="black" cx="193.43" cy="-539.21" rx="104.61" ry="41.09" style=""/>
+<text text-anchor="middle" x="193.43" y="-551.81" font-family="Times,serif" font-size="14.00" style="">隐式事务、load data之类</text>
+<text text-anchor="middle" x="193.43" y="-535.01" font-family="Times,serif" font-size="14.00" style="">start与commit ts才差几秒</text>
+<text text-anchor="middle" x="193.43" y="-518.21" font-family="Times,serif" font-size="14.00" style="">有时系统负载也不高</text>
+</g>
+<!-- errorName1&#45;&gt;problem1 -->
+<g id="edge1" class="edge" data-name="errorName1-&gt;problem1">
+
+<path fill="none" stroke="black" d="M264.94,-617.41C256.17,-607.94 246.1,-597.07 236.33,-586.52" style=""/>
+<polygon fill="black" stroke="black" points="238.98,-584.23 229.62,-579.28 233.85,-588.99 238.98,-584.23" style=""/>
+</g>
+<!-- problem2 -->
+<g id="node3" class="node" pointer-events="visible" data-name="problem2">
+
+<ellipse fill="none" stroke="black" cx="387.43" cy="-539.21" rx="70.92" ry="29.33" style=""/>
+<text text-anchor="middle" x="387.43" y="-543.41" font-family="Times,serif" font-size="14.00" style="">悲观并发批处理</text>
+<text text-anchor="middle" x="387.43" y="-526.61" font-family="Times,serif" font-size="14.00" style="">系统负载一般较大</text>
+</g>
+<!-- errorName1&#45;&gt;problem2 -->
+<g id="edge2" class="edge" data-name="errorName1-&gt;problem2">
+
+<path fill="none" stroke="black" d="M315.92,-617.41C327.91,-604.46 342.35,-588.88 355.1,-575.11" style=""/>
+<polygon fill="black" stroke="black" points="357.53,-577.64 361.76,-567.93 352.39,-572.88 357.53,-577.64" style=""/>
+</g>
+<!-- parallel -->
+<g id="node4" class="node" pointer-events="visible" data-name="parallel">
+
+<ellipse fill="none" stroke="black" cx="129.43" cy="-136.13" rx="93.56" ry="29.33" style=""/>
+<text text-anchor="middle" x="129.43" y="-140.33" font-family="Times,serif" font-size="14.00" style="">并发commit太多而阻塞</text>
+<text text-anchor="middle" x="129.43" y="-123.53" font-family="Times,serif" font-size="14.00" style="">并发有限制(128)</text>
+</g>
+<!-- problem1&#45;&gt;parallel -->
+<g id="edge14" class="edge" data-name="problem1-&gt;parallel">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M179.37,-498.07C175.56,-486.48 171.61,-473.76 168.43,-461.92 157.26,-420.31 154.66,-409.71 148.43,-367.08 138.76,-300.9 133.62,-223.23 131.22,-177.21" style=""/>
+<polygon fill="black" stroke="black" points="134.72,-177.26 130.73,-167.45 127.73,-177.61 134.72,-177.26" style=""/>
+</g>
+<!-- 乐观或悲观事务\nTTL超出就会被清锁 -->
+<g id="node6" class="node" pointer-events="visible" data-name="乐观或悲观事务\nTTL超出就会被清锁">
+
+<ellipse fill="none" stroke="black" cx="258.43" cy="-432.5" rx="81.35" ry="29.33" style=""/>
+<text text-anchor="middle" x="258.43" y="-436.7" font-family="Times,serif" font-size="14.00" style="">乐观或悲观事务</text>
+<text text-anchor="middle" x="258.43" y="-419.9" font-family="Times,serif" font-size="14.00" style="">TTL超出就会被清锁</text>
+</g>
+<!-- problem1&#45;&gt;乐观或悲观事务\nTTL超出就会被清锁 -->
+<g id="edge3" class="edge" data-name="problem1-&gt;乐观或悲观事务\nTTL超出就会被清锁">
+
+<path fill="none" stroke="black" d="M217.82,-498.92C223.48,-489.8 229.49,-480.12 235.11,-471.07" style=""/>
+<polygon fill="black" stroke="black" points="237.91,-473.2 240.21,-462.85 231.96,-469.5 237.91,-473.2" style=""/>
+</g>
+<!-- sysbusy -->
+<g id="node5" class="node" pointer-events="visible" data-name="sysbusy">
+
+<ellipse fill="none" stroke="black" cx="551.43" cy="-136.13" rx="65.5" ry="41.09" style=""/>
+<text text-anchor="middle" x="551.43" y="-148.73" font-family="Times,serif" font-size="14.00" style="">系统慢、硬件慢</text>
+<text text-anchor="middle" x="551.43" y="-131.93" font-family="Times,serif" font-size="14.00" style="">server is busy</text>
+<text text-anchor="middle" x="551.43" y="-115.13" font-family="Times,serif" font-size="14.00" style="">触发流控 等等</text>
+</g>
+<!-- problem2&#45;&gt;sysbusy -->
+<g id="edge15" class="edge" data-name="problem2-&gt;sysbusy">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M419.01,-512.74C454.18,-482.27 509.38,-427.72 534.43,-367.08 558.22,-309.49 559.37,-236.91 556.61,-188.87" style=""/>
+<polygon fill="black" stroke="black" points="560.11,-188.76 555.96,-179.02 553.12,-189.23 560.11,-188.76" style=""/>
+</g>
+<!-- problem2&#45;&gt;乐观或悲观事务\nTTL超出就会被清锁 -->
+<g id="edge4" class="edge" data-name="problem2-&gt;乐观或悲观事务\nTTL超出就会被清锁">
+
+<path fill="none" stroke="black" d="M355.87,-512.6C338.82,-498.75 317.57,-481.51 299.27,-466.65" style=""/>
+<polygon fill="black" stroke="black" points="301.7,-464.12 291.73,-460.53 297.29,-469.55 301.7,-464.12" style=""/>
+</g>
+<!-- 建议 调大commit并发参数\n(效果有限) -->
+<g id="node11" class="node" pointer-events="visible" data-name="建议 调大commit并发参数\n(效果有限)">
+
+<ellipse fill="none" stroke="black" cx="103.43" cy="-29.42" rx="103.36" ry="29.33" style=""/>
+<text text-anchor="middle" x="103.43" y="-33.62" font-family="Times,serif" font-size="14.00" style="">建议 调大commit并发参数</text>
+<text text-anchor="middle" x="103.43" y="-16.82" font-family="Times,serif" font-size="14.00" style="">(效果有限)</text>
+</g>
+<!-- parallel&#45;&gt;建议 调大commit并发参数\n(效果有限) -->
+<g id="edge11" class="edge" data-name="parallel-&gt;建议 调大commit并发参数\n(效果有限)">
+
+<path fill="none" stroke="black" d="M122.33,-106.51C119.52,-95.2 116.24,-82.01 113.22,-69.82" style=""/>
+<polygon fill="black" stroke="black" points="116.7,-69.32 110.89,-60.46 109.9,-71.01 116.7,-69.32" style=""/>
+</g>
+<!-- 建议 找出性能的瓶颈并优化 -->
+<g id="node13" class="node" pointer-events="visible" data-name="建议 找出性能的瓶颈并优化">
+
+<ellipse fill="none" stroke="black" cx="551.43" cy="-29.42" rx="100.23" ry="18" style=""/>
+<text text-anchor="middle" x="551.43" y="-25.22" font-family="Times,serif" font-size="14.00" style="">建议 找出性能的瓶颈并优化</text>
+</g>
+<!-- sysbusy&#45;&gt;建议 找出性能的瓶颈并优化 -->
+<g id="edge13" class="edge" data-name="sysbusy-&gt;建议 找出性能的瓶颈并优化">
+
+<path fill="none" stroke="black" d="M551.43,-94.64C551.43,-82.85 551.43,-70.21 551.43,-59.29" style=""/>
+<polygon fill="black" stroke="black" points="554.93,-59.34 551.43,-49.34 547.93,-59.34 554.93,-59.34" style=""/>
+</g>
+<!-- 为什么有时TTL值只有几秒 -->
+<g id="node7" class="node" pointer-events="visible" data-name="为什么有时TTL值只有几秒">
+
+<ellipse fill="none" stroke="black" cx="258.43" cy="-337.67" rx="101.32" ry="18" style=""/>
+<text text-anchor="middle" x="258.43" y="-333.47" font-family="Times,serif" font-size="14.00" style="">为什么有时TTL值只有几秒</text>
+</g>
+<!-- 乐观或悲观事务\nTTL超出就会被清锁&#45;&gt;为什么有时TTL值只有几秒 -->
+<g id="edge5" class="edge" data-name="乐观或悲观事务\nTTL超出就会被清锁-&gt;为什么有时TTL值只有几秒">
+
+<path fill="none" stroke="black" d="M258.43,-402.89C258.43,-391.62 258.43,-378.7 258.43,-367.42" style=""/>
+<polygon fill="black" stroke="black" points="261.93,-367.49 258.43,-357.49 254.93,-367.49 261.93,-367.49" style=""/>
+</g>
+<!-- 为什么从prewrite到\ncommit的时间久(超出TTL) -->
+<g id="node8" class="node" pointer-events="visible" data-name="为什么从prewrite到\ncommit的时间久(超出TTL)">
+
+<ellipse fill="none" stroke="black" cx="288.43" cy="-242.84" rx="110.68" ry="29.33" style=""/>
+<text text-anchor="middle" x="288.43" y="-247.04" font-family="Times,serif" font-size="14.00" style="">为什么从prewrite到</text>
+<text text-anchor="middle" x="288.43" y="-230.24" font-family="Times,serif" font-size="14.00" style="">commit的时间久(超出TTL)</text>
+</g>
+<!-- 为什么有时TTL值只有几秒&#45;&gt;为什么从prewrite到\ncommit的时间久(超出TTL) -->
+<g id="edge6" class="edge" data-name="为什么有时TTL值只有几秒-&gt;为什么从prewrite到\ncommit的时间久(超出TTL)">
+
+<path fill="none" stroke="black" d="M264.07,-319.21C267.35,-309.05 271.63,-295.82 275.68,-283.28" style=""/>
+<polygon fill="black" stroke="black" points="278.95,-284.56 278.69,-273.97 272.29,-282.41 278.95,-284.56" style=""/>
+</g>
+<!-- TTL值不是固定的\n和事务大小相关 -->
+<g id="node10" class="node" pointer-events="visible" data-name="TTL值不是固定的\n和事务大小相关">
+
+<ellipse fill="none" stroke="black" cx="451.43" cy="-337.67" rx="74" ry="29.33" style=""/>
+<text text-anchor="middle" x="451.43" y="-341.87" font-family="Times,serif" font-size="14.00" style="">TTL值不是固定的</text>
+<text text-anchor="middle" x="451.43" y="-325.07" font-family="Times,serif" font-size="14.00" style="">和事务大小相关</text>
+</g>
+<!-- 为什么有时TTL值只有几秒&#45;&gt;TTL值不是固定的\n和事务大小相关 -->
+<g id="edge10" class="edge" data-name="为什么有时TTL值只有几秒-&gt;TTL值不是固定的\n和事务大小相关">
+
+<path fill="none" stroke="black" d="M360.21,-337.67C362.04,-337.67 363.87,-337.67 365.7,-337.67" style=""/>
+<polygon fill="black" stroke="black" points="365.44,-341.17 375.44,-337.67 365.44,-334.17 365.44,-341.17" style=""/>
+</g>
+<!-- 为什么从prewrite到\ncommit的时间久(超出TTL)&#45;&gt;parallel -->
+<g id="edge7" class="edge" data-name="为什么从prewrite到\ncommit的时间久(超出TTL)-&gt;parallel">
+
+<path fill="none" stroke="black" d="M247.9,-215.14C226.74,-201.21 200.69,-184.05 178.41,-169.38" style=""/>
+<polygon fill="black" stroke="black" points="180.33,-166.46 170.06,-163.88 176.48,-172.3 180.33,-166.46" style=""/>
+</g>
+<!-- 为什么从prewrite到\ncommit的时间久(超出TTL)&#45;&gt;sysbusy -->
+<g id="edge8" class="edge" data-name="为什么从prewrite到\ncommit的时间久(超出TTL)-&gt;sysbusy">
+
+<path fill="none" stroke="black" d="M348.77,-217.81C389.78,-201.48 444.02,-179.89 486.06,-163.15" style=""/>
+<polygon fill="black" stroke="black" points="487.34,-166.41 495.34,-159.46 484.75,-159.91 487.34,-166.41" style=""/>
+</g>
+<!-- prewrite处理key多 -->
+<g id="node9" class="node" pointer-events="visible" data-name="prewrite处理key多">
+
+<ellipse fill="none" stroke="black" cx="321.43" cy="-136.13" rx="78.76" ry="18" style=""/>
+<text text-anchor="middle" x="321.43" y="-131.93" font-family="Times,serif" font-size="14.00" style="">prewrite处理key多</text>
+</g>
+<!-- 为什么从prewrite到\ncommit的时间久(超出TTL)&#45;&gt;prewrite处理key多 -->
+<g id="edge9" class="edge" data-name="为什么从prewrite到\ncommit的时间久(超出TTL)-&gt;prewrite处理key多">
+
+<path fill="none" stroke="black" d="M297.45,-213.22C302.16,-198.27 307.91,-180.03 312.6,-165.16" style=""/>
+<polygon fill="black" stroke="black" points="315.82,-166.58 315.48,-155.99 309.14,-164.48 315.82,-166.58" style=""/>
+</g>
+<!-- 建议 减小处理线程每批的量 -->
+<g id="node12" class="node" pointer-events="visible" data-name="建议 减小处理线程每批的量">
+
+<ellipse fill="none" stroke="black" cx="325.43" cy="-29.42" rx="100.23" ry="18" style=""/>
+<text text-anchor="middle" x="325.43" y="-25.22" font-family="Times,serif" font-size="14.00" style="">建议 减小处理线程每批的量</text>
+</g>
+<!-- prewrite处理key多&#45;&gt;建议 减小处理线程每批的量 -->
+<g id="edge12" class="edge" data-name="prewrite处理key多-&gt;建议 减小处理线程每批的量">
+
+<path fill="none" stroke="black" d="M322.09,-117.84C322.7,-101.92 323.61,-78 324.33,-59.21" style=""/>
+<polygon fill="black" stroke="black" points="327.83,-59.37 324.71,-49.24 320.83,-59.1 327.83,-59.37" style=""/>
+</g>
+<!-- errorName2 -->
+<g id="node14" class="node" pointer-events="visible" data-name="errorName2">
+
+<ellipse fill="lightpink" stroke="black" cx="501.43" cy="-645.92" rx="105.09" ry="23.52" style=""/>
+<text text-anchor="middle" x="501.43" y="-650.12" font-family="Times,serif" font-size="14.00" style="">PessimisticLockNotFound</text>
+<text text-anchor="middle" x="501.43" y="-633.32" font-family="Times,serif" font-size="14.00" style="">类似报错</text>
+</g>
+</g>
+</svg>

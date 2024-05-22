@@ -1,0 +1,420 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="876pt" height="839pt" viewBox="0.00 0.00 875.58 838.99">
+<g id="graph0" class="graph" transform="translate(4,834.989990234375) scale(1)" data-name="demo">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-834.99 871.58,-834.99 871.58,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_dml">
+
+<polygon fill="none" stroke="black" points="152,-386.56 152,-463.36 488,-463.36 488,-386.56 152,-386.56" style=""/>
+<text text-anchor="middle" x="320" y="-446.76" font-family="Times,serif" font-size="14.00" style="">会话内存</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_commit">
+
+<polygon fill="none" stroke="black" points="8,-8 8,-378.56 547,-378.56 547,-8 8,-8" style=""/>
+<text text-anchor="middle" x="277.5" y="-361.96" font-family="Times,serif" font-size="14.00" style="">事务提交</text>
+</g>
+<g id="clust8" class="cluster" data-name="cluster_lock">
+
+<polygon fill="none" stroke="black" points="522,-471.36 522,-786.99 740,-786.99 740,-471.36 522,-471.36" style=""/>
+<text text-anchor="middle" x="631" y="-770.39" font-family="Times,serif" font-size="14.00" style="">事务锁相关</text>
+</g>
+<g id="clust10" class="cluster" data-name="cluster_lockerr">
+
+<polygon fill="none" stroke="black" points="574,-224 574,-438.56 814,-438.56 814,-224 574,-224" style=""/>
+</g>
+<!-- pessi_rw -->
+<g id="node1" class="node" pointer-events="visible" data-name="pessi_rw">
+
+<ellipse fill="none" stroke="black" cx="440" cy="-412.56" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="440" y="-408.36" font-family="Times,serif" font-size="14.00" style="">修改数据</text>
+</g>
+<!-- 悲观commit -->
+<g id="node5" class="node" pointer-events="visible" data-name="悲观commit">
+
+<ellipse fill="none" stroke="black" cx="328" cy="-327.76" rx="55.05" ry="18" style=""/>
+<text text-anchor="middle" x="328" y="-323.56" font-family="Times,serif" font-size="14.00" style="">悲观commit</text>
+</g>
+<!-- pessi_rw&#45;&gt;悲观commit -->
+<g id="edge34" class="edge" data-name="pessi_rw-&gt;悲观commit">
+
+<path fill="none" stroke="black" d="M419.72,-396.56C402.71,-383.99 378.15,-365.83 358.73,-351.48" style=""/>
+<polygon fill="black" stroke="black" points="361,-348.8 350.88,-345.67 356.84,-354.43 361,-348.8" style=""/>
+</g>
+<!-- opti_rw -->
+<g id="node2" class="node" pointer-events="visible" data-name="opti_rw">
+
+<ellipse fill="none" stroke="black" cx="200" cy="-412.56" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="200" y="-408.36" font-family="Times,serif" font-size="14.00" style="">修改数据</text>
+</g>
+<!-- 乐观commit -->
+<g id="node4" class="node" pointer-events="visible" data-name="乐观commit">
+
+<ellipse fill="none" stroke="black" cx="200" cy="-327.76" rx="55.05" ry="18" style=""/>
+<text text-anchor="middle" x="200" y="-323.56" font-family="Times,serif" font-size="14.00" style="">乐观commit</text>
+</g>
+<!-- opti_rw&#45;&gt;乐观commit -->
+<g id="edge18" class="edge" data-name="opti_rw-&gt;乐观commit">
+
+<path fill="none" stroke="black" d="M200,-394.4C200,-383.71 200,-369.67 200,-357.33" style=""/>
+<polygon fill="black" stroke="black" points="203.5,-357.69 200,-347.69 196.5,-357.69 203.5,-357.69" style=""/>
+</g>
+<!-- dirtydata -->
+<g id="node3" class="node" pointer-events="visible" data-name="dirtydata">
+
+<ellipse fill="none" stroke="black" stroke-dasharray="5,2" cx="320" cy="-412.56" rx="61.97" ry="18" style=""/>
+<text text-anchor="middle" x="320" y="-408.36" font-family="Times,serif" font-size="14.00" style="">脏数据都在内存</text>
+</g>
+<!-- dirtydata&#45;&gt;乐观commit -->
+<!-- dirtydata&#45;&gt;悲观commit -->
+<!-- 超大事务 -->
+<g id="node6" class="node" pointer-events="visible" data-name="超大事务">
+
+<ellipse fill="none" stroke="black" cx="384" cy="-250" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="384" y="-245.8" font-family="Times,serif" font-size="14.00" style="">超大事务</text>
+</g>
+<!-- dirtydata&#45;&gt;超大事务 -->
+<g id="edge14" class="edge" data-name="dirtydata-&gt;超大事务">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M365.38,-400.05C375.87,-395.17 385.76,-388.28 392,-378.56 411.19,-348.66 403.24,-306.26 394.6,-278.69" style=""/>
+<polygon fill="black" stroke="black" points="397.94,-277.65 391.42,-269.3 391.31,-279.89 397.94,-277.65" style=""/>
+</g>
+<!-- 乐观commit&#45;&gt;超大事务 -->
+<g id="edge8" class="edge" data-name="乐观commit-&gt;超大事务">
+
+<path fill="none" stroke="black" d="M233.32,-313.04C264.72,-300.11 311.77,-280.74 344.92,-267.09" style=""/>
+<polygon fill="black" stroke="black" points="345.85,-270.49 353.76,-263.45 343.18,-264.02 345.85,-270.49" style=""/>
+</g>
+<!-- 事务成功 -->
+<g id="node7" class="node" pointer-events="visible" data-name="事务成功">
+
+<ellipse fill="greenyellow" stroke="black" cx="286" cy="-250" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="286" y="-245.8" font-family="Times,serif" font-size="14.00" style="">事务成功</text>
+</g>
+<!-- 乐观commit&#45;&gt;事务成功 -->
+<g id="edge9" class="edge" data-name="乐观commit-&gt;事务成功">
+
+<path fill="none" stroke="black" d="M218.24,-310.69C230.37,-300 246.5,-285.8 259.97,-273.93" style=""/>
+<polygon fill="black" stroke="black" points="262.05,-276.76 267.24,-267.53 257.42,-271.51 262.05,-276.76" style=""/>
+</g>
+<!-- 锁冲突backoff -->
+<g id="node13" class="node" pointer-events="visible" data-name="锁冲突backoff">
+
+<ellipse fill="none" stroke="black" cx="166" cy="-250" rx="62.01" ry="18" style=""/>
+<text text-anchor="middle" x="166" y="-245.8" font-family="Times,serif" font-size="14.00" style="">锁冲突backoff</text>
+</g>
+<!-- 乐观commit&#45;&gt;锁冲突backoff -->
+<g id="edge10" class="edge" data-name="乐观commit-&gt;锁冲突backoff">
+
+<path fill="none" stroke="black" d="M192.28,-309.57C188.16,-300.37 182.97,-288.81 178.3,-278.41" style=""/>
+<polygon fill="black" stroke="black" points="181.59,-277.19 174.3,-269.5 175.21,-280.06 181.59,-277.19" style=""/>
+</g>
+<!-- 悲观commit&#45;&gt;超大事务 -->
+<g id="edge1" class="edge" data-name="悲观commit-&gt;超大事务">
+
+<path fill="none" stroke="black" d="M340.43,-309.95C347.66,-300.17 356.91,-287.64 365.03,-276.66" style=""/>
+<polygon fill="black" stroke="black" points="367.77,-278.84 370.9,-268.72 362.14,-274.68 367.77,-278.84" style=""/>
+</g>
+<!-- 悲观commit&#45;&gt;事务成功 -->
+<g id="edge2" class="edge" data-name="悲观commit-&gt;事务成功">
+
+<path fill="none" stroke="black" d="M318.47,-309.57C313.28,-300.2 306.74,-288.41 300.89,-277.86" style=""/>
+<polygon fill="black" stroke="black" points="303.99,-276.23 296.08,-269.19 297.87,-279.63 303.99,-276.23" style=""/>
+</g>
+<!-- binlog超2G -->
+<g id="node8" class="node" pointer-events="visible" data-name="binlog超2G">
+
+<ellipse fill="none" stroke="black" cx="484" cy="-178" rx="54.52" ry="18" style=""/>
+<text text-anchor="middle" x="484" y="-173.8" font-family="Times,serif" font-size="14.00" style="">binlog超2G</text>
+</g>
+<!-- 超大事务&#45;&gt;binlog超2G -->
+<g id="edge3" class="edge" data-name="超大事务-&gt;binlog超2G">
+
+<path fill="none" stroke="black" d="M404.72,-234.5C418.46,-224.88 436.75,-212.07 452.3,-201.19" style=""/>
+<polygon fill="black" stroke="black" points="454.14,-204.17 460.33,-195.57 450.13,-198.44 454.14,-204.17" style=""/>
+</g>
+<!-- 超出事务限制 -->
+<g id="node9" class="node" pointer-events="visible" data-name="超出事务限制">
+
+<ellipse fill="none" stroke="black" cx="357" cy="-178" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="357" y="-173.8" font-family="Times,serif" font-size="14.00" style="">超出事务限制</text>
+</g>
+<!-- 超大事务&#45;&gt;超出事务限制 -->
+<g id="edge4" class="edge" data-name="超大事务-&gt;超出事务限制">
+
+<path fill="none" stroke="black" d="M377.46,-232.05C374.56,-224.52 371.05,-215.44 367.78,-206.94" style=""/>
+<polygon fill="black" stroke="black" points="371.07,-205.76 364.21,-197.69 364.54,-208.28 371.07,-205.76" style=""/>
+</g>
+<!-- grpc报文失败 -->
+<g id="node10" class="node" pointer-events="visible" data-name="grpc报文失败">
+
+<ellipse fill="none" stroke="black" cx="458" cy="-106" rx="57.33" ry="18" style=""/>
+<text text-anchor="middle" x="458" y="-101.8" font-family="Times,serif" font-size="14.00" style="">grpc报文失败</text>
+</g>
+<!-- binlog超2G&#45;&gt;grpc报文失败 -->
+<g id="edge5" class="edge" data-name="binlog超2G-&gt;grpc报文失败">
+
+<path fill="none" stroke="black" d="M477.57,-159.7C474.77,-152.15 471.42,-143.12 468.28,-134.68" style=""/>
+<polygon fill="black" stroke="black" points="471.64,-133.68 464.88,-125.52 465.08,-136.12 471.64,-133.68" style=""/>
+</g>
+<!-- 提交事务失败 -->
+<g id="node12" class="node" pointer-events="visible" data-name="提交事务失败">
+
+<ellipse fill="lightpink" stroke="black" cx="270" cy="-106" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="270" y="-101.8" font-family="Times,serif" font-size="14.00" style="">提交事务失败</text>
+</g>
+<!-- 超出事务限制&#45;&gt;提交事务失败 -->
+<g id="edge7" class="edge" data-name="超出事务限制-&gt;提交事务失败">
+
+<path fill="none" stroke="black" d="M337.26,-161.12C325.88,-151.96 311.38,-140.29 298.75,-130.13" style=""/>
+<polygon fill="black" stroke="black" points="301.13,-127.55 291.14,-124.01 296.74,-133.01 301.13,-127.55" style=""/>
+</g>
+<!-- DM /kafka失败 (事务成功) -->
+<g id="node11" class="node" pointer-events="visible" data-name="DM /kafka失败 (事务成功)">
+
+<ellipse fill="none" stroke="black" cx="434" cy="-34" rx="105.38" ry="18" style=""/>
+<text text-anchor="middle" x="434" y="-29.8" font-family="Times,serif" font-size="14.00" style="">DM /kafka失败 (事务成功)</text>
+</g>
+<!-- grpc报文失败&#45;&gt;DM /kafka失败 (事务成功) -->
+<g id="edge6" class="edge" data-name="grpc报文失败-&gt;DM /kafka失败 (事务成功)">
+
+<path fill="none" stroke="black" d="M452.07,-87.7C449.51,-80.24 446.45,-71.32 443.59,-62.97" style=""/>
+<polygon fill="black" stroke="black" points="446.91,-61.86 440.36,-53.54 440.29,-64.13 446.91,-61.86" style=""/>
+</g>
+<!-- 重试成功(慢) -->
+<g id="node14" class="node" pointer-events="visible" data-name="重试成功(慢)">
+
+<ellipse fill="greenyellow" stroke="black" cx="70" cy="-178" rx="53.86" ry="18" style=""/>
+<text text-anchor="middle" x="70" y="-173.8" font-family="Times,serif" font-size="14.00" style="">重试成功(慢)</text>
+</g>
+<!-- 锁冲突backoff&#45;&gt;重试成功(慢) -->
+<g id="edge11" class="edge" data-name="锁冲突backoff-&gt;重试成功(慢)">
+
+<path fill="none" stroke="black" d="M143.73,-232.76C131.04,-223.51 114.94,-211.77 101.03,-201.63" style=""/>
+<polygon fill="black" stroke="black" points="103.18,-198.86 93.04,-195.8 99.05,-204.52 103.18,-198.86" style=""/>
+</g>
+<!-- 重试失败/或不重试 -->
+<g id="node15" class="node" pointer-events="visible" data-name="重试失败/或不重试">
+
+<ellipse fill="none" stroke="black" cx="213" cy="-178" rx="71.82" ry="18" style=""/>
+<text text-anchor="middle" x="213" y="-173.8" font-family="Times,serif" font-size="14.00" style="">重试失败/或不重试</text>
+</g>
+<!-- 锁冲突backoff&#45;&gt;重试失败/或不重试 -->
+<g id="edge12" class="edge" data-name="锁冲突backoff-&gt;重试失败/或不重试">
+
+<path fill="none" stroke="black" d="M177.38,-232.05C182.8,-223.97 189.42,-214.12 195.47,-205.11" style=""/>
+<polygon fill="black" stroke="black" points="198.22,-207.3 200.88,-197.05 192.4,-203.4 198.22,-207.3" style=""/>
+</g>
+<!-- 重试失败/或不重试&#45;&gt;提交事务失败 -->
+<g id="edge13" class="edge" data-name="重试失败/或不重试-&gt;提交事务失败">
+
+<path fill="none" stroke="black" d="M226.8,-160.05C233.52,-151.8 241.74,-141.7 249.2,-132.54" style=""/>
+<polygon fill="black" stroke="black" points="251.77,-134.93 255.37,-124.96 246.34,-130.51 251.77,-134.93" style=""/>
+</g>
+<!-- 乐观事务 -->
+<g id="node16" class="node" pointer-events="visible" data-name="乐观事务">
+
+<ellipse fill="none" stroke="black" cx="260" cy="-497.36" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="260" y="-493.16" font-family="Times,serif" font-size="14.00" style="">乐观事务</text>
+</g>
+<!-- 乐观事务&#45;&gt;opti_rw -->
+<g id="edge17" class="edge" data-name="乐观事务-&gt;opti_rw">
+
+<path fill="none" stroke="black" d="M248.15,-480C239.74,-468.4 228.28,-452.59 218.65,-439.3" style=""/>
+<polygon fill="black" stroke="black" points="221.62,-437.44 212.92,-431.39 215.96,-441.54 221.62,-437.44" style=""/>
+</g>
+<!-- 乐观事务&#45;&gt;dirtydata -->
+<!-- 上锁lock_CF -->
+<g id="node17" class="node" pointer-events="visible" data-name="上锁lock_CF">
+
+<ellipse fill="none" stroke="black" cx="638" cy="-736.19" rx="58.58" ry="18" style=""/>
+<text text-anchor="middle" x="638" y="-731.99" font-family="Times,serif" font-size="14.00" style="">上锁lock_CF</text>
+</g>
+<!-- 上锁成功 -->
+<g id="node18" class="node" pointer-events="visible" data-name="上锁成功">
+
+<ellipse fill="greenyellow" stroke="black" cx="581" cy="-497.36" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="581" y="-493.16" font-family="Times,serif" font-size="14.00" style="">上锁成功</text>
+</g>
+<!-- 上锁lock_CF&#45;&gt;上锁成功 -->
+<g id="edge20" class="edge" data-name="上锁lock_CF-&gt;上锁成功">
+
+<path fill="none" stroke="black" d="M614.57,-719.33C601.67,-709.73 586.08,-696.57 575,-682.19 553.41,-654.15 548.74,-644.72 541,-610.19 535.28,-584.68 532.69,-576.15 541,-551.36 544.5,-540.92 550.95,-530.9 557.66,-522.43" style=""/>
+<polygon fill="black" stroke="black" points="560.12,-524.94 563.95,-515.06 554.8,-520.4 560.12,-524.94" style=""/>
+</g>
+<!-- 目标已经有锁 -->
+<g id="node19" class="node" pointer-events="visible" data-name="目标已经有锁">
+
+<ellipse fill="none" stroke="black" cx="638" cy="-664.19" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="638" y="-659.99" font-family="Times,serif" font-size="14.00" style="">目标已经有锁</text>
+</g>
+<!-- 上锁lock_CF&#45;&gt;目标已经有锁 -->
+<g id="edge21" class="edge" data-name="上锁lock_CF-&gt;目标已经有锁">
+
+<path fill="none" stroke="black" d="M638,-717.89C638,-710.6 638,-701.92 638,-693.73" style=""/>
+<polygon fill="black" stroke="black" points="641.5,-693.81 638,-683.81 634.5,-693.81 641.5,-693.81" style=""/>
+</g>
+<!-- 上锁成功&#45;&gt;pessi_rw -->
+<g id="edge33" class="edge" data-name="上锁成功-&gt;pessi_rw">
+
+<path fill="none" stroke="black" d="M546.54,-488C528.51,-482.66 506.58,-474.6 489,-463.36 478.42,-456.6 468.39,-447.16 460.19,-438.32" style=""/>
+<polygon fill="black" stroke="black" points="462.9,-436.1 453.65,-430.93 457.66,-440.74 462.9,-436.1" style=""/>
+</g>
+<!-- 持锁超时1h -->
+<g id="node24" class="node" pointer-events="visible" data-name="持锁超时1h">
+
+<ellipse fill="none" stroke="black" cx="632" cy="-412.56" rx="49.83" ry="18" style=""/>
+<text text-anchor="middle" x="632" y="-408.36" font-family="Times,serif" font-size="14.00" style="">持锁超时1h</text>
+</g>
+<!-- 上锁成功&#45;&gt;持锁超时1h -->
+<g id="edge36" class="edge" data-name="上锁成功-&gt;持锁超时1h">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M591.32,-479.6C598.26,-468.34 607.55,-453.26 615.5,-440.35" style=""/>
+<polygon fill="black" stroke="black" points="618.46,-442.21 620.73,-431.86 612.5,-438.54 618.46,-442.21" style=""/>
+</g>
+<!-- MDL锁\n阻止DDL -->
+<g id="node30" class="node" pointer-events="visible" data-name="MDL锁\n阻止DDL">
+
+<polygon fill="none" stroke="black" points="557.77,-433.16 498.23,-433.16 498.23,-391.96 563.77,-391.96 563.77,-427.16 557.77,-433.16" style=""/>
+<polyline fill="none" stroke="black" points="557.77,-433.16 557.77,-427.16" style=""/>
+<polyline fill="none" stroke="black" points="563.77,-427.16 557.77,-427.16" style=""/>
+<text text-anchor="middle" x="531" y="-416.76" font-family="Times,serif" font-size="14.00" style="">MDL锁</text>
+<text text-anchor="middle" x="531" y="-399.96" font-family="Times,serif" font-size="14.00" style="">阻止DDL</text>
+</g>
+<!-- 上锁成功&#45;&gt;MDL锁\n阻止DDL -->
+<g id="edge35" class="edge" data-name="上锁成功-&gt;MDL锁\n阻止DDL">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M570.88,-479.6C564.6,-469.19 556.33,-455.51 548.96,-443.3" style=""/>
+<polygon fill="black" stroke="black" points="551.99,-441.55 543.82,-434.8 546,-445.17 551.99,-441.55" style=""/>
+</g>
+<!-- 过期的锁\n/清理 -->
+<g id="node20" class="node" pointer-events="visible" data-name="过期的锁\n/清理">
+
+<ellipse fill="none" stroke="black" cx="591" cy="-580.77" rx="41.02" ry="29.33" style=""/>
+<text text-anchor="middle" x="591" y="-584.97" font-family="Times,serif" font-size="14.00" style="">过期的锁</text>
+<text text-anchor="middle" x="591" y="-568.17" font-family="Times,serif" font-size="14.00" style="">/清理</text>
+</g>
+<!-- 目标已经有锁&#45;&gt;过期的锁\n/清理 -->
+<g id="edge22" class="edge" data-name="目标已经有锁-&gt;过期的锁\n/清理">
+
+<path fill="none" stroke="black" d="M628.26,-646.32C623.5,-638.08 617.58,-627.82 611.87,-617.92" style=""/>
+<polygon fill="black" stroke="black" points="615.07,-616.46 607.03,-609.55 609,-619.96 615.07,-616.46" style=""/>
+</g>
+<!-- 有效的锁\n/等待 -->
+<g id="node21" class="node" pointer-events="visible" data-name="有效的锁\n/等待">
+
+<ellipse fill="none" stroke="black" cx="691" cy="-580.77" rx="41.02" ry="29.33" style=""/>
+<text text-anchor="middle" x="691" y="-584.97" font-family="Times,serif" font-size="14.00" style="">有效的锁</text>
+<text text-anchor="middle" x="691" y="-568.17" font-family="Times,serif" font-size="14.00" style="">/等待</text>
+</g>
+<!-- 目标已经有锁&#45;&gt;有效的锁\n/等待 -->
+<g id="edge24" class="edge" data-name="目标已经有锁-&gt;有效的锁\n/等待">
+
+<path fill="none" stroke="black" d="M648.98,-646.32C654.45,-637.92 661.28,-627.43 667.83,-617.36" style=""/>
+<polygon fill="black" stroke="black" points="670.63,-619.48 673.15,-609.19 664.76,-615.66 670.63,-619.48" style=""/>
+</g>
+<!-- 过期的锁\n/清理&#45;&gt;上锁成功 -->
+<g id="edge23" class="edge" data-name="过期的锁\n/清理-&gt;上锁成功">
+
+<path fill="none" stroke="black" d="M587.5,-551.3C586.53,-543.38 585.47,-534.78 584.5,-526.87" style=""/>
+<polygon fill="black" stroke="black" points="587.99,-526.55 583.3,-517.05 581.04,-527.4 587.99,-526.55" style=""/>
+</g>
+<!-- 有效的锁\n/等待&#45;&gt;上锁成功 -->
+<g id="edge25" class="edge" data-name="有效的锁\n/等待-&gt;上锁成功">
+
+<path fill="none" stroke="black" d="M662.96,-559.02C646.78,-547.05 626.47,-532.02 610.12,-519.91" style=""/>
+<polygon fill="black" stroke="black" points="612.34,-517.2 602.22,-514.07 608.18,-522.83 612.34,-517.2" style=""/>
+</g>
+<!-- 等待超时50s -->
+<g id="node22" class="node" pointer-events="visible" data-name="等待超时50s">
+
+<ellipse fill="none" stroke="black" cx="753" cy="-412.56" rx="53.34" ry="18" style=""/>
+<text text-anchor="middle" x="753" y="-408.36" font-family="Times,serif" font-size="14.00" style="">等待超时50s</text>
+</g>
+<!-- 有效的锁\n/等待&#45;&gt;等待超时50s -->
+<g id="edge37" class="edge" data-name="有效的锁\n/等待-&gt;等待超时50s">
+
+<path fill="none" stroke="black" d="M701.38,-551.95C712.86,-521.17 731.25,-471.87 742.7,-441.17" style=""/>
+<polygon fill="black" stroke="black" points="745.84,-442.78 746.05,-432.19 739.28,-440.33 745.84,-442.78" style=""/>
+</g>
+<!-- lockwait -->
+<g id="node23" class="node" pointer-events="visible" data-name="lockwait">
+
+<ellipse fill="none" stroke="black" cx="752" cy="-327.76" rx="39.72" ry="23.52" style=""/>
+<text text-anchor="middle" x="752" y="-331.96" font-family="Times,serif" font-size="14.00" style="">Lock wait</text>
+<text text-anchor="middle" x="752" y="-315.16" font-family="Times,serif" font-size="14.00" style="">timeout</text>
+</g>
+<!-- 等待超时50s&#45;&gt;lockwait -->
+<g id="edge26" class="edge" data-name="等待超时50s-&gt;lockwait">
+
+<path fill="none" stroke="black" d="M752.79,-394.4C752.68,-385.29 752.54,-373.75 752.41,-362.91" style=""/>
+<polygon fill="black" stroke="black" points="755.91,-363.02 752.29,-353.06 748.91,-363.11 755.91,-363.02" style=""/>
+</g>
+<!-- 事务因锁失败 -->
+<g id="node26" class="node" pointer-events="visible" data-name="事务因锁失败">
+
+<ellipse fill="lightpink" stroke="black" cx="695" cy="-250" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="695" y="-245.8" font-family="Times,serif" font-size="14.00" style="">事务因锁失败</text>
+</g>
+<!-- lockwait&#45;&gt;事务因锁失败 -->
+<g id="edge28" class="edge" data-name="lockwait-&gt;事务因锁失败">
+
+<path fill="none" stroke="black" d="M736.42,-306.06C729.6,-296.99 721.52,-286.25 714.32,-276.68" style=""/>
+<polygon fill="black" stroke="black" points="717.21,-274.7 708.4,-268.81 711.62,-278.91 717.21,-274.7" style=""/>
+</g>
+<!-- ttlmgr -->
+<g id="node25" class="node" pointer-events="visible" data-name="ttlmgr">
+
+<ellipse fill="none" stroke="black" cx="638" cy="-327.76" rx="54.89" ry="23.52" style=""/>
+<text text-anchor="middle" x="638" y="-331.96" font-family="Times,serif" font-size="14.00" style="">TTL manager</text>
+<text text-anchor="middle" x="638" y="-315.16" font-family="Times,serif" font-size="14.00" style="">timeout</text>
+</g>
+<!-- 持锁超时1h&#45;&gt;ttlmgr -->
+<g id="edge27" class="edge" data-name="持锁超时1h-&gt;ttlmgr">
+
+<path fill="none" stroke="black" d="M633.24,-394.4C633.9,-385.29 634.74,-373.75 635.53,-362.91" style=""/>
+<polygon fill="black" stroke="black" points="639.01,-363.29 636.24,-353.06 632.03,-362.78 639.01,-363.29" style=""/>
+</g>
+<!-- ttlmgr&#45;&gt;事务因锁失败 -->
+<g id="edge29" class="edge" data-name="ttlmgr-&gt;事务因锁失败">
+
+<path fill="none" stroke="black" d="M654.49,-304.85C661.12,-296.02 668.83,-285.79 675.72,-276.62" style=""/>
+<polygon fill="black" stroke="black" points="678.41,-278.87 681.63,-268.78 672.82,-274.66 678.41,-278.87" style=""/>
+</g>
+<!-- 悲观事务 -->
+<g id="node27" class="node" pointer-events="visible" data-name="悲观事务">
+
+<ellipse fill="none" stroke="black" cx="723" cy="-812.99" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="723" y="-808.79" font-family="Times,serif" font-size="14.00" style="">悲观事务</text>
+</g>
+<!-- 悲观事务&#45;&gt;上锁lock_CF -->
+<g id="edge32" class="edge" data-name="悲观事务-&gt;上锁lock_CF">
+
+<path fill="none" stroke="black" d="M705.39,-796.49C693.74,-786.24 678.24,-772.6 665.04,-760.99" style=""/>
+<polygon fill="black" stroke="black" points="667.72,-758.69 657.9,-754.71 663.1,-763.94 667.72,-758.69" style=""/>
+</g>
+<!-- 时长超gc_life -->
+<g id="node28" class="node" pointer-events="visible" data-name="时长超gc_life">
+
+<ellipse fill="none" stroke="black" cx="808" cy="-736.19" rx="59.65" ry="18" style=""/>
+<text text-anchor="middle" x="808" y="-731.99" font-family="Times,serif" font-size="14.00" style="">时长超gc_life</text>
+</g>
+<!-- 悲观事务&#45;&gt;时长超gc_life -->
+<g id="edge30" class="edge" data-name="悲观事务-&gt;时长超gc_life">
+
+<path fill="none" stroke="black" d="M740.61,-796.49C752.26,-786.24 767.76,-772.6 780.96,-760.99" style=""/>
+<polygon fill="black" stroke="black" points="782.9,-763.94 788.1,-754.71 778.28,-758.69 782.9,-763.94" style=""/>
+</g>
+<!-- 事务超长失败 -->
+<g id="node29" class="node" pointer-events="visible" data-name="事务超长失败">
+
+<ellipse fill="lightpink" stroke="black" cx="808" cy="-664.19" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="808" y="-659.99" font-family="Times,serif" font-size="14.00" style="">事务超长失败</text>
+</g>
+<!-- 时长超gc_life&#45;&gt;事务超长失败 -->
+<g id="edge31" class="edge" data-name="时长超gc_life-&gt;事务超长失败">
+
+<path fill="none" stroke="black" d="M808,-717.89C808,-710.6 808,-701.92 808,-693.73" style=""/>
+<polygon fill="black" stroke="black" points="811.5,-693.81 808,-683.81 804.5,-693.81 811.5,-693.81" style=""/>
+</g>
+</g>
+</svg>

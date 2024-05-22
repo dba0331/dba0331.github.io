@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>JitDBA Blog</title>
+        <link>http://jitdba.com/blog</link>
+        <description>JitDBA Blog</description>
+        <lastBuildDate>Sat, 04 May 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[Schema系列一]]></title>
+            <link>http://jitdba.com/blog/schema-series-1</link>
+            <guid>http://jitdba.com/blog/schema-series-1</guid>
+            <pubDate>Sat, 04 May 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[schema对象]]></description>
+            <content:encoded><![CDATA[<p>SQL中事务章节结束, 开始写<code>表和对象管理</code>部分。<br>
+<!-- -->本次先写表的隐式ID, 和自动生成ID的相关知识</p>
+<ul>
+<li>_tidb_rowid</li>
+<li>auto_increment, auto_random</li>
+<li>id引出的热点问题</li>
+</ul>]]></content:encoded>
+            <category>Schema</category>
+        </item>
+        <item>
+            <title><![CDATA[事务系列二]]></title>
+            <link>http://jitdba.com/blog/txn-images-2</link>
+            <guid>http://jitdba.com/blog/txn-images-2</guid>
+            <pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[事务的隔离级别, 锁的清理]]></description>
+            <content:encoded><![CDATA[<p>把事务的几篇图文更正重写, 并上传其它几篇:</p>
+<ul>
+<li>隔离级别</li>
+<li>锁的清理</li>
+<li>大事务及其它</li>
+</ul>
+<p>另外扩充了导航栏的项目(安装部署, 实例管理), 不过目前置为灰色, 内容也是空的。</p>]]></content:encoded>
+            <category>事务</category>
+        </item>
+        <item>
+            <title><![CDATA[事务系列一]]></title>
+            <link>http://jitdba.com/blog/txn-images-1</link>
+            <guid>http://jitdba.com/blog/txn-images-1</guid>
+            <pubDate>Sat, 06 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[事务的主要流程, 事务知识点, 案例分析]]></description>
+            <content:encoded><![CDATA[<p>上传了事务知识点系列一:</p>
+<ul>
+<li>主要流程</li>
+<li>显式与隐式</li>
+<li>上锁与重试</li>
+<li>案例TxnLockNotFound</li>
+</ul>]]></content:encoded>
+            <category>事务</category>
+        </item>
+        <item>
+            <title><![CDATA[欢迎来到 JitDBA]]></title>
+            <link>http://jitdba.com/blog/welcome-jitdba</link>
+            <guid>http://jitdba.com/blog/welcome-jitdba</guid>
+            <pubDate>Fri, 05 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[关于TiDB数据库的经验分享, 知识结构图]]></description>
+            <content:encoded><![CDATA[<p>本站为DBA(数据库管理员)提供:</p>
+<ul>
+<li>查找数据库知识点</li>
+<li>用图解释知识点</li>
+</ul>
+<p>本站画了一些数据库知识点的结构图, 把知识点以及关联关系有序地组织起来, 形成由点到网的过程。</p>
+<p>有意对这些图文按内容进行有序组织, 希望最后能形成一份较完整的参考手册（持续进行当中）。</p>
+<p>目前只提供 <strong>TiDB数据库</strong> 的相关知识。</p>
+<p>已经上传的TiDB知识文档, 可由导航栏 <a href="http://jitdba.com/docs/%E4%BB%8B%E7%BB%8D">TiDB</a> 进入。</p>
+<p>对文档的持续更新情况, 放在 <a href="http://jitdba.com/blog">Blog</a> 中说明。</p>
+<p>欢迎一起学习交流！</p>]]></content:encoded>
+            <category>欢迎</category>
+            <category>数据库</category>
+            <category>TiDB</category>
+        </item>
+    </channel>
+</rss>

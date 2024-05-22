@@ -1,0 +1,41 @@
+digraph {
+    graph[rankdir = "LR"];
+
+    quest[shape=plaintext, label="提问者"];
+    answer[shape=plaintext, label="回答者"];
+
+    desc1[label="一条小dml用了几秒,\n耗时在prewrite,有backoff,\nautocommit,可能是乐观", margin=0.02];
+    answ1[shape=record, label="注意, 这是隐式, 且默认先以乐观事务自动提交。\l", margin=0.1, fixedsize=true, width=5, height=0.8];
+    desc1 -> answ1;
+
+
+    desc2[label="sql的信息说backoff\n类型是txnLock"];
+    answ2[shape=record, label="表明是乐观事务在prewrite时的写写冲突。\l悲观事务不会有prewrite写写冲突,因为prewrite前就上锁了。\l", margin=0.1, fixedsize=true, width=5, height=0.8];
+    desc2 -> answ2;
+
+    desc3[label="官网说,写写冲突的\n重试机制是默认关闭的,\n所以不应该有backoff", margin=0.05];
+    answ3[shape=record, label="官网是这么说的\n显式乐观事务 不重试 tidb_disable_txn_auto_retry;\l隐式乐观事务, 默认重试10次 tidb_retry_limit;\l本例是隐式乐观, 写写冲突(txnLock)会自动backoff重试;\l", margin=0.1, fixedsize=true, width=5, height=1];
+    desc3 -> answ3;
+
+    desc4[label="官网说,prewrite阶段\n有 [写写冲突检测]\n和 [锁冲突检测]", margin=0.05];
+    answ4[shape=record, label="个人这么理解文档\n\“prewrite第一步检查写写冲突, 第二步检查key是否上锁”。\l[检查写写冲突]是指 tikv scheduler latch, 不是 txnLock,\l[检查key的锁]时冲突才是真正的 txnLock。\l", margin=0.1, fixedsize=true, width=5, height=1.2];
+    desc4-> answ4;
+
+    desc5[label="所以到底是\n写写冲突, 还是锁冲突"];
+    answ5[shape=record, label="逻辑乱了,\l他认为不应该有txnLock, 也不清楚 [锁冲突检查]是什么。\l\l本案就是一个隐式乐观事务prewrite上锁时遇到写写冲突,\l然后通过backoff, 最终事务提交成功, 但花了好几秒钟。\l", margin=0.1, fixedsize=true, width=5, height=1.2];
+    desc5 -> answ5;
+
+    desc6[label="tikv日志key is locked,\nwill clean up什么意思"];
+    answ6[shape=record, label="[key is locked]说明是写写冲突, 因为读写冲突不是这个。\lwill clean up是说这个锁可能过一会儿就会被锁主人清理,\l这只是假设, 如果锁主人出了什么意外, 就不会马上解锁。\l", margin=0.1, fixedsize=true, width=5, height=1.2];
+    desc6 -> answ6;
+
+
+    desc7[label="说点题外话\n想改的xx行都被别人先改了\n为什么还要重试?\n会不会把别人的修改抹去?\n文档中说重试会导致丢失更新"];
+    answ7[shape=record, label="是业务上让大家处理同一行才有冲突, 说明业务允许重试,\l比如业务sql是, update tab set x=x+1, xdate=now() where ...。\l而且, 重试是重跑sql,包括start_ts,假如有now(),是取新值\l\l关于重试与丢失更新，已经在《上锁与重试》中讲过了。\l", margin=0.1, fixedsize=true, width=5, height=1.4];
+    desc7 -> answ7;
+
+    {rank=same; quest -> desc1 -> desc2 -> desc3 -> desc4 -> desc5 -> desc6 -> desc7};
+    quest -> answer[style=invis];
+    // {rank=same; answer -> answ1 }
+}
+

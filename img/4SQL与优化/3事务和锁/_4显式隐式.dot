@@ -1,0 +1,63 @@
+digraph  {
+    // node [style="filled", fillcolor="#f0f0f0"];
+    subgraph cluster_txnmode1 {
+        label="tidb_txn_mode"
+        margin =20
+        txn_op1 [label="乐观\n事务"];
+        txn_pe1 [label="悲观\n事务"];
+    }
+
+    Begin事务 -> "显式\n事务" -> {txn_op1 txn_pe1};
+    txn_op1 -> "DML不检查冲突\n(commit时检查)" -> expl_commit;
+    txn_pe1 -> "DML时检查冲突" -> expl_commit
+    expl_commit[label="显式commit\nautocommit无效"];
+
+    subgraph cluster_txnmode2 {
+        label="tidb_txn_mode"
+        margin =20
+        txn_op2 [label="乐观\n事务"];
+        txn_pe2 [label="悲观\n事务"];
+    }
+    "直接DML" -> "隐式\n事务" -> {txn_op2 txn_pe2};
+    txn_op2 -> "DML不检查冲突\n(commit时检查)." -> {"autocommit=1\n隐式commit" "autocommit=0\n显式commit."};
+    txn_pe2 -> "DML时检查冲突." -> {"autocommit=1\n隐式commit" "autocommit=0\n显式commit."};
+
+
+    expl_commit -> opmode [style="invis"];
+
+    subgraph cluster_isolation {
+        label = "隔离级别";
+        margin =20
+        opmode[label="乐观模式"];
+        pemode[label="悲观模式"];
+        {rank=same; opmode pemode};
+        opmode -> "隔离级别RR";
+        pemode -> {"隔离级别RC" "隔离级别RR"};
+    }
+
+    "autocommit=1\n隐式commit" -> "隐式&autocommit=1" [style="invis"];
+    subgraph cluster_impltune {
+        label = "隐式的优化\ntidb参数pessimistic-auto-commit";
+        margin =20;
+        "隐式&autocommit=1" -> "先用乐观模式提交" -> "失败后用悲观事务重试";
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

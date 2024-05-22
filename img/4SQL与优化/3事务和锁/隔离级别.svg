@@ -1,0 +1,334 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="778pt" height="805pt" viewBox="0.00 0.00 778 804.58">
+<g id="graph0" class="graph" transform="translate(4,800.5800170898438) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-800.58 774,-800.58 774,4 -4,4"/>
+<g id="clust1" class="cluster" data-name="cluster_norr">
+
+<polygon fill="none" stroke="black" points="8,-466.39 8,-788.58 348,-788.58 348,-466.39 8,-466.39"/>
+<text text-anchor="middle" x="178" y="-771.98" font-family="Times,serif" font-size="14.00">理论上 RC级别(读已提交)</text>
+<text text-anchor="middle" x="178" y="-755.18" font-family="Times,serif" font-size="14.00">规则简单, 就是可以看到另人已提交数据</text>
+<text text-anchor="middle" x="178" y="-738.38" font-family="Times,serif" font-size="14.00">        理论上还细分 update(不可重复), insert(幻读)</text>
+</g><g id="clust8" class="cluster" data-name="cluster_tidb_rc">
+
+<polygon fill="none" stroke="black" points="49,-326.7 49,-433.1 193,-433.1 193,-326.7 49,-326.7"/>
+<text text-anchor="middle" x="121" y="-416.5" font-family="Times,serif" font-size="14.00">现实中的RC级别</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_phantom">
+
+<polygon fill="none" stroke="black" points="404,-466.39 404,-771.78 744,-771.78 744,-466.39 404,-466.39"/>
+<text text-anchor="middle" x="574" y="-755.18" font-family="Times,serif" font-size="14.00">理论上 RR级别(可重复读)</text>
+<text text-anchor="middle" x="574" y="-738.38" font-family="Times,serif" font-size="14.00">可避开update, 但可能有 insert(幻读)</text>
+</g>
+
+<g id="clust5" class="cluster" data-name="cluster_si">
+
+<polygon fill="none" stroke="black" points="254,-8 254,-458.39 762,-458.39 762,-8 254,-8"/>
+<text text-anchor="middle" x="508" y="-441.79" font-family="Times,serif" font-size="14.00">现实中 TiDB的RR (和MySQL RR)</text>
+<text text-anchor="middle" x="508" y="-424.99" font-family="Times,serif" font-size="14.00">和理论说的不太一样, 有自己的实现</text>
+</g>
+<!-- data1 -->
+<g id="node1" class="node" pointer-events="visible" data-name="data1">
+
+<path fill="none" stroke="black" d="M78,-598.47C78,-601.35 65.9,-603.69 51,-603.69 36.1,-603.69 24,-601.35 24,-598.47 24,-598.47 24,-551.51 24,-551.51 24,-548.63 36.1,-546.29 51,-546.29 65.9,-546.29 78,-548.63 78,-551.51 78,-551.51 78,-598.47 78,-598.47"/>
+<path fill="none" stroke="black" d="M78,-598.47C78,-595.59 65.9,-593.25 51,-593.25 36.1,-593.25 24,-595.59 24,-598.47"/>
+<text text-anchor="middle" x="51" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="51" y="-562.39" font-family="Times,serif" font-size="14.00">1,3,5</text>
+</g>
+<!-- data2 -->
+<g id="node2" class="node" pointer-events="visible" data-name="data2">
+
+<path fill="none" stroke="black" d="M204,-598.47C204,-601.35 191.9,-603.69 177,-603.69 162.1,-603.69 150,-601.35 150,-598.47 150,-598.47 150,-551.51 150,-551.51 150,-548.63 162.1,-546.29 177,-546.29 191.9,-546.29 204,-548.63 204,-551.51 204,-551.51 204,-598.47 204,-598.47"/>
+<path fill="none" stroke="black" d="M204,-598.47C204,-595.59 191.9,-593.25 177,-593.25 162.1,-593.25 150,-595.59 150,-598.47"/>
+<text text-anchor="middle" x="177" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="177" y="-562.39" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data1&#45;&gt;data2 -->
+<g id="edge1" class="edge" data-name="data1-&gt;data2">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M78.07,-574.99C96.5,-574.99 114.93,-574.99 133.37,-574.99"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="133.33,-579.37 143.33,-574.99 133.33,-570.62 133.33,-579.37"/>
+</g>
+<!-- data3 -->
+<g id="node3" class="node" pointer-events="visible" data-name="data3">
+
+<path fill="none" stroke="black" d="M331,-598.47C331,-601.35 318.9,-603.69 304,-603.69 289.1,-603.69 277,-601.35 277,-598.47 277,-598.47 277,-551.51 277,-551.51 277,-548.63 289.1,-546.29 304,-546.29 318.9,-546.29 331,-548.63 331,-551.51 331,-551.51 331,-598.47 331,-598.47"/>
+<path fill="none" stroke="black" d="M331,-598.47C331,-595.59 318.9,-593.25 304,-593.25 289.1,-593.25 277,-595.59 277,-598.47"/>
+<text text-anchor="middle" x="304" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="304" y="-562.39" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data2&#45;&gt;data3 -->
+<g id="edge2" class="edge" data-name="data2-&gt;data3">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M204.29,-574.99C223.06,-574.99 241.83,-574.99 260.6,-574.99"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="260.5,-579.37 270.5,-574.99 260.5,-570.62 260.5,-579.37"/>
+</g>
+<!-- sess02 -->
+<g id="node5" class="node" pointer-events="visible" data-name="sess02">
+
+<ellipse fill="none" stroke="black" cx="177" cy="-492.39" rx="109.44" ry="18"/>
+<text text-anchor="middle" x="177" y="-488.19" font-family="Times,serif" font-size="14.00">会话B修改3为2,插入4,并提交</text>
+</g>
+<!-- data2&#45;&gt;sess02 -->
+<g id="edge4" class="edge" data-name="data2-&gt;sess02">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M177,-534.32C177,-526.08 177,-517.81 177,-510.88"/>
+<polygon fill="black" stroke="black" points="173.5,-534.29 177,-544.29 180.5,-534.29 173.5,-534.29"/>
+</g>
+<!-- sess01 -->
+<g id="node4" class="node" pointer-events="visible" data-name="sess01">
+
+<ellipse fill="none" stroke="black" cx="79" cy="-680.89" rx="62.72" ry="41.09"/>
+<text text-anchor="middle" x="79" y="-693.49" font-family="Times,serif" font-size="14.00">会话A</text>
+<text text-anchor="middle" x="79" y="-676.69" font-family="Times,serif" font-size="14.00">第一次读[1~5]</text>
+<text text-anchor="middle" x="79" y="-659.89" font-family="Times,serif" font-size="14.00">得1,3,5</text>
+</g>
+<!-- sess01&#45;&gt;data1 -->
+<g id="edge3" class="edge" data-name="sess01-&gt;data1">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M65.32,-629.14C62.99,-620.48 60.65,-611.78 58.55,-603.99"/>
+<polygon fill="black" stroke="black" points="61.88,-629.81 67.86,-638.55 68.64,-627.99 61.88,-629.81"/>
+</g>
+<!-- tidb_rc -->
+
+<!-- sess02&#45;&gt;tidb_rc -->
+<!-- sess01a -->
+<g id="node6" class="node" pointer-events="visible" data-name="sess01a">
+
+<ellipse fill="rgb(135, 206, 250)" stroke="black" cx="277" cy="-680.89" rx="62.72" ry="41.09"/>
+<text text-anchor="middle" x="277" y="-693.49" font-family="Times,serif" font-size="14.00">会话A</text>
+<text text-anchor="middle" x="277" y="-676.69" font-family="Times,serif" font-size="14.00">第二次读[1~5]</text>
+<text text-anchor="middle" x="277" y="-659.89" font-family="Times,serif" font-size="14.00">得1,2,4,5</text>
+</g>
+<!-- sess01a&#45;&gt;data3 -->
+<g id="edge5" class="edge" data-name="sess01a-&gt;data3">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M290.19,-629.14C292.44,-620.48 294.7,-611.78 296.72,-603.99"/>
+<polygon fill="black" stroke="black" points="286.87,-627.99 287.74,-638.55 293.65,-629.75 286.87,-627.99"/>
+</g>
+<!-- data4 -->
+<g id="node7" class="node" pointer-events="visible" data-name="data4">
+
+<path fill="none" stroke="black" d="M474,-598.47C474,-601.35 461.9,-603.69 447,-603.69 432.1,-603.69 420,-601.35 420,-598.47 420,-598.47 420,-551.51 420,-551.51 420,-548.63 432.1,-546.29 447,-546.29 461.9,-546.29 474,-548.63 474,-551.51 474,-551.51 474,-598.47 474,-598.47"/>
+<path fill="none" stroke="black" d="M474,-598.47C474,-595.59 461.9,-593.25 447,-593.25 432.1,-593.25 420,-595.59 420,-598.47"/>
+<text text-anchor="middle" x="447" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="447" y="-562.39" font-family="Times,serif" font-size="14.00">1,3,5</text>
+</g>
+<!-- data5 -->
+<g id="node8" class="node" pointer-events="visible" data-name="data5">
+
+<path fill="none" stroke="black" d="M600,-598.47C600,-601.35 587.9,-603.69 573,-603.69 558.1,-603.69 546,-601.35 546,-598.47 546,-598.47 546,-551.51 546,-551.51 546,-548.63 558.1,-546.29 573,-546.29 587.9,-546.29 600,-548.63 600,-551.51 600,-551.51 600,-598.47 600,-598.47"/>
+<path fill="none" stroke="black" d="M600,-598.47C600,-595.59 587.9,-593.25 573,-593.25 558.1,-593.25 546,-595.59 546,-598.47"/>
+<text text-anchor="middle" x="573" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="573" y="-562.39" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data4&#45;&gt;data5 -->
+<g id="edge6" class="edge" data-name="data4-&gt;data5">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M474.07,-574.99C492.5,-574.99 510.93,-574.99 529.37,-574.99"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="529.33,-579.37 539.33,-574.99 529.33,-570.62 529.33,-579.37"/>
+</g>
+<!-- data6 -->
+<g id="node9" class="node" pointer-events="visible" data-name="data6">
+
+<path fill="none" stroke="black" d="M727,-598.47C727,-601.35 714.9,-603.69 700,-603.69 685.1,-603.69 673,-601.35 673,-598.47 673,-598.47 673,-551.51 673,-551.51 673,-548.63 685.1,-546.29 700,-546.29 714.9,-546.29 727,-548.63 727,-551.51 727,-551.51 727,-598.47 727,-598.47"/>
+<path fill="none" stroke="black" d="M727,-598.47C727,-595.59 714.9,-593.25 700,-593.25 685.1,-593.25 673,-595.59 673,-598.47"/>
+<text text-anchor="middle" x="700" y="-579.19" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="700" y="-562.39" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data5&#45;&gt;data6 -->
+<g id="edge7" class="edge" data-name="data5-&gt;data6">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M600.29,-574.99C619.06,-574.99 637.83,-574.99 656.6,-574.99"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="656.5,-579.37 666.5,-574.99 656.5,-570.62 656.5,-579.37"/>
+</g>
+<!-- sess12 -->
+<g id="node11" class="node" pointer-events="visible" data-name="sess12">
+
+<ellipse fill="none" stroke="black" cx="573" cy="-492.39" rx="109.44" ry="18"/>
+<text text-anchor="middle" x="573" y="-488.19" font-family="Times,serif" font-size="14.00">会话B修改3为2,插入4,并提交</text>
+</g>
+<!-- data5&#45;&gt;sess12 -->
+<g id="edge9" class="edge" data-name="data5-&gt;sess12">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M573,-534.32C573,-526.08 573,-517.81 573,-510.88"/>
+<polygon fill="black" stroke="black" points="569.5,-534.29 573,-544.29 576.5,-534.29 569.5,-534.29"/>
+</g>
+<!-- sess11 -->
+<g id="node10" class="node" pointer-events="visible" data-name="sess11">
+
+<ellipse fill="none" stroke="black" cx="475" cy="-680.89" rx="62.72" ry="41.09"/>
+<text text-anchor="middle" x="475" y="-693.49" font-family="Times,serif" font-size="14.00">会话A</text>
+<text text-anchor="middle" x="475" y="-676.69" font-family="Times,serif" font-size="14.00">第一次读[1~5]</text>
+<text text-anchor="middle" x="475" y="-659.89" font-family="Times,serif" font-size="14.00">得1,3,5</text>
+</g>
+<!-- sess11&#45;&gt;data4 -->
+<g id="edge8" class="edge" data-name="sess11-&gt;data4">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M461.32,-629.14C458.99,-620.48 456.65,-611.78 454.55,-603.99"/>
+<polygon fill="black" stroke="black" points="457.88,-629.81 463.86,-638.55 464.64,-627.99 457.88,-629.81"/>
+</g>
+<!-- sess21a -->
+<g id="node20" class="node" pointer-events="visible" data-name="sess21a">
+
+<polygon fill="none" stroke="black" points="471,-381.5 471,-403.5 676,-403.5 676,-381.5 471,-381.5"/>
+<text text-anchor="start" x="547.44" y="-387.9" font-family="Times,serif" font-size="14.00">A第二次读</text>
+<polygon fill="none" stroke="black" points="471,-331.5 471,-381.5 676,-381.5 676,-331.5 471,-331.5"/>
+<polygon fill="lightblue" stroke="none" points="474,-356.5 474,-378.5 568,-378.5 568,-356.5 474,-356.5"/>
+<polygon fill="none" stroke="black" points="474,-356.5 474,-378.5 568,-378.5 568,-356.5 474,-356.5"/>
+<text text-anchor="start" x="481.54" y="-362.9" font-family="Times,serif" font-size="14.00" fill="#0000ff">A无相关update</text>
+<polygon fill="#f0e3ff" stroke="none" points="568,-356.5 568,-378.5 673,-378.5 673,-356.5 568,-356.5"/>
+<polygon fill="none" stroke="black" points="568,-356.5 568,-378.5 673,-378.5 673,-356.5 568,-356.5"/>
+<text text-anchor="start" x="581.04" y="-362.9" font-family="Times,serif" font-size="14.00" fill="#ff1020">A有相关update</text>
+<polygon fill="lightblue" stroke="none" points="474,-334.5 474,-356.5 568,-356.5 568,-334.5 474,-334.5"/>
+<polygon fill="none" stroke="black" points="474,-334.5 474,-356.5 568,-356.5 568,-334.5 474,-334.5"/>
+<text text-anchor="start" x="476.67" y="-340.9" font-family="Times,serif" font-size="14.00" fill="#0000ff">从snap1得1,3,5  </text>
+<polygon fill="#f0e3ff" stroke="none" points="568,-334.5 568,-356.5 673,-356.5 673,-334.5 568,-334.5"/>
+<polygon fill="none" stroke="black" points="568,-334.5 568,-356.5 673,-356.5 673,-334.5 568,-334.5"/>
+<text text-anchor="start" x="570.92" y="-340.9" font-family="Times,serif" font-size="14.00" fill="#ff1020">从snap2得1,2,4,5  </text>
+</g>
+<!-- sess12&#45;&gt;sess21a -->
+<!-- sess11a -->
+<g id="node12" class="node" pointer-events="visible" data-name="sess11a">
+
+<ellipse fill="lightskyblue" stroke="black" cx="673" cy="-680.89" rx="62.72" ry="41.09"/>
+<text text-anchor="middle" x="673" y="-693.49" font-family="Times,serif" font-size="14.00">会话A</text>
+<text text-anchor="middle" x="673" y="-676.69" font-family="Times,serif" font-size="14.00">第二次读[1~5]</text>
+<text text-anchor="middle" x="673" y="-659.89" font-family="Times,serif" font-size="14.00">得1,3,4,5</text>
+</g>
+<!-- sess11a&#45;&gt;data6 --><g id="node21" class="node" pointer-events="visible" data-name="tidb_rc" data-comment="sess11a-&gt;data6">
+
+<text text-anchor="middle" x="121" y="-371.7" font-family="Times,serif" font-size="14.00">TiDB和MySQL</text>
+<text text-anchor="middle" x="121" y="-354.9" font-family="Times,serif" font-size="14.00">基本上和理论一样</text>
+</g>
+<g id="edge10" class="edge" data-name="sess11a-&gt;data6">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M686.19,-629.14C688.44,-620.48 690.7,-611.78 692.72,-603.99"/>
+<polygon fill="black" stroke="black" points="682.87,-627.99 683.74,-638.55 689.65,-629.75 682.87,-627.99"/>
+</g>
+<!-- snap1 -->
+<g id="node13" class="node" pointer-events="visible" data-name="snap1">
+
+<ellipse fill="none" stroke="black" cx="404" cy="-235.7" rx="68.47" ry="29.33"/>
+<text text-anchor="middle" x="404" y="-239.9" font-family="Times,serif" font-size="14.00">内存 snapshot1</text>
+<text text-anchor="middle" x="404" y="-223.1" font-family="Times,serif" font-size="14.00">1,3,5</text>
+</g>
+<!-- data7 -->
+<g id="node15" class="node" pointer-events="visible" data-name="data7">
+
+<path fill="none" stroke="black" d="M374,-140.08C374,-142.96 361.9,-145.3 347,-145.3 332.1,-145.3 320,-142.96 320,-140.08 320,-140.08 320,-93.12 320,-93.12 320,-90.24 332.1,-87.9 347,-87.9 361.9,-87.9 374,-90.24 374,-93.12 374,-93.12 374,-140.08 374,-140.08"/>
+<path fill="none" stroke="black" d="M374,-140.08C374,-137.2 361.9,-134.86 347,-134.86 332.1,-134.86 320,-137.2 320,-140.08"/>
+<text text-anchor="middle" x="347" y="-120.8" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="347" y="-104" font-family="Times,serif" font-size="14.00">1,3,5</text>
+</g>
+<!-- snap1&#45;&gt;data7 -->
+<g id="edge15" class="edge" data-name="snap1-&gt;data7">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M385.48,-196.65C377.36,-179.96 368,-160.73 360.54,-145.42"/>
+<polygon fill="black" stroke="black" points="382.16,-197.83 389.68,-205.29 388.45,-194.77 382.16,-197.83"/>
+</g>
+<!-- snap2 -->
+<g id="node14" class="node" pointer-events="visible" data-name="snap2">
+
+<ellipse fill="none" stroke="black" cx="686" cy="-235.7" rx="68.47" ry="29.33"/>
+<text text-anchor="middle" x="686" y="-239.9" font-family="Times,serif" font-size="14.00">内存 snapshot2</text>
+<text text-anchor="middle" x="686" y="-223.1" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data9 -->
+<g id="node17" class="node" pointer-events="visible" data-name="data9">
+
+<path fill="none" stroke="black" d="M706,-140.08C706,-142.96 693.9,-145.3 679,-145.3 664.1,-145.3 652,-142.96 652,-140.08 652,-140.08 652,-93.12 652,-93.12 652,-90.24 664.1,-87.9 679,-87.9 693.9,-87.9 706,-90.24 706,-93.12 706,-93.12 706,-140.08 706,-140.08"/>
+<path fill="none" stroke="black" d="M706,-140.08C706,-137.2 693.9,-134.86 679,-134.86 664.1,-134.86 652,-137.2 652,-140.08"/>
+<text text-anchor="middle" x="679" y="-120.8" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="679" y="-104" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- snap2&#45;&gt;data9 -->
+<g id="edge19" class="edge" data-name="snap2-&gt;data9">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M683.61,-194.73C682.64,-178.55 681.55,-160.25 680.67,-145.55"/>
+<polygon fill="black" stroke="black" points="680.11,-194.77 684.2,-204.54 687.09,-194.35 680.11,-194.77"/>
+</g>
+<!-- data8 -->
+<g id="node16" class="node" pointer-events="visible" data-name="data8">
+
+<path fill="none" stroke="black" d="M572,-140.08C572,-142.96 559.9,-145.3 545,-145.3 530.1,-145.3 518,-142.96 518,-140.08 518,-140.08 518,-93.12 518,-93.12 518,-90.24 530.1,-87.9 545,-87.9 559.9,-87.9 572,-90.24 572,-93.12 572,-93.12 572,-140.08 572,-140.08"/>
+<path fill="none" stroke="black" d="M572,-140.08C572,-137.2 559.9,-134.86 545,-134.86 530.1,-134.86 518,-137.2 518,-140.08"/>
+<text text-anchor="middle" x="545" y="-120.8" font-family="Times,serif" font-size="14.00">磁盘</text>
+<text text-anchor="middle" x="545" y="-104" font-family="Times,serif" font-size="14.00">1,2,4,5</text>
+</g>
+<!-- data7&#45;&gt;data8 -->
+<g id="edge11" class="edge" data-name="data7-&gt;data8">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M374.46,-116.6C416.79,-116.6 459.13,-116.6 501.46,-116.6"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="501.45,-120.98 511.45,-116.6 501.45,-112.23 501.45,-120.98"/>
+</g>
+<!-- data8&#45;&gt;data9 -->
+<g id="edge12" class="edge" data-name="data8-&gt;data9">
+
+<path fill="none" stroke="lightgrey" stroke-width="5" stroke-dasharray="5,2" d="M572.48,-116.6C593.48,-116.6 614.48,-116.6 635.48,-116.6"/>
+<polygon fill="lightgrey" stroke="lightgrey" stroke-width="5" points="635.3,-120.98 645.3,-116.6 635.3,-112.23 635.3,-120.98"/>
+</g>
+<!-- sess22 -->
+<g id="node19" class="node" pointer-events="visible" data-name="sess22">
+
+<ellipse fill="none" stroke="black" cx="545" cy="-34" rx="111.77" ry="18"/>
+<text text-anchor="middle" x="545" y="-29.8" font-family="Times,serif" font-size="14.00">会话B修改3为2, 插入4 并提交</text>
+</g>
+<!-- data8&#45;&gt;sess22 -->
+<g id="edge16" class="edge" data-name="data8-&gt;sess22">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M545,-75.93C545,-67.69 545,-59.42 545,-52.49"/>
+<polygon fill="black" stroke="black" points="541.5,-75.9 545,-85.9 548.5,-75.9 541.5,-75.9"/>
+</g>
+<!-- sess21 -->
+<g id="node18" class="node" pointer-events="visible" data-name="sess21">
+
+<ellipse fill="none" stroke="black" cx="326" cy="-367.5" rx="64.22" ry="41.09"/>
+<text text-anchor="middle" x="326" y="-380.1" font-family="Times,serif" font-size="14.00">会话A</text>
+<text text-anchor="middle" x="326" y="-363.3" font-family="Times,serif" font-size="14.00">第一次读[1~5]</text>
+<text text-anchor="middle" x="326" y="-346.5" font-family="Times,serif" font-size="14.00">从snap得1,3,5</text>
+</g>
+<!-- sess21&#45;&gt;snap1 -->
+<g id="edge14" class="edge" data-name="sess21-&gt;snap1">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M354.56,-318.97C365.56,-300.66 377.75,-280.37 387.28,-264.52"/>
+<polygon fill="black" stroke="black" points="351.7,-316.93 349.55,-327.31 357.7,-320.54 351.7,-316.93"/>
+</g>
+<!-- sess21&#45;&gt;data7 -->
+<!-- localdata -->
+
+<!-- sess22&#45;&gt;localdata -->
+<!-- sess21a&#45;&gt;snap1 -->
+<g id="edge17" class="edge" data-name="sess21a-&gt;snap1">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M513.35,-320.68C487.62,-300.92 458.51,-278.57 436.8,-261.89"/>
+<polygon fill="black" stroke="black" points="511.03,-323.32 521.09,-326.63 515.3,-317.76 511.03,-323.32"/>
+</g>
+<!-- sess21a&#45;&gt;snap2 -->
+<g id="edge20" class="edge" data-name="sess21a-&gt;snap2">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M614.44,-318.89C630.65,-300.28 648.63,-279.63 662.51,-263.68"/>
+<polygon fill="black" stroke="black" points="611.82,-316.57 607.9,-326.41 617.1,-321.17 611.82,-316.57"/>
+</g>
+<g id="node22" class="node" pointer-events="visible" data-name="localdata" data-comment="sess21a-&gt;snap2">
+
+<polygon fill="none" stroke="black" points="51.9,-181.7 51.9,-289.7 190.1,-289.7 190.1,-181.7 51.9,-181.7"/>
+<text text-anchor="middle" x="121" y="-273.1" font-family="Times,serif" font-size="14.00">单条sql内是否读</text>
+<polyline fill="none" stroke="black" points="51.9,-248.1 190.1,-248.1"/>
+<text text-anchor="middle" x="121" y="-256.3" font-family="Times,serif" font-size="14.00">自己修改的数据</text>
+<polyline fill="none" stroke="black" points="51.9,-223.3 102.13,-223.3"/>
+<text text-anchor="middle" x="77.01" y="-231.5" font-family="Times,serif" font-size="14.00">mysql</text>
+<text text-anchor="middle" x="77.01" y="-206.7" font-family="Times,serif" font-size="14.00">✔︎</text>
+<polyline fill="none" stroke="black" points="102.13,-181.7 102.13,-248.1"/>
+<text text-anchor="middle" x="77.01" y="-189.9" font-family="Times,serif" font-size="14.00">读</text>
+<polyline fill="none" stroke="black" points="102.13,-223.3 139.91,-223.3"/>
+<text text-anchor="middle" x="121.02" y="-231.5" font-family="Times,serif" font-size="14.00">tidb</text>
+<text text-anchor="middle" x="121.02" y="-206.7" font-family="Times,serif" font-size="14.00">✖︎</text>
+<polyline fill="none" stroke="black" points="139.91,-181.7 139.91,-248.1"/>
+<text text-anchor="middle" x="121.02" y="-189.9" font-family="Times,serif" font-size="14.00">不读</text>
+<polyline fill="none" stroke="black" points="139.91,-223.3 190.1,-223.3"/>
+<text text-anchor="middle" x="165" y="-231.5" font-family="Times,serif" font-size="14.00">oracle</text>
+<text text-anchor="middle" x="165" y="-206.7" font-family="Times,serif" font-size="14.00">✖︎</text>
+<text text-anchor="middle" x="165" y="-189.9" font-family="Times,serif" font-size="14.00">不读</text>
+</g><!-- localdata&#45;&gt;data7 -->
+</g>
+</svg>

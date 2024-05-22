@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="449pt" height="677pt" viewBox="0.00 0.00 449.50 677.09">
+<g id="graph0" class="graph" transform="translate(4,673.0900268554688) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-673.09 445.5,-673.09 445.5,4 -4,4" style=""/>
+<g id="clust2" class="cluster" data-name="cluster_case">
+
+<polygon fill="none" stroke="black" points="77.39,-8 77.39,-393.83 403.39,-393.83 403.39,-8 77.39,-8" style=""/>
+<text text-anchor="middle" x="240.39" y="-377.23" font-family="Times,serif" font-size="14.00" style="">一个场景, 假设企业有300万人(RD有10万)</text>
+</g>
+<!-- note -->
+<g id="node1" class="node" pointer-events="visible" data-name="note">
+
+<text text-anchor="start" x="22" y="-634.49" font-family="Times,serif" font-size="14.00" style="">leader在各tikv分布不均</text>
+<text text-anchor="start" x="22" y="-617.69" font-family="Times,serif" font-size="14.00" style="">可能导致某个tikv成为热点</text>
+</g>
+<!-- hot_tikv -->
+<g id="node2" class="node" pointer-events="visible" data-name="hot_tikv">
+
+<ellipse fill="lightpink" stroke="black" cx="344.39" cy="-431.25" rx="97.22" ry="29.33" style=""/>
+<text text-anchor="middle" x="344.39" y="-435.45" font-family="Times,serif" font-size="14.00" style="">导致这tikv cpu高, sql慢</text>
+<text text-anchor="middle" x="344.39" y="-418.65" font-family="Times,serif" font-size="14.00" style="">实际发生的概率较高</text>
+</g>
+<!-- sql -->
+<g id="node7" class="node" pointer-events="visible" data-name="sql">
+
+<polygon fill="none" stroke="black" points="91.99,-318.93 91.99,-360.53 388.79,-360.53 388.79,-318.93 91.99,-318.93" style=""/>
+<text text-anchor="start" x="99.99" y="-343.93" font-family="Times,serif" font-size="14.00" style="">select emp.* from dept a, emp b where a.xid='RD'</text>
+<text text-anchor="start" x="99.99" y="-327.13" font-family="Times,serif" font-size="14.00" style=""> and a.emp_id = b.emp_id and b.age = 30</text>
+</g>
+<!-- hot_tikv&#45;&gt;sql -->
+<!-- normal_tikv -->
+<g id="node3" class="node" pointer-events="visible" data-name="normal_tikv">
+
+<ellipse fill="none" stroke="black" cx="136.39" cy="-431.25" rx="92.97" ry="29.33" style=""/>
+<text text-anchor="middle" x="136.39" y="-435.45" font-family="Times,serif" font-size="14.00" style="">导致这个tikv cpu高</text>
+<text text-anchor="middle" x="136.39" y="-418.65" font-family="Times,serif" font-size="14.00" style="">不过实际发生的概率不大</text>
+</g>
+<!-- normal_tikv&#45;&gt;sql -->
+<!-- 新创建的大表 -->
+<g id="node4" class="node" pointer-events="visible" data-name="新创建的大表">
+
+<ellipse fill="none" stroke="black" cx="243.39" cy="-630.29" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="243.39" y="-626.09" font-family="Times,serif" font-size="14.00" style="">新创建的大表</text>
+</g>
+<!-- 表region的leader\n可能集中在某个tikv -->
+<g id="node5" class="node" pointer-events="visible" data-name="表region的leader\n可能集中在某个tikv">
+
+<ellipse fill="none" stroke="black" cx="150.39" cy="-526.08" rx="78.87" ry="29.33" style=""/>
+<text text-anchor="middle" x="150.39" y="-530.28" font-family="Times,serif" font-size="14.00" style="">表region的leader</text>
+<text text-anchor="middle" x="150.39" y="-513.48" font-family="Times,serif" font-size="14.00" style="">可能集中在某个tikv</text>
+</g>
+<!-- 新创建的大表&#45;&gt;表region的leader\n可能集中在某个tikv -->
+<g id="edge1" class="edge" data-name="新创建的大表-&gt;表region的leader\n可能集中在某个tikv">
+
+<path fill="none" stroke="black" d="M228.45,-612.87C216.09,-599.29 198.11,-579.53 182.52,-562.39" style=""/>
+<polygon fill="black" stroke="black" points="185.43,-560.39 176.11,-555.35 180.25,-565.1 185.43,-560.39" style=""/>
+</g>
+<!-- 索引region的leader\n可能集中在某个tikv -->
+<g id="node6" class="node" pointer-events="visible" data-name="索引region的leader\n可能集中在某个tikv">
+
+<ellipse fill="none" stroke="black" cx="337.39" cy="-526.08" rx="83.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="337.39" y="-530.28" font-family="Times,serif" font-size="14.00" style="">索引region的leader</text>
+<text text-anchor="middle" x="337.39" y="-513.48" font-family="Times,serif" font-size="14.00" style="">可能集中在某个tikv</text>
+</g>
+<!-- 新创建的大表&#45;&gt;索引region的leader\n可能集中在某个tikv -->
+<g id="edge2" class="edge" data-name="新创建的大表-&gt;索引region的leader\n可能集中在某个tikv">
+
+<path fill="none" stroke="black" d="M258.49,-612.87C270.98,-599.29 289.16,-579.53 304.92,-562.39" style=""/>
+<polygon fill="black" stroke="black" points="307.21,-565.07 311.4,-555.34 302.05,-560.33 307.21,-565.07" style=""/>
+</g>
+<!-- 表region的leader\n可能集中在某个tikv&#45;&gt;normal_tikv -->
+<g id="edge3" class="edge" data-name="表region的leader\n可能集中在某个tikv-&gt;normal_tikv">
+
+<path fill="none" stroke="black" d="M146.07,-496.47C144.92,-488.79 143.64,-480.35 142.41,-472.18" style=""/>
+<polygon fill="black" stroke="black" points="145.89,-471.79 140.94,-462.42 138.97,-472.83 145.89,-471.79" style=""/>
+</g>
+<!-- 索引region的leader\n可能集中在某个tikv&#45;&gt;hot_tikv -->
+<g id="edge4" class="edge" data-name="索引region的leader\n可能集中在某个tikv-&gt;hot_tikv">
+
+<path fill="none" stroke="black" d="M339.55,-496.47C340.13,-488.79 340.76,-480.35 341.38,-472.18" style=""/>
+<polygon fill="black" stroke="black" points="344.85,-472.67 342.11,-462.43 337.87,-472.14 344.85,-472.67" style=""/>
+</g>
+<!-- plan -->
+<g id="node8" class="node" pointer-events="visible" data-name="plan">
+
+<polygon fill="none" stroke="black" points="96.39,-189.93 96.39,-281.93 384.39,-281.93 384.39,-189.93 96.39,-189.93" style=""/>
+<text text-anchor="start" x="104.39" y="-265.33" font-family="Times,serif" font-size="14.00" style="">IndexJoin</text>
+<text text-anchor="start" x="104.39" y="-248.53" font-family="Times,serif" font-size="14.00" style="">├─dept取得RD部门10万个emp_id</text>
+<text text-anchor="start" x="104.39" y="-231.73" font-family="Times,serif" font-size="14.00" style="">└─IndexLookup</text>
+<text text-anchor="start" x="104.39" y="-214.93" font-family="Times,serif" font-size="14.00" style="">　├─emp索引读取10万个emp_id</text>
+<text text-anchor="start" x="104.39" y="-198.13" font-family="Times,serif" font-size="14.00" style="">　└─emp回表&amp;过滤</text>
+</g>
+<!-- sql&#45;&gt;plan -->
+<g id="edge5" class="edge" data-name="sql-&gt;plan">
+
+<path fill="none" stroke="black" d="M240.39,-319.1C240.39,-311.55 240.39,-302.49 240.39,-293.18" style=""/>
+<polygon fill="black" stroke="black" points="243.89,-293.32 240.39,-283.32 236.89,-293.32 243.89,-293.32" style=""/>
+</g>
+<!-- issue -->
+<g id="node9" class="node" pointer-events="visible" data-name="issue">
+
+<polygon fill="none" stroke="black" points="96.39,-111.33 96.39,-152.93 384.39,-152.93 384.39,-111.33 96.39,-111.33" style=""/>
+<text text-anchor="start" x="104.39" y="-136.33" font-family="Times,serif" font-size="14.00" style="">dept通过xid索引读10万个emp_id很快;</text>
+<text text-anchor="start" x="104.39" y="-119.53" font-family="Times,serif" font-size="14.00" style="">问题在emp索引读10万个离散的emp_id</text>
+</g>
+<!-- plan&#45;&gt;issue -->
+<g id="edge6" class="edge" data-name="plan-&gt;issue">
+
+<path fill="none" stroke="black" d="M240.39,-189.98C240.39,-181.25 240.39,-172.28 240.39,-164.12" style=""/>
+<polygon fill="black" stroke="black" points="243.89,-164.39 240.39,-154.39 236.89,-164.39 243.89,-164.39" style=""/>
+</g>
+<!-- 如果emp_id索引的leader集中在某个tikv\ntikv cpu上升, cop_wait高涨, sql变慢 -->
+<g id="node10" class="node" pointer-events="visible" data-name="如果emp_id索引的leader集中在某个tikv\ntikv cpu上升, cop_wait高涨, sql变慢">
+
+<ellipse fill="none" stroke="black" cx="240.39" cy="-45.42" rx="154.66" ry="29.33" style=""/>
+<text text-anchor="middle" x="240.39" y="-49.62" font-family="Times,serif" font-size="14.00" style="">如果emp_id索引的leader集中在某个tikv</text>
+<text text-anchor="middle" x="240.39" y="-32.82" font-family="Times,serif" font-size="14.00" style="">tikv cpu上升, cop_wait高涨, sql变慢</text>
+</g>
+<!-- issue&#45;&gt;如果emp_id索引的leader集中在某个tikv\ntikv cpu上升, cop_wait高涨, sql变慢 -->
+<g id="edge7" class="edge" data-name="issue-&gt;如果emp_id索引的leader集中在某个tikv\ntikv cpu上升, cop_wait高涨, sql变慢">
+
+<path fill="none" stroke="black" d="M240.39,-111.48C240.39,-103.94 240.39,-95.03 240.39,-86.26" style=""/>
+<polygon fill="black" stroke="black" points="243.89,-86.46 240.39,-76.46 236.89,-86.46 243.89,-86.46" style=""/>
+</g>
+</g>
+</svg>

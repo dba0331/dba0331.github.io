@@ -1,0 +1,33 @@
+digraph {
+    graph[rankdir=LR];
+
+
+    "DML" -> "MDL" -> "DDL" [style=invis];
+
+    "DML\n数据修改语句" -> "MDL表锁\n防止事务过程中\n表结构被修改" [label="产生"];
+    "MDL表锁\n防止事务过程中\n表结构被修改"  -> "DDL\n被阻塞" [label="导致"]
+
+    note[shape=record, label="DML语句会阻塞DDL\l频繁修改的表,DDL用时长\lDDL不阻塞事务和查询\lDDL不锁表\lDDL只会阻塞DDL\l", width=2.3]
+
+    {rank=same; "DML" -> "DML\n数据修改语句" -> note [style=invis]}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

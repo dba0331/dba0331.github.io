@@ -1,0 +1,82 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="400pt" viewBox="0.00 0.00 323.83 400.49">
+<g id="graph0" class="graph" transform="translate(4,396.489990234375) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-396.49 319.83,-396.49 319.83,4 -4,4"/>
+<!-- regerr -->
+<g id="node1" class="node" pointer-events="visible" data-name="regerr">
+
+<ellipse fill="lightpink" stroke="black" cx="156.73" cy="-29.42" rx="93.56" ry="29.33"/>
+<text text-anchor="middle" x="156.73" y="-33.62" font-family="Times,serif" font-size="14.00">因为无leader,应用报</text>
+<text text-anchor="middle" x="156.73" y="-16.82" font-family="Times,serif" font-size="14.00">region is unavailable</text>
+</g>
+<!-- 表有隐式id,没有shard -->
+<g id="node2" class="node" pointer-events="visible" data-name="表有隐式id, 未shard" data-comment="表有隐式id,没有shard">
+
+<ellipse fill="none" stroke="black" cx="156.73" cy="-374.49" rx="80.51" ry="18"/>
+<text text-anchor="middle" x="156.73" y="-370.29" font-family="Times,serif" font-size="14.00">表有隐式id, 未shard</text>
+</g>
+<!-- 顺序写入, 造成热点region -->
+<g id="node3" class="node" pointer-events="visible" data-name="大量顺序写入, 造成热点region" data-comment="顺序写入, 造成热点region">
+
+<ellipse fill="none" stroke="black" cx="156.73" cy="-302.49" rx="112.93" ry="18"/>
+<text text-anchor="middle" x="156.73" y="-298.29" font-family="Times,serif" font-size="14.00">大量顺序写入, 造成热点region</text>
+</g>
+<!-- 表有隐式id,没有shard&#45;&gt;顺序写入, 造成热点region -->
+<g id="edge1" class="edge" data-name="表有隐式id, 未shard-&gt;大量顺序写入, 造成热点region" data-comment="表有隐式id,没有shard-&gt;顺序写入, 造成热点region">
+
+<path fill="none" stroke="black" d="M156.73,-356.19C156.73,-348.9 156.73,-340.22 156.73,-332.03"/>
+<polygon fill="black" stroke="black" points="160.23,-332.11 156.73,-322.11 153.23,-332.11 160.23,-332.11"/>
+</g>
+<!-- 变大后自动split,\n新region需要选主 -->
+<g id="node4" class="node" pointer-events="visible" data-name="变大后自动split,\n新region需要选主">
+
+<ellipse fill="none" stroke="black" cx="73.73" cy="-219.08" rx="73.95" ry="29.33"/>
+<text text-anchor="middle" x="73.73" y="-223.28" font-family="Times,serif" font-size="14.00">变大后自动split,</text>
+<text text-anchor="middle" x="73.73" y="-206.48" font-family="Times,serif" font-size="14.00">新region需要选主</text>
+</g>
+<!-- 顺序写入, 造成热点region&#45;&gt;变大后自动split,\n新region需要选主 -->
+<g id="edge2" class="edge" data-name="大量顺序写入, 造成热点region-&gt;变大后自动split,\n新region需要选主" data-comment="顺序写入, 造成热点region-&gt;变大后自动split,\n新region需要选主">
+
+<path fill="none" stroke="black" d="M139.12,-284.23C130.34,-275.61 119.38,-264.86 108.97,-254.65"/>
+<polygon fill="black" stroke="black" points="111.45,-252.18 101.86,-247.68 106.55,-257.18 111.45,-252.18"/>
+</g>
+<!-- tikv和raft忙\napply wait时间长 -->
+<g id="node5" class="node" pointer-events="visible" data-name="tikv和raft忙\napply wait时间长">
+
+<ellipse fill="none" stroke="black" cx="240.73" cy="-219.08" rx="75.2" ry="29.33"/>
+<text text-anchor="middle" x="240.73" y="-223.28" font-family="Times,serif" font-size="14.00">tikv和raft忙</text>
+<text text-anchor="middle" x="240.73" y="-206.48" font-family="Times,serif" font-size="14.00">apply wait时间长</text>
+</g>
+<!-- 顺序写入, 造成热点region&#45;&gt;tikv和raft忙\napply wait时间长 -->
+<g id="edge3" class="edge" data-name="大量顺序写入, 造成热点region-&gt;tikv和raft忙\napply wait时间长" data-comment="顺序写入, 造成热点region-&gt;tikv和raft忙\napply wait时间长">
+
+<path fill="none" stroke="black" d="M174.54,-284.23C183.52,-275.52 194.74,-264.65 205.37,-254.34"/>
+<polygon fill="black" stroke="black" points="207.51,-257.14 212.26,-247.67 202.64,-252.12 207.51,-257.14"/>
+</g>
+<!-- 新region的leader\n无法及时选出 -->
+<g id="node6" class="node" pointer-events="visible" data-name="新region的leader\n无法及时选出">
+
+<ellipse fill="none" stroke="black" cx="156.73" cy="-124.25" rx="75.76" ry="29.33"/>
+<text text-anchor="middle" x="156.73" y="-128.45" font-family="Times,serif" font-size="14.00">新region的leader</text>
+<text text-anchor="middle" x="156.73" y="-111.65" font-family="Times,serif" font-size="14.00">无法及时选出</text>
+</g>
+<!-- 变大后自动split,\n新region需要选主&#45;&gt;新region的leader\n无法及时选出 -->
+<g id="edge4" class="edge" data-name="变大后自动split,\n新region需要选主-&gt;新region的leader\n无法及时选出">
+
+<path fill="none" stroke="black" d="M97.73,-191.23C106.26,-181.69 116,-170.8 125.07,-160.66"/>
+<polygon fill="black" stroke="black" points="127.42,-163.27 131.48,-153.49 122.2,-158.61 127.42,-163.27"/>
+</g>
+<!-- tikv和raft忙\napply wait时间长&#45;&gt;新region的leader\n无法及时选出 -->
+<g id="edge5" class="edge" data-name="tikv和raft忙\napply wait时间长-&gt;新region的leader\n无法及时选出">
+
+<path fill="none" stroke="black" d="M216.43,-191.23C207.8,-181.69 197.95,-170.8 188.77,-160.66"/>
+<polygon fill="black" stroke="black" points="191.58,-158.55 182.28,-153.48 186.39,-163.24 191.58,-158.55"/>
+</g>
+<!-- 新region的leader\n无法及时选出&#45;&gt;regerr -->
+<g id="edge6" class="edge" data-name="新region的leader\n无法及时选出-&gt;regerr">
+
+<path fill="none" stroke="black" d="M156.73,-94.64C156.73,-86.96 156.73,-78.52 156.73,-70.35"/>
+<polygon fill="black" stroke="black" points="160.23,-70.6 156.73,-60.6 153.23,-70.6 160.23,-70.6"/>
+</g>
+</g>
+</svg>

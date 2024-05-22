@@ -1,0 +1,210 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="602pt" height="638pt" viewBox="0.00 0.00 601.60 637.67">
+<g id="graph0" class="graph" transform="translate(4,633.6699829101562) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-633.67 597.6,-633.67 597.6,4 -4,4" style=""/>
+<!-- case -->
+<g id="node1" class="node" pointer-events="visible" data-name="case">
+
+<ellipse fill="none" stroke="black" cx="290.3" cy="-588.38" rx="100.32" ry="41.09" style=""/>
+<text text-anchor="middle" x="290.3" y="-600.98" font-family="Times,serif" font-size="14.00" style="">以 noncluster 表为例,</text>
+<text text-anchor="middle" x="290.3" y="-584.18" font-family="Times,serif" font-size="14.00" style="">每天批量插入100万条数据</text>
+<text text-anchor="middle" x="290.3" y="-567.38" font-family="Times,serif" font-size="14.00" style="">(业务又经常按天查数据)</text>
+</g>
+<!-- 表region是否有热点 -->
+<g id="node2" class="node" pointer-events="visible" data-name="表region是否有热点">
+
+<ellipse fill="none" stroke="black" cx="198.3" cy="-493.08" rx="79.33" ry="18" style=""/>
+<text text-anchor="middle" x="198.3" y="-488.88" font-family="Times,serif" font-size="14.00" style="">表region是否有热点</text>
+</g>
+<!-- case&#45;&gt;表region是否有热点 -->
+<g id="edge1" class="edge" data-name="case-&gt;表region是否有热点">
+
+<path fill="none" stroke="black" d="M253.41,-549.97C243.05,-539.46 232.05,-528.3 222.62,-518.74" style=""/>
+<polygon fill="black" stroke="black" points="225.37,-516.55 215.86,-511.88 220.39,-521.46 225.37,-516.55" style=""/>
+</g>
+<!-- 主键region是否有热点 -->
+<g id="node9" class="node" pointer-events="visible" data-name="主键region是否有热点">
+
+<ellipse fill="none" stroke="black" cx="382.3" cy="-493.08" rx="86.31" ry="18" style=""/>
+<text text-anchor="middle" x="382.3" y="-488.88" font-family="Times,serif" font-size="14.00" style="">主键region是否有热点</text>
+</g>
+<!-- case&#45;&gt;主键region是否有热点 -->
+<g id="edge6" class="edge" data-name="case-&gt;主键region是否有热点">
+
+<path fill="none" stroke="black" d="M327.19,-549.97C337.55,-539.46 348.56,-528.3 357.99,-518.74" style=""/>
+<polygon fill="black" stroke="black" points="360.22,-521.46 364.75,-511.88 355.24,-516.55 360.22,-521.46" style=""/>
+</g>
+<!-- 表shard -->
+<g id="node3" class="node" pointer-events="visible" data-name="表shard">
+
+<ellipse fill="none" stroke="black" cx="78.3" cy="-421.08" rx="39.39" ry="18" style=""/>
+<text text-anchor="middle" x="78.3" y="-416.88" font-family="Times,serif" font-size="14.00" style="">表shard</text>
+</g>
+<!-- 表region是否有热点&#45;&gt;表shard -->
+<g id="edge2" class="edge" data-name="表region是否有热点-&gt;表shard">
+
+<path fill="none" stroke="black" d="M170.47,-475.85C152.94,-465.63 130.22,-452.37 111.72,-441.58" style=""/>
+<polygon fill="black" stroke="black" points="113.65,-438.65 103.25,-436.63 110.12,-444.7 113.65,-438.65" style=""/>
+</g>
+<!-- 表没有shard -->
+<g id="node4" class="node" pointer-events="visible" data-name="表没有shard">
+
+<ellipse fill="none" stroke="black" cx="201.3" cy="-421.08" rx="53.86" ry="18" style=""/>
+<text text-anchor="middle" x="201.3" y="-416.88" font-family="Times,serif" font-size="14.00" style="">表没有shard</text>
+</g>
+<!-- 表region是否有热点&#45;&gt;表没有shard -->
+<g id="edge3" class="edge" data-name="表region是否有热点-&gt;表没有shard">
+
+<path fill="none" stroke="black" d="M199.04,-474.78C199.36,-467.49 199.73,-458.81 200.08,-450.62" style=""/>
+<polygon fill="black" stroke="black" points="203.57,-450.84 200.5,-440.7 196.58,-450.54 203.57,-450.84" style=""/>
+</g>
+<!-- shard_tab -->
+<g id="node5" class="node" pointer-events="visible" data-name="shard_tab">
+
+<ellipse fill="lightskyblue" stroke="black" cx="66.3" cy="-337.67" rx="66.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="66.3" y="-341.87" font-family="Times,serif" font-size="14.00" style="">读写不同region</text>
+<text text-anchor="middle" x="66.3" y="-325.07" font-family="Times,serif" font-size="14.00" style="">表没热点</text>
+</g>
+<!-- 表shard&#45;&gt;shard_tab -->
+<g id="edge4" class="edge" data-name="表shard-&gt;shard_tab">
+
+<path fill="none" stroke="black" d="M75.76,-402.82C74.7,-395.61 73.41,-386.92 72.14,-378.29" style=""/>
+<polygon fill="black" stroke="black" points="75.64,-378 70.72,-368.62 68.71,-379.02 75.64,-378" style=""/>
+</g>
+<!-- nonshard_tab -->
+<g id="node6" class="node" pointer-events="visible" data-name="nonshard_tab">
+
+<ellipse fill="lightpink" stroke="black" cx="217.3" cy="-337.67" rx="66.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="217.3" y="-341.87" font-family="Times,serif" font-size="14.00" style="">读写同一region</text>
+<text text-anchor="middle" x="217.3" y="-325.07" font-family="Times,serif" font-size="14.00" style="">表有热点</text>
+</g>
+<!-- 表没有shard&#45;&gt;nonshard_tab -->
+<g id="edge5" class="edge" data-name="表没有shard-&gt;nonshard_tab">
+
+<path fill="none" stroke="black" d="M204.7,-402.82C206.11,-395.61 207.82,-386.92 209.51,-378.29" style=""/>
+<polygon fill="black" stroke="black" points="212.92,-379.09 211.42,-368.61 206.06,-377.74 212.92,-379.09" style=""/>
+</g>
+<!-- auto_increment\nPK的id分配 -->
+<g id="node12" class="node" pointer-events="visible" data-name="auto_increment\nPK的id分配">
+
+<ellipse fill="none" stroke="black" cx="217.3" cy="-242.84" rx="72.77" ry="29.33" style=""/>
+<text text-anchor="middle" x="217.3" y="-247.04" font-family="Times,serif" font-size="14.00" style="">auto_increment</text>
+<text text-anchor="middle" x="217.3" y="-230.24" font-family="Times,serif" font-size="14.00" style="">PK的id分配</text>
+</g>
+<!-- nonshard_tab&#45;&gt;auto_increment\nPK的id分配 -->
+<!-- random_pk -->
+<g id="node7" class="node" pointer-events="visible" data-name="random_pk">
+
+<ellipse fill="lightskyblue" stroke="black" cx="376.3" cy="-337.67" rx="66.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="376.3" y="-341.87" font-family="Times,serif" font-size="14.00" style="">读写不同region</text>
+<text text-anchor="middle" x="376.3" y="-325.07" font-family="Times,serif" font-size="14.00" style="">PK没热点</text>
+</g>
+<!-- autoinc_pk -->
+<g id="node8" class="node" pointer-events="visible" data-name="autoinc_pk">
+
+<ellipse fill="lightpink" stroke="black" cx="527.3" cy="-337.67" rx="66.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="527.3" y="-341.87" font-family="Times,serif" font-size="14.00" style="">读写同一region</text>
+<text text-anchor="middle" x="527.3" y="-325.07" font-family="Times,serif" font-size="14.00" style="">PK有热点</text>
+</g>
+<!-- 分散的PK -->
+<g id="node10" class="node" pointer-events="visible" data-name="分散的PK">
+
+<ellipse fill="none" stroke="black" cx="378.3" cy="-421.08" rx="45.22" ry="18" style=""/>
+<text text-anchor="middle" x="378.3" y="-416.88" font-family="Times,serif" font-size="14.00" style="">分散的PK</text>
+</g>
+<!-- 主键region是否有热点&#45;&gt;分散的PK -->
+<g id="edge7" class="edge" data-name="主键region是否有热点-&gt;分散的PK">
+
+<path fill="none" stroke="black" d="M381.31,-474.78C380.9,-467.49 380.4,-458.81 379.93,-450.62" style=""/>
+<polygon fill="black" stroke="black" points="383.43,-450.48 379.37,-440.7 376.44,-450.88 383.43,-450.48" style=""/>
+</g>
+<!-- 自增PK -->
+<g id="node11" class="node" pointer-events="visible" data-name="自增PK">
+
+<ellipse fill="none" stroke="black" cx="504.3" cy="-421.08" rx="37.73" ry="18" style=""/>
+<text text-anchor="middle" x="504.3" y="-416.88" font-family="Times,serif" font-size="14.00" style="">自增PK</text>
+</g>
+<!-- 主键region是否有热点&#45;&gt;自增PK -->
+<g id="edge8" class="edge" data-name="主键region是否有热点-&gt;自增PK">
+
+<path fill="none" stroke="black" d="M410.91,-475.67C428.85,-465.38 452.07,-452.05 470.86,-441.27" style=""/>
+<polygon fill="black" stroke="black" points="472.55,-444.34 479.48,-436.33 469.06,-438.27 472.55,-444.34" style=""/>
+</g>
+<!-- 分散的PK&#45;&gt;random_pk -->
+<g id="edge9" class="edge" data-name="分散的PK-&gt;random_pk">
+
+<path fill="none" stroke="black" d="M377.88,-402.82C377.7,-395.76 377.5,-387.27 377.29,-378.82" style=""/>
+<polygon fill="black" stroke="black" points="380.79,-378.87 377.05,-368.96 373.79,-379.04 380.79,-378.87" style=""/>
+</g>
+<!-- 自增PK&#45;&gt;autoinc_pk -->
+<g id="edge10" class="edge" data-name="自增PK-&gt;autoinc_pk">
+
+<path fill="none" stroke="black" d="M509.18,-402.82C511.24,-395.53 513.73,-386.73 516.19,-378" style=""/>
+<polygon fill="black" stroke="black" points="519.5,-379.15 518.85,-368.58 512.77,-377.25 519.5,-379.15" style=""/>
+</g>
+<!-- tidb&#45;1节点\n1~30000 -->
+<g id="node13" class="node" pointer-events="visible" data-name="tidb-1节点\n1~30000">
+
+<ellipse fill="none" stroke="black" cx="83.3" cy="-148.01" rx="49.62" ry="29.33" style=""/>
+<text text-anchor="middle" x="83.3" y="-152.21" font-family="Times,serif" font-size="14.00" style="">tidb-1节点</text>
+<text text-anchor="middle" x="83.3" y="-135.41" font-family="Times,serif" font-size="14.00" style="">1~30000</text>
+</g>
+<!-- auto_increment\nPK的id分配&#45;&gt;tidb&#45;1节点\n1~30000 -->
+<g id="edge12" class="edge" data-name="auto_increment\nPK的id分配-&gt;tidb-1节点\n1~30000">
+
+<path fill="none" stroke="black" d="M181.39,-216.96C163.7,-204.7 142.29,-189.87 123.99,-177.2" style=""/>
+<polygon fill="black" stroke="black" points="126.2,-174.47 115.99,-171.65 122.22,-180.22 126.2,-174.47" style=""/>
+</g>
+<!-- tidb&#45;2节点\n30000~60000 -->
+<g id="node14" class="node" pointer-events="visible" data-name="tidb-2节点\n30000~60000">
+
+<ellipse fill="none" stroke="black" cx="217.3" cy="-148.01" rx="66.33" ry="29.33" style=""/>
+<text text-anchor="middle" x="217.3" y="-152.21" font-family="Times,serif" font-size="14.00" style="">tidb-2节点</text>
+<text text-anchor="middle" x="217.3" y="-135.41" font-family="Times,serif" font-size="14.00" style="">30000~60000</text>
+</g>
+<!-- auto_increment\nPK的id分配&#45;&gt;tidb&#45;2节点\n30000~60000 -->
+<g id="edge13" class="edge" data-name="auto_increment\nPK的id分配-&gt;tidb-2节点\n30000~60000">
+
+<path fill="none" stroke="black" d="M217.3,-213.23C217.3,-205.55 217.3,-197.11 217.3,-188.94" style=""/>
+<polygon fill="black" stroke="black" points="220.8,-189.19 217.3,-179.19 213.8,-189.19 220.8,-189.19" style=""/>
+</g>
+<!-- ... -->
+<g id="node15" class="node" pointer-events="visible" data-name="...">
+
+<ellipse fill="none" stroke="black" cx="328.3" cy="-148.01" rx="27" ry="18" style=""/>
+<text text-anchor="middle" x="328.3" y="-143.81" font-family="Times,serif" font-size="14.00" style="">...</text>
+</g>
+<!-- auto_increment\nPK的id分配&#45;&gt;... -->
+<g id="edge14" class="edge" data-name="auto_increment\nPK的id分配-&gt;...">
+
+<path fill="none" stroke="black" d="M248.22,-215.98C265.65,-201.4 287.13,-183.44 303.46,-169.78" style=""/>
+<polygon fill="black" stroke="black" points="305.35,-172.76 310.78,-163.66 300.86,-167.39 305.35,-172.76" style=""/>
+</g>
+<!-- 虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的 -->
+<g id="node16" class="node" pointer-events="visible" data-name="虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的">
+
+<ellipse fill="none" stroke="black" cx="217.3" cy="-41.3" rx="118.62" ry="41.09" style=""/>
+<text text-anchor="middle" x="217.3" y="-53.9" font-family="Times,serif" font-size="14.00" style="">虽然每个tidb节点的id范围不同,</text>
+<text text-anchor="middle" x="217.3" y="-37.1" font-family="Times,serif" font-size="14.00" style="">但这不同于random或雪花id,</text>
+<text text-anchor="middle" x="217.3" y="-20.3" font-family="Times,serif" font-size="14.00" style="">本质上认为id还是未打散的</text>
+</g>
+<!-- tidb&#45;1节点\n1~30000&#45;&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的 -->
+<g id="edge15" class="edge" data-name="tidb-1节点\n1~30000-&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的">
+
+<path fill="none" stroke="black" d="M112.71,-124.03C126.81,-113 144.21,-99.41 160.73,-86.5" style=""/>
+<polygon fill="black" stroke="black" points="162.88,-89.26 168.6,-80.35 158.57,-83.75 162.88,-89.26" style=""/>
+</g>
+<!-- tidb&#45;2节点\n30000~60000&#45;&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的 -->
+<g id="edge16" class="edge" data-name="tidb-2节点\n30000~60000-&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的">
+
+<path fill="none" stroke="black" d="M217.3,-118.39C217.3,-110.82 217.3,-102.4 217.3,-94" style=""/>
+<polygon fill="black" stroke="black" points="220.8,-94.16 217.3,-84.16 213.8,-94.16 220.8,-94.16" style=""/>
+</g>
+<!-- ...&#45;&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的 -->
+<g id="edge17" class="edge" data-name="...-&gt;虽然每个tidb节点的id范围不同,\n但这不同于random或雪花id,\n本质上认为id还是未打散的">
+
+<path fill="none" stroke="black" d="M313.33,-132.88C301.03,-121.27 282.87,-104.15 265.65,-87.91" style=""/>
+<polygon fill="black" stroke="black" points="268.08,-85.39 258.41,-81.07 263.28,-90.48 268.08,-85.39" style=""/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,135 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="514pt" height="534pt" viewBox="0.00 0.00 514 533.73">
+<g id="graph0" class="graph" transform="translate(4,529.72998046875) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-529.73 510,-529.73 510,4 -4,4"/>
+<g id="clust1" class="cluster" data-name="cluster_tidblog">
+
+<polygon fill="none" stroke="black" points="35,-251.26 35,-517.73 322,-517.73 322,-251.26 35,-251.26"/>
+<text text-anchor="middle" x="178.5" y="-501.13" font-family="Times,serif" font-size="14.00">tidb日志</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_grafana">
+
+<polygon fill="none" stroke="black" points="8,-8 8,-243.26 402,-243.26 402,-8 8,-8"/>
+<text text-anchor="middle" x="205" y="-226.66" font-family="Times,serif" font-size="14.00">grafana监控</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_gf_tidb">
+
+<polygon fill="none" stroke="black" points="204,-16 204,-210.46 394,-210.46 394,-16 204,-16"/>
+<text text-anchor="middle" x="299" y="-193.86" font-family="Times,serif" font-size="14.00">TiDB监控, kv相关</text>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_gf_tikv">
+
+<polygon fill="none" stroke="black" points="16,-110.83 16,-210.46 196,-210.46 196,-110.83 16,-110.83"/>
+<text text-anchor="middle" x="106" y="-193.86" font-family="Times,serif" font-size="14.00">TiKV监控, cop相关</text>
+</g>
+<g id="clust5" class="cluster" data-name="cluster_execinfo">
+
+<polygon fill="none" stroke="black" points="330,-346.09 330,-506.31 498,-506.31 498,-346.09 330,-346.09"/>
+<text text-anchor="middle" x="414" y="-489.71" font-family="Times,serif" font-size="14.00">sql执行的 exec info</text>
+</g>
+<!-- rw_conflict -->
+<g id="node1" class="node" pointer-events="visible" data-name="rw_conflict">
+
+<ellipse fill="none" stroke="black" cx="251" cy="-372.09" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="251" y="-367.89" font-family="Times,serif" font-size="14.00">读写冲突</text>
+</g>
+<!-- 行上有其它会话\nprewrite的锁 -->
+<g id="node4" class="node" pointer-events="visible" data-name="行上有其它会话\nprewrite的锁">
+
+<ellipse fill="none" stroke="black" cx="251" cy="-288.68" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="251" y="-292.88" font-family="Times,serif" font-size="14.00">行上有其它会话</text>
+<text text-anchor="middle" x="251" y="-276.08" font-family="Times,serif" font-size="14.00">prewrite的锁</text>
+</g>
+<!-- rw_conflict&#45;&gt;行上有其它会话\nprewrite的锁 -->
+<g id="edge2" class="edge" data-name="rw_conflict-&gt;行上有其它会话\nprewrite的锁">
+
+<path fill="none" stroke="black" d="M251,-353.83C251,-346.77 251,-338.28 251,-329.83"/>
+<polygon fill="black" stroke="black" points="254.5,-329.97 251,-319.97 247.5,-329.97 254.5,-329.97"/>
+</g>
+<!-- ww_conflict -->
+<g id="node2" class="node" pointer-events="visible" data-name="ww_conflict">
+
+<ellipse fill="none" stroke="black" cx="109" cy="-372.09" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="109" y="-367.89" font-family="Times,serif" font-size="14.00">写写冲突</text>
+</g>
+<!-- 乐观事务\n上锁失败会重试 -->
+<g id="node6" class="node" pointer-events="visible" data-name="乐观事务\n上锁失败会重试">
+
+<ellipse fill="none" stroke="black" cx="106" cy="-288.68" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="106" y="-292.88" font-family="Times,serif" font-size="14.00">乐观事务</text>
+<text text-anchor="middle" x="106" y="-276.08" font-family="Times,serif" font-size="14.00">上锁失败会重试</text>
+</g>
+<!-- ww_conflict&#45;&gt;乐观事务\n上锁失败会重试 -->
+<g id="edge4" class="edge" data-name="ww_conflict-&gt;乐观事务\n上锁失败会重试">
+
+<path fill="none" stroke="black" d="M108.36,-353.83C108.1,-346.77 107.79,-338.28 107.48,-329.83"/>
+<polygon fill="black" stroke="black" points="110.98,-329.83 107.12,-319.97 103.99,-330.09 110.98,-329.83"/>
+</g>
+<!-- ?? -->
+<g id="node3" class="node" pointer-events="visible" data-name="??">
+
+<ellipse fill="none" stroke="black" cx="251" cy="-455.51" rx="27" ry="18"/>
+<text text-anchor="middle" x="251" y="-451.31" font-family="Times,serif" font-size="14.00">??</text>
+</g>
+<!-- ??&#45;&gt;rw_conflict -->
+<g id="edge1" class="edge" data-name="??-&gt;rw_conflict">
+
+<path fill="none" stroke="black" d="M251,-437.24C251,-426.88 251,-413.44 251,-401.55"/>
+<polygon fill="black" stroke="black" points="254.5,-401.85 251,-391.85 247.5,-401.85 254.5,-401.85"/>
+</g>
+<!-- key is locked\n(will clean up) -->
+<g id="node5" class="node" pointer-events="visible" data-name="key is locked\n(will clean up)">
+
+<ellipse fill="none" stroke="black" cx="112" cy="-455.51" rx="69.08" ry="29.33"/>
+<text text-anchor="middle" x="112" y="-459.71" font-family="Times,serif" font-size="14.00">key is locked</text>
+<text text-anchor="middle" x="112" y="-442.91" font-family="Times,serif" font-size="14.00">(will clean up)</text>
+</g>
+<!-- key is locked\n(will clean up)&#45;&gt;ww_conflict -->
+<g id="edge3" class="edge" data-name="key is locked\n(will clean up)-&gt;ww_conflict">
+
+<path fill="none" stroke="black" d="M110.95,-426.03C110.66,-418.12 110.34,-409.52 110.05,-401.6"/>
+<polygon fill="black" stroke="black" points="113.55,-401.66 109.69,-391.79 106.56,-401.91 113.55,-401.66"/>
+</g>
+<!-- cop_view -->
+<g id="node9" class="node" pointer-events="visible" data-name="cop_view">
+
+<ellipse fill="none" stroke="black" cx="106" cy="-148.25" rx="81.88" ry="29.33"/>
+<text text-anchor="middle" x="106" y="-152.45" font-family="Times,serif" font-size="14.00">Total Request Err</text>
+<text text-anchor="middle" x="106" y="-135.65" font-family="Times,serif" font-size="14.00">meet_lock</text>
+</g>
+<!-- 乐观事务\n上锁失败会重试&#45;&gt;cop_view -->
+
+<!-- kv_err1 -->
+<g id="node7" class="node" pointer-events="visible" data-name="kv_err1">
+
+<ellipse fill="none" stroke="black" cx="299" cy="-148.25" rx="80.71" ry="29.33"/>
+<text text-anchor="middle" x="299" y="-152.45" font-family="Times,serif" font-size="14.00">KV Backoff OPS</text>
+<text text-anchor="middle" x="299" y="-135.65" font-family="Times,serif" font-size="14.00">tikvLockFast</text>
+</g>
+<!-- kv_err2 -->
+<g id="node8" class="node" pointer-events="visible" data-name="kv_err2">
+
+<ellipse fill="none" stroke="black" cx="299" cy="-53.42" rx="86.81" ry="29.33"/>
+<text text-anchor="middle" x="299" y="-57.62" font-family="Times,serif" font-size="14.00">Lock Resolve OPS</text>
+<text text-anchor="middle" x="299" y="-40.82" font-family="Times,serif" font-size="14.00">resolve</text>
+</g>
+<!-- kv_err1&#45;&gt;kv_err2 -->
+<!-- resolve_lock高 -->
+<g id="node10" class="node" pointer-events="visible" data-name="resolve_lock高">
+
+<ellipse fill="none" stroke="black" cx="414" cy="-455.51" rx="67.74" ry="18"/>
+<text text-anchor="middle" x="414" y="-451.31" font-family="Times,serif" font-size="14.00">resolve_lock高</text>
+</g>
+<!-- 大量并发的更新请求 -->
+<g id="node11" class="node" pointer-events="visible" data-name="大量并发的更新请求">
+
+<ellipse fill="none" stroke="black" cx="414" cy="-372.09" rx="76.44" ry="18"/>
+<text text-anchor="middle" x="414" y="-367.89" font-family="Times,serif" font-size="14.00">大量并发的更新请求</text>
+</g>
+<!-- resolve_lock高&#45;&gt;大量并发的更新请求 -->
+<g id="edge6" class="edge" data-name="resolve_lock高-&gt;大量并发的更新请求">
+
+<path fill="none" stroke="black" d="M414,-437.24C414,-426.88 414,-413.44 414,-401.55"/>
+<polygon fill="black" stroke="black" points="417.5,-401.85 414,-391.85 410.5,-401.85 417.5,-401.85"/>
+</g></g>
+</svg>

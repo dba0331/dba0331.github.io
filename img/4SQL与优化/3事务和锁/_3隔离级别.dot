@@ -1,0 +1,110 @@
+digraph {
+    graph [nodesep=1.0]
+    subgraph cluster_norr{
+        label="理论上 RC级别(读已提交)\n规则简单, 就是可以看到另人已提交数据
+        理论上还细分 update(不可重复), insert(幻读)"
+        {rank=same;
+            data1[label="磁盘\n1,3,5", shape=cylinder];
+            data2[label="磁盘\n1,2,4,5", shape=cylinder];
+            data3[label="磁盘\n1,2,4,5", shape=cylinder];
+            data1 -> data2 -> data3 [style=dashed, color=lightgrey, penwidth=5];
+        }
+        //第一次读
+        sess01[label="会话A\n第一次读[1~5]\n得1,3,5"];
+        sess01 -> data1 [style=dashed, dir=back];
+        
+        //其它会话修改
+        sess02[label="会话B修改3为2,插入4,并提交"];
+        data2 -> sess02 [dir=back, style=dashed];
+
+        //第二次读
+        sess01a[label="会话A\n第二次读[1~5]\n得1,2,4,5", fillcolor=lightskyblue, style="filled"];
+        sess01a -> data3 [style=dashed, dir=back];
+    }
+
+    subgraph cluster_phantom{
+        label="理论上 RR级别(可重复读)\n可避开update, 但可能有 insert(幻读)"
+        {rank=same;
+            data4[label="磁盘\n1,3,5", shape=cylinder];
+            data5[label="磁盘\n1,2,4,5", shape=cylinder];
+            data6[label="磁盘\n1,2,4,5", shape=cylinder];
+            data4 -> data5 -> data6 [style=dashed, color=lightgrey, penwidth=5];
+        }
+        //第一次读
+        sess11[label="会话A\n第一次读[1~5]\n得1,3,5"];
+        sess11 -> data4 [style=dashed, dir=back];
+        
+        //其它会话修改
+        sess12[label="会话B修改3为2,插入4,并提交"];
+        data5 -> sess12 [dir=back, style=dashed];
+
+        //第二次读
+        sess11a[label="会话A\n第二次读[1~5]\n得1,3,4,5", fillcolor=lightskyblue, style="filled"];
+        sess11a -> data6 [style=dashed, dir=back];
+    }
+
+    subgraph cluster_si{
+        label="现实中 TiDB的RR (和MySQL RR)\n和理论说的不太一样, 有自己的实现"
+
+        snap1[label="内存 snapshot1\n1,3,5"];
+        snap2[label="内存 snapshot2\n1,2,4,5"];
+        {rank=same;
+            data7[label="磁盘\n1,3,5", shape=cylinder];
+            data8[label="磁盘\n1,2,4,5", shape=cylinder];
+            data9[label="磁盘\n1,2,4,5", shape=cylinder];
+            data7 -> data8 -> data9 [style=dashed, color=lightgrey, penwidth=5];
+
+        }
+        //第一次读
+        sess21[label="会话A\n第一次读[1~5]\n从snap得1,3,5"];
+        sess21 -> data7 [style=invis]
+        sess21 -> snap1 [style=dashed, dir=back];
+        snap1 -> data7 [style=dashed, dir=back];
+
+        //其它会话修改
+        sess22[label="会话B修改3为2, 插入4 并提交"];
+        data8 -> sess22 [dir=back, style=dashed];
+
+        //第二次读
+        sess21a[shape=plaintext, label=<
+            <table border="0" cellborder="1" cellspacing="0">
+            <tr><td>A第二次读</td></tr>
+            <tr><td>
+                <table border="0" cellborder="1" cellspacing="0">
+                    <tr><td bgcolor="lightblue"><font color="#0000ff">A无相关update</font></td><td bgcolor="#f0e3ff"><font color="#ff1020">A有相关update</font></td></tr>
+                    <tr><td bgcolor="lightblue"><font color="#0000ff">从snap1得1,3,5  </font></td><td bgcolor="#f0e3ff"><font color="#ff1020">从snap2得1,2,4,5  </font></td></tr>
+                </table>
+            </td></tr>
+            </table>>]
+        // sess21a[shape=record,label="{A第二次读|{A未曾update\n则从snap1得1,3,5|A已经update\n从snap2得1,2,4,5}}",  fillcolor=lightskyblue, style="filled"];
+        sess21a -> snap1 [style=dashed, dir=back];
+        sess21a -> data8[style=invis]
+
+        // //第二次当前读
+        snap2 -> data9[style=dashed, dir=back];
+        // sess21b[label="第二次读\n若有 update\n从snap得1,2,4,5", fillcolor=lightpink, style="filled"];
+        sess21a -> snap2 [style=dashed, dir=back];
+        // sess21b -> data9[style=invis]
+
+    }
+
+    sess12 -> { sess21a} [style=invis];
+
+    subgraph cluster_tidb_rc{
+        label="现实中的RC级别"
+        margin=20
+        tidb_rc[label="TiDB和MySQL\n基本上和理论一样",shape=plaintext]
+    }
+    
+    localdata[shape=record    label="{单条sql内是否读\n自己修改的数据|{{mysql|✔︎\n读}|{tidb|✖︎\n不读}|{oracle|✖︎\n不读}}}"];
+    
+    tidb_rc ->localdata -> data7 [style=invis];
+}
+
+
+
+
+
+
+
+

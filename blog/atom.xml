@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://jitdba.com/blog</id>
+    <title>JitDBA Blog</title>
+    <updated>2024-05-04T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://jitdba.com/blog"/>
+    <subtitle>JitDBA Blog</subtitle>
+    <icon>http://jitdba.com/img/j-favicon.jpeg</icon>
+    <entry>
+        <title type="html"><![CDATA[Schema系列一]]></title>
+        <id>http://jitdba.com/blog/schema-series-1</id>
+        <link href="http://jitdba.com/blog/schema-series-1"/>
+        <updated>2024-05-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[schema对象]]></summary>
+        <content type="html"><![CDATA[<p>SQL中事务章节结束, 开始写<code>表和对象管理</code>部分。<br>
+<!-- -->本次先写表的隐式ID, 和自动生成ID的相关知识</p>
+<ul>
+<li>_tidb_rowid</li>
+<li>auto_increment, auto_random</li>
+<li>id引出的热点问题</li>
+</ul>]]></content>
+        <author>
+            <name>阿波</name>
+            <uri>https://github.com/jitdba</uri>
+        </author>
+        <category label="Schema" term="Schema"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[事务系列二]]></title>
+        <id>http://jitdba.com/blog/txn-images-2</id>
+        <link href="http://jitdba.com/blog/txn-images-2"/>
+        <updated>2024-04-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[事务的隔离级别, 锁的清理]]></summary>
+        <content type="html"><![CDATA[<p>把事务的几篇图文更正重写, 并上传其它几篇:</p>
+<ul>
+<li>隔离级别</li>
+<li>锁的清理</li>
+<li>大事务及其它</li>
+</ul>
+<p>另外扩充了导航栏的项目(安装部署, 实例管理), 不过目前置为灰色, 内容也是空的。</p>]]></content>
+        <author>
+            <name>阿波</name>
+            <uri>https://github.com/jitdba</uri>
+        </author>
+        <category label="事务" term="事务"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[事务系列一]]></title>
+        <id>http://jitdba.com/blog/txn-images-1</id>
+        <link href="http://jitdba.com/blog/txn-images-1"/>
+        <updated>2024-04-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[事务的主要流程, 事务知识点, 案例分析]]></summary>
+        <content type="html"><![CDATA[<p>上传了事务知识点系列一:</p>
+<ul>
+<li>主要流程</li>
+<li>显式与隐式</li>
+<li>上锁与重试</li>
+<li>案例TxnLockNotFound</li>
+</ul>]]></content>
+        <author>
+            <name>阿波</name>
+            <uri>https://github.com/jitdba</uri>
+        </author>
+        <category label="事务" term="事务"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[欢迎来到 JitDBA]]></title>
+        <id>http://jitdba.com/blog/welcome-jitdba</id>
+        <link href="http://jitdba.com/blog/welcome-jitdba"/>
+        <updated>2024-04-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[关于TiDB数据库的经验分享, 知识结构图]]></summary>
+        <content type="html"><![CDATA[<p>本站为DBA(数据库管理员)提供:</p>
+<ul>
+<li>查找数据库知识点</li>
+<li>用图解释知识点</li>
+</ul>
+<p>本站画了一些数据库知识点的结构图, 把知识点以及关联关系有序地组织起来, 形成由点到网的过程。</p>
+<p>有意对这些图文按内容进行有序组织, 希望最后能形成一份较完整的参考手册（持续进行当中）。</p>
+<p>目前只提供 <strong>TiDB数据库</strong> 的相关知识。</p>
+<p>已经上传的TiDB知识文档, 可由导航栏 <a href="http://jitdba.com/docs/%E4%BB%8B%E7%BB%8D">TiDB</a> 进入。</p>
+<p>对文档的持续更新情况, 放在 <a href="http://jitdba.com/blog">Blog</a> 中说明。</p>
+<p>欢迎一起学习交流！</p>]]></content>
+        <author>
+            <name>阿波</name>
+            <uri>https://github.com/jitdba</uri>
+        </author>
+        <category label="欢迎" term="欢迎"/>
+        <category label="数据库" term="数据库"/>
+        <category label="TiDB" term="TiDB"/>
+    </entry>
+</feed>

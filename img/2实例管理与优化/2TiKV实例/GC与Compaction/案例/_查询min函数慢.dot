@@ -1,0 +1,66 @@
+digraph {
+    graph[nodesep=0.5];
+
+    subgraph cluster_delete {
+        style=dashed;
+        select_min[label="然后查询, 花了一分钟\nselect min(dt) from t", style="filled", fillcolor=lightpink]
+        {rank=same;"变成mvcc数据\n保留在表中" -> select_min[style=invis]};
+    }
+
+    subgraph cluster_realdelete {
+        style=dashed;
+
+        del_end[shape=record, label="delete的数据\n真正从磁盘抹去", width=1.5];
+        select_after_clear[label="select min(dt) from t"];
+    }
+    
+    "delete数据" -> "变成mvcc数据\n保留在表中";
+    is_comp_filter[shape="diamond", label="compaction\n_filter参数?", margin=0];
+    rocksdb_clear[label="由rocksdb在\ncompaction时\n一起清理"];
+    
+
+    note1[shape=plaintext, label="理论回顾"];
+    note2[shape=plaintext, label="案例"];
+    note1 -> "delete数据" [style=invis]
+    
+    "变成mvcc数据\n保留在表中" -> is_comp_filter[style=dashed, label="保留时间超出gc life"];
+    
+    
+    is_comp_filter -> rocksdb_clear [label="默认true"];
+    is_comp_filter -> "gc worker\n标记为tomestone" [label="false"];
+    "gc worker\n标记为tomestone" -> rocksdb_clear -> del_end
+
+    // 案例
+    delsql[label="先清理30天前数据5千万条\ndelete t where dt<30天前"]
+    note2 -> delsql [style=invis];
+    delsql -> select_min;
+
+    explain[shape=plaintext, label="dt有索引, tidb内部把min改写为:\l    select t order by dt limit 1\l理论上tikv只读取有效的第一条,\l但tikv从索引头部扫描起,\l需要跳过5000万条mvcc数据,\lsql执行信息中的skip count有记录\l", width=3];
+
+    select_min -> explain [dir=back, style=dashed];
+
+    tunning[shape=plaintext, label="解决办法\n清理的时间提前\n或查询时刻延后", style="filled", fillcolor=lightskyblue, margin=0.2]
+    select_min -> tunning [style=dotted]; 
+    tunning -> select_after_clear [style=dotted];
+
+    exp2[shape=plaintext, label="\n此时dt索引头部没有mvcc数据\n查询min只需读索引第一个region\n就大概率能取得有效数据"]
+    select_after_clear -> exp2 [dir=back, style=dashed]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

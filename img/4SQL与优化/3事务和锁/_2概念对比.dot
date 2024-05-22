@@ -1,0 +1,68 @@
+digraph {
+    graph[rankdir="LR"];
+
+    subgraph cluster_old {
+        label = "传统的事务 (悲观事务)";
+
+        old0[label="读数据时无冲突"]
+        old1[label="事务提交与锁无关"];
+        old2[label="若锁冲突会一直阻塞\n没有上锁失败一说"];
+
+        old3[label="事务失败就返回了"];
+        old4[label="会话可长期持有锁\n除非是会话被kill"];
+        old5[label="事务可以很大\n不超过undo表空间"];
+
+    }
+
+    subgraph cluster_opt{
+        label = "TiDB乐观事务";
+        margin=20;
+
+        opt0[label="有读写冲突"];
+        opt1[label="提交才上锁,锁可能被清理"];
+        opt2[label="锁冲突txnLock 则失败\n也即事务失败"];
+        opt3[label="隐式事务失败会自动重试"]
+        opt4[label="上锁后即提交,时间短\n但TTL异常可能被清理"];
+        opt5[label="事务的大小受限\n修改内容都在会话内存"]
+    }
+
+    subgraph cluster_pess{
+        label = "TiDB悲观事务";
+
+        pess0[label="有读写冲突"];
+        pess1[label="锁可能被清理"];
+        pess2[label="有等待队列\n但有重试次数"];
+        pess3[label="同传统事务"];
+        pess4[label="锁可长期持有\n异常时会被清理"];
+        pess5[label="大小受限\n都放在内存"]
+    }
+
+    old0 -> opt0 -> pess0 [style=dashed, label="vs"];
+    old1 -> opt1 -> pess1 [style=dashed];
+    old2 -> opt2 -> pess2 [style=dashed];
+    old3 -> opt3 -> pess3 [style=dashed];
+    old4 -> opt4 -> pess4 [style=dashed];
+    old5 -> opt5 -> pess5 [style=dashed];
+
+    // {rank=same; old1 -> old2 -> old3 -> old4 -> old5 [style=invis]};
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

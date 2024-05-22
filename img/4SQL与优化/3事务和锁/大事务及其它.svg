@@ -1,0 +1,267 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="857pt" height="782pt" viewBox="0.00 0.00 857 781.53">
+<g id="graph0" class="graph" transform="translate(4,777.530029296875) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-777.53 853,-777.53 853,4 -4,4"/>
+<g id="clust1" class="cluster" data-name="cluster_quest1">
+
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="22,-295.43 22,-765.53 841,-765.53 841,-295.43 22,-295.43"/>
+<text text-anchor="middle" x="431.5" y="-748.93" font-family="Times,serif" font-size="14.00">情况一</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_case1">
+
+<polygon fill="none" stroke="black" points="470,-548.68 470,-732.73 833,-732.73 833,-548.68 470,-548.68"/>
+<text text-anchor="middle" x="651.5" y="-716.13" font-family="Times,serif" font-size="14.00">业务场景</text>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_case2">
+
+<polygon fill="none" stroke="black" points="30,-537.26 30,-732.73 450,-732.73 450,-537.26 30,-537.26"/>
+<text text-anchor="middle" x="240" y="-716.13" font-family="Times,serif" font-size="14.00">运行报错</text>
+</g>
+<g id="clust8" class="cluster" data-name="cluster_quest2">
+
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="126,-126.63 126,-276.43 558,-276.43 558,-126.63 126,-126.63"/>
+<text text-anchor="middle" x="342" y="-259.83" font-family="Times,serif" font-size="14.00">情况二</text>
+</g>
+<g id="clust11" class="cluster" data-name="cluster_quest3">
+
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="8,-8 8,-107.63 559,-107.63 559,-8 8,-8"/>
+<text text-anchor="middle" x="283.5" y="-91.03" font-family="Times,serif" font-size="14.00">情况三</text>
+</g>
+<!-- need_estsize -->
+<g id="node1" class="node" pointer-events="visible" data-name="need_estsize">
+
+<ellipse fill="lightskyblue" stroke="black" cx="379" cy="-490.26" rx="80.51" ry="18"/>
+<text text-anchor="middle" x="379" y="-486.06" font-family="Times,serif" font-size="14.00">能否估算事务的大小?</text>
+</g>
+<!-- delete只记录key\n大小相对好估算 -->
+<g id="node10" class="node" pointer-events="visible" data-name="delete只记录key\n大小相对好估算">
+
+<ellipse fill="none" stroke="black" cx="177" cy="-405.85" rx="71.53" ry="29.33"/>
+<text text-anchor="middle" x="177" y="-410.05" font-family="Times,serif" font-size="14.00">delete只记录key</text>
+<text text-anchor="middle" x="177" y="-393.25" font-family="Times,serif" font-size="14.00">大小相对好估算</text>
+</g>
+<!-- need_estsize&#45;&gt;delete只记录key\n大小相对好估算 -->
+<g id="edge9" class="edge" data-name="need_estsize-&gt;delete只记录key\n大小相对好估算">
+
+<path fill="none" stroke="black" d="M341.48,-473.95C312.22,-462.02 271,-445.2 237.15,-431.39"/>
+<polygon fill="black" stroke="black" points="238.88,-428.31 228.3,-427.78 236.24,-434.8 238.88,-428.31"/>
+</g>
+<!-- insert/update要记录kv\n大小和字段数量有关 -->
+<g id="node11" class="node" pointer-events="visible" data-name="insert/update要记录kv\n大小和字段数量有关">
+
+<ellipse fill="none" stroke="black" cx="379" cy="-405.85" rx="94.74" ry="29.33"/>
+<text text-anchor="middle" x="379" y="-410.05" font-family="Times,serif" font-size="14.00">insert/update要记录kv</text>
+<text text-anchor="middle" x="379" y="-393.25" font-family="Times,serif" font-size="14.00">大小和字段数量有关</text>
+</g>
+<!-- need_estsize&#45;&gt;insert/update要记录kv\n大小和字段数量有关 -->
+<g id="edge10" class="edge" data-name="need_estsize-&gt;insert/update要记录kv\n大小和字段数量有关">
+
+<path fill="none" stroke="black" d="M379,-471.78C379,-464.49 379,-455.69 379,-446.96"/>
+<polygon fill="black" stroke="black" points="382.5,-447.16 379,-437.16 375.5,-447.16 382.5,-447.16"/>
+</g>
+<!-- 表上的索引数量\n影响事务大小 -->
+<g id="node12" class="node" pointer-events="visible" data-name="表上的索引数量\n影响事务大小">
+
+<ellipse fill="none" stroke="black" cx="573" cy="-405.85" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="573" y="-410.05" font-family="Times,serif" font-size="14.00">表上的索引数量</text>
+<text text-anchor="middle" x="573" y="-393.25" font-family="Times,serif" font-size="14.00">影响事务大小</text>
+</g>
+<!-- need_estsize&#45;&gt;表上的索引数量\n影响事务大小 -->
+<g id="edge11" class="edge" data-name="need_estsize-&gt;表上的索引数量\n影响事务大小">
+
+<path fill="none" stroke="black" d="M415.49,-473.76C444.01,-461.64 484.16,-444.59 516.78,-430.73"/>
+<polygon fill="black" stroke="black" points="517.86,-434.08 525.69,-426.94 515.12,-427.63 517.86,-434.08"/>
+</g>
+<!-- 大表复制\n数据装载 -->
+<g id="node2" class="node" pointer-events="visible" data-name="大表复制\n数据装载">
+
+<ellipse fill="none" stroke="black" cx="784" cy="-670.51" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="784" y="-674.71" font-family="Times,serif" font-size="14.00">大表复制</text>
+<text text-anchor="middle" x="784" y="-657.91" font-family="Times,serif" font-size="14.00">数据装载</text>
+</g>
+<!-- 怎么划分批次 -->
+<g id="node5" class="node" pointer-events="visible" data-name="怎么划分批次">
+
+<ellipse fill="none" stroke="black" cx="595" cy="-574.68" rx="54.49" ry="18"/>
+<text text-anchor="middle" x="595" y="-570.48" font-family="Times,serif" font-size="14.00">怎么划分批次</text>
+</g>
+<!-- 大表复制\n数据装载&#45;&gt;怎么划分批次 -->
+<g id="edge1" class="edge" data-name="大表复制\n数据装载-&gt;怎么划分批次">
+
+<path fill="none" stroke="black" d="M750.65,-652.95C718.18,-636.83 668.86,-612.34 634.46,-595.27"/>
+<polygon fill="black" stroke="black" points="636.17,-592.21 625.66,-590.9 633.06,-598.48 636.17,-592.21"/>
+</g>
+<!-- 批量DML\n如清理数据 -->
+<g id="node3" class="node" pointer-events="visible" data-name="批量DML\n如清理数据">
+
+<ellipse fill="none" stroke="black" cx="659" cy="-670.51" rx="48.37" ry="29.33"/>
+<text text-anchor="middle" x="659" y="-674.71" font-family="Times,serif" font-size="14.00">批量DML</text>
+<text text-anchor="middle" x="659" y="-657.91" font-family="Times,serif" font-size="14.00">如清理数据</text>
+</g>
+<!-- 批量DML\n如清理数据&#45;&gt;怎么划分批次 -->
+<g id="edge2" class="edge" data-name="批量DML\n如清理数据-&gt;怎么划分批次">
+
+<path fill="none" stroke="black" d="M640.83,-642.87C632.06,-630.01 621.56,-614.62 612.83,-601.82"/>
+<polygon fill="black" stroke="black" points="615.93,-600.16 607.41,-593.87 610.15,-604.1 615.93,-600.16"/>
+</g>
+<!-- 业务跑批\n其它批处理 -->
+<g id="node4" class="node" pointer-events="visible" data-name="业务跑批\n其它批处理">
+
+<ellipse fill="none" stroke="black" cx="526" cy="-670.51" rx="48.37" ry="29.33"/>
+<text text-anchor="middle" x="526" y="-674.71" font-family="Times,serif" font-size="14.00">业务跑批</text>
+<text text-anchor="middle" x="526" y="-657.91" font-family="Times,serif" font-size="14.00">其它批处理</text>
+</g>
+<!-- 业务跑批\n其它批处理&#45;&gt;怎么划分批次 -->
+<g id="edge3" class="edge" data-name="业务跑批\n其它批处理-&gt;怎么划分批次">
+
+<path fill="none" stroke="black" d="M545.22,-643.37C554.85,-630.28 566.46,-614.49 576.05,-601.45"/>
+<polygon fill="black" stroke="black" points="578.62,-603.87 581.72,-593.74 572.98,-599.72 578.62,-603.87"/>
+</g>
+<!-- 怎么划分批次&#45;&gt;need_estsize -->
+<g id="edge4" class="edge" data-name="怎么划分批次-&gt;need_estsize">
+
+<path fill="none" stroke="black" d="M560.3,-560.44C524.79,-546.89 469.28,-525.71 429.03,-510.35"/>
+<polygon fill="black" stroke="black" points="430.38,-507.12 419.79,-506.83 427.89,-513.66 430.38,-507.12"/>
+</g>
+<!-- txn_size_err -->
+<g id="node6" class="node" pointer-events="visible" data-name="txn_size_err">
+
+<ellipse fill="lightpink" stroke="black" cx="401" cy="-670.51" rx="41.02" ry="29.33"/>
+<text text-anchor="middle" x="401" y="-674.71" font-family="Times,serif" font-size="14.00">事务大小</text>
+<text text-anchor="middle" x="401" y="-657.91" font-family="Times,serif" font-size="14.00">超出限制</text>
+</g>
+<!-- 故障分析\n事务为什么大 -->
+<g id="node9" class="node" pointer-events="visible" data-name="故障分析\n事务为什么大">
+
+<ellipse fill="none" stroke="black" cx="315" cy="-574.68" rx="55.72" ry="29.33"/>
+<text text-anchor="middle" x="315" y="-578.88" font-family="Times,serif" font-size="14.00">故障分析</text>
+<text text-anchor="middle" x="315" y="-562.08" font-family="Times,serif" font-size="14.00">事务为什么大</text>
+</g>
+<!-- txn_size_err&#45;&gt;故障分析\n事务为什么大 -->
+<g id="edge5" class="edge" data-name="txn_size_err-&gt;故障分析\n事务为什么大">
+
+<path fill="none" stroke="black" d="M378.85,-645.35C368.92,-634.51 357.03,-621.54 346.22,-609.74"/>
+<polygon fill="black" stroke="black" points="348.94,-607.53 339.6,-602.52 343.78,-612.26 348.94,-607.53"/>
+</g>
+<!-- txn_omq_err -->
+<g id="node7" class="node" pointer-events="visible" data-name="txn_omq_err">
+
+<ellipse fill="lightpink" stroke="black" cx="255" cy="-670.51" rx="68.55" ry="29.33"/>
+<text text-anchor="middle" x="255" y="-674.71" font-family="Times,serif" font-size="14.00">sql报错out of</text>
+<text text-anchor="middle" x="255" y="-657.91" font-family="Times,serif" font-size="14.00">memroy quota</text>
+</g>
+<!-- txn_omq_err&#45;&gt;故障分析\n事务为什么大 -->
+<g id="edge6" class="edge" data-name="txn_omq_err-&gt;故障分析\n事务为什么大">
+
+<path fill="none" stroke="black" d="M272.68,-641.86C278.59,-632.62 285.27,-622.17 291.55,-612.35"/>
+<polygon fill="black" stroke="black" points="294.4,-614.39 296.84,-604.08 288.5,-610.62 294.4,-614.39"/>
+</g>
+<!-- binlog_err -->
+<g id="node8" class="node" pointer-events="visible" data-name="binlog_err">
+
+<ellipse fill="lightpink" stroke="black" cx="94" cy="-670.51" rx="55.7" ry="29.33"/>
+<text text-anchor="middle" x="94" y="-674.71" font-family="Times,serif" font-size="14.00">binlog很大</text>
+<text text-anchor="middle" x="94" y="-657.91" font-family="Times,serif" font-size="14.00">grpc上限2G</text>
+</g>
+<!-- binlog_err&#45;&gt;故障分析\n事务为什么大 -->
+<g id="edge7" class="edge" data-name="binlog_err-&gt;故障分析\n事务为什么大">
+
+<path fill="none" stroke="black" d="M136.87,-651.31C172.56,-636.16 223.53,-614.52 261.81,-598.26"/>
+<polygon fill="black" stroke="black" points="263.02,-601.55 270.85,-594.42 260.28,-595.11 263.02,-601.55"/>
+</g>
+<!-- 故障分析\n事务为什么大&#45;&gt;need_estsize -->
+<g id="edge8" class="edge" data-name="故障分析\n事务为什么大-&gt;need_estsize">
+
+<path fill="none" stroke="black" d="M335.6,-547.15C343,-537.62 351.34,-526.89 358.71,-517.39"/>
+<polygon fill="black" stroke="black" points="361.39,-519.64 364.76,-509.6 355.87,-515.35 361.39,-519.64"/>
+</g>
+<!-- 难以估算 -->
+<g id="node13" class="node" pointer-events="visible" data-name="难以估算">
+
+<ellipse fill="none" stroke="black" cx="431" cy="-321.43" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="431" y="-317.23" font-family="Times,serif" font-size="14.00">难以估算</text>
+</g>
+<!-- insert/update要记录kv\n大小和字段数量有关&#45;&gt;难以估算 -->
+<g id="edge12" class="edge" data-name="insert/update要记录kv\n大小和字段数量有关-&gt;难以估算">
+
+<path fill="none" stroke="black" d="M396.6,-376.94C402.34,-367.85 408.69,-357.79 414.35,-348.81"/>
+<polygon fill="black" stroke="black" points="417.21,-350.85 419.58,-340.53 411.29,-347.12 417.21,-350.85"/>
+</g>
+<!-- 表上的索引数量\n影响事务大小&#45;&gt;难以估算 -->
+<g id="edge13" class="edge" data-name="表上的索引数量\n影响事务大小-&gt;难以估算">
+
+<path fill="none" stroke="black" d="M534.2,-382.33C512.32,-369.63 485.27,-353.93 464.35,-341.79"/>
+<polygon fill="black" stroke="black" points="466.34,-338.9 455.94,-336.9 462.83,-344.95 466.34,-338.9"/>
+</g>
+<!-- dead_txn -->
+<g id="node14" class="node" pointer-events="visible" data-name="dead_txn">
+
+<ellipse fill="lightskyblue" stroke="black" cx="431" cy="-225.63" rx="76.44" ry="18"/>
+<text text-anchor="middle" x="431" y="-221.43" font-family="Times,serif" font-size="14.00">长时间未关闭的事务</text>
+</g>
+<!-- 难以估算&#45;&gt;dead_txn -->
+<!-- 可能阻止gc safepoint推进 -->
+<g id="node15" class="node" pointer-events="visible" data-name="可能阻止gc safepoint推进">
+
+<ellipse fill="none" stroke="black" cx="235" cy="-152.63" rx="101.34" ry="18"/>
+<text text-anchor="middle" x="235" y="-148.43" font-family="Times,serif" font-size="14.00">可能阻止gc safepoint推进</text>
+</g>
+<!-- dead_txn&#45;&gt;可能阻止gc safepoint推进 -->
+<g id="edge14" class="edge" data-name="dead_txn-&gt;可能阻止gc safepoint推进">
+
+<path fill="none" stroke="black" d="M390.39,-209.92C360.97,-199.26 320.91,-184.75 288.82,-173.13"/>
+<polygon fill="black" stroke="black" points="290.3,-169.94 279.7,-169.82 287.91,-176.52 290.3,-169.94"/>
+</g>
+<!-- 可能阻塞其它DDL操作 -->
+<g id="node16" class="node" pointer-events="visible" data-name="可能阻塞其它DDL操作">
+
+<ellipse fill="none" stroke="black" cx="461" cy="-152.63" rx="88.65" ry="18"/>
+<text text-anchor="middle" x="461" y="-148.43" font-family="Times,serif" font-size="14.00">可能阻塞其它DDL操作</text>
+</g>
+<!-- dead_txn&#45;&gt;可能阻塞其它DDL操作 -->
+<g id="edge15" class="edge" data-name="dead_txn-&gt;可能阻塞其它DDL操作">
+
+<path fill="none" stroke="black" d="M438.26,-207.44C441.62,-199.51 445.68,-189.89 449.44,-180.99"/>
+<polygon fill="black" stroke="black" points="452.55,-182.63 453.22,-172.05 446.1,-179.9 452.55,-182.63"/>
+</g>
+<!-- txn_resolved_ts -->
+<g id="node17" class="node" pointer-events="visible" data-name="txn_resolved_ts">
+
+<ellipse fill="lightskyblue" stroke="black" cx="235" cy="-45.42" rx="82.47" ry="29.33"/>
+<text text-anchor="middle" x="235" y="-49.62" font-family="Times,serif" font-size="14.00">resolved-ts的</text>
+<text text-anchor="middle" x="235" y="-32.82" font-family="Times,serif" font-size="14.00">lock heap size增大</text>
+</g>
+<!-- 可能阻止gc safepoint推进&#45;&gt;txn_resolved_ts -->
+<!-- tikv OOM -->
+<g id="node19" class="node" pointer-events="visible" data-name="tikv OOM">
+
+<ellipse fill="none" stroke="black" cx="440" cy="-45.42" rx="51.02" ry="18"/>
+<text text-anchor="middle" x="440" y="-41.22" font-family="Times,serif" font-size="14.00">tikv OOM</text>
+</g>
+<!-- txn_resolved_ts&#45;&gt;tikv OOM -->
+<g id="edge18" class="edge" data-name="txn_resolved_ts-&gt;tikv OOM">
+
+<path fill="none" stroke="black" d="M317.88,-45.42C337.78,-45.42 357.68,-45.42 377.57,-45.42"/>
+<polygon fill="black" stroke="black" points="377.44,-48.92 387.44,-45.42 377.44,-41.92 377.44,-48.92"/>
+</g>
+<!-- 大事务 -->
+<g id="node18" class="node" pointer-events="visible" data-name="大事务">
+
+<ellipse fill="none" stroke="black" cx="49" cy="-45.42" rx="32.53" ry="18"/>
+<text text-anchor="middle" x="49" y="-41.22" font-family="Times,serif" font-size="14.00">大事务</text>
+</g>
+<!-- 大事务&#45;&gt;txn_resolved_ts -->
+<g id="edge17" class="edge" data-name="大事务-&gt;txn_resolved_ts">
+
+<path fill="none" stroke="black" d="M81.7,-45.42C101.39,-45.42 121.09,-45.42 140.79,-45.42"/>
+<polygon fill="black" stroke="black" points="140.55,-48.92 150.55,-45.42 140.55,-41.92 140.55,-48.92"/>
+</g>
+<!-- tikv OOM&#45;&gt;tikv OOM -->
+<g id="edge19" class="edge" data-name="tikv OOM-&gt;tikv OOM">
+
+<path fill="none" stroke="black" d="M478.47,-57.63C503.2,-60.81 527.01,-56.74 527.01,-45.42 527.01,-35.86 510.06,-31.47 489.91,-32.24"/>
+<polygon fill="black" stroke="black" points="489.65,-28.75 479.98,-33.08 490.23,-35.73 489.65,-28.75"/>
+<text text-anchor="middle" x="548.01" y="-41.22" font-family="Times,serif" font-size="14.00">不断重启</text>
+</g>
+</g>
+</svg>

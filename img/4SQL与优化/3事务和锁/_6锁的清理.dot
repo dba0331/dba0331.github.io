@@ -1,0 +1,24 @@
+digraph {
+
+    slowsql[label="sql执行慢", style="filled", fillcolor=lightpink];
+    cleanlock[label="他人清理残留的锁\n每行锁等一秒"];
+    wait_owner[label="先等锁主人\n自己清理", style=dashed];
+    lock_timeout[label="tikv参数\nwait-for-lock-timeout", style=dashed];
+
+    "A的锁由他人清理" -> cleanlock[style=dashed]
+    cleanlock -> "lock_rpc用时长" -> slowsql;
+    {rank=same; lock_timeout -> cleanlock-> wait_owner;
+    }
+
+
+    subgraph cluster_cleanlock {
+        "会话A或\ntidb-server死了" -> "A的锁由他人清理"
+        "会话A\n因为锁冲突放弃\n已持有的锁" -> "A自己清理"
+        "会话A\n提交 primary key后\n处理second keys" -> "A自己清理"
+    }
+}
+
+
+
+
+

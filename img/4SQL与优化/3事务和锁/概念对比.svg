@@ -1,0 +1,212 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="626pt" height="462pt" viewBox="0.00 0.00 625.98 462.00">
+<g id="graph0" class="graph" transform="translate(4,458) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-458 621.98,-458 621.98,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_old">
+
+<polygon fill="none" stroke="black" points="8,-20 8,-434 180.27,-434 180.27,-20 8,-20" style=""/>
+<text text-anchor="middle" x="94.14" y="-417.4" font-family="Times,serif" font-size="14.00" style="">传统的事务 (悲观事务)</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_opt">
+
+<polygon fill="none" stroke="black" points="210.72,-8 210.72,-446 436.96,-446 436.96,-8 210.72,-8" style=""/>
+<text text-anchor="middle" x="323.84" y="-429.4" font-family="Times,serif" font-size="14.00" style="">TiDB乐观事务</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_pess">
+
+<polygon fill="none" stroke="black" points="467.41,-20 467.41,-434 609.98,-434 609.98,-20 467.41,-20" style=""/>
+<text text-anchor="middle" x="538.69" y="-417.4" font-family="Times,serif" font-size="14.00" style="">TiDB悲观事务</text>
+</g>
+<!-- old0 -->
+<g id="node1" class="node" pointer-events="visible" data-name="old0">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-383" rx="61.97" ry="18" style=""/>
+<text text-anchor="middle" x="94.14" y="-378.8" font-family="Times,serif" font-size="14.00" style="">读数据时无冲突</text>
+</g>
+<!-- opt0 -->
+<g id="node7" class="node" pointer-events="visible" data-name="opt0">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-383" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="323.84" y="-378.8" font-family="Times,serif" font-size="14.00" style="">有读写冲突</text>
+</g>
+<!-- old0&#45;&gt;opt0 -->
+<g id="edge1" class="edge" data-name="old0-&gt;opt0">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M156.46,-383C190.27,-383 232.01,-383 265.22,-383" style=""/>
+<polygon fill="black" stroke="black" points="265.07,-386.5 275.07,-383 265.07,-379.5 265.07,-386.5" style=""/>
+<text text-anchor="middle" x="196.49" y="-387.2" font-family="Times,serif" font-size="14.00" style="">vs</text>
+</g>
+<!-- old1 -->
+<g id="node2" class="node" pointer-events="visible" data-name="old1">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-329" rx="68.96" ry="18" style=""/>
+<text text-anchor="middle" x="94.14" y="-324.8" font-family="Times,serif" font-size="14.00" style="">事务提交与锁无关</text>
+</g>
+<!-- opt1 -->
+<g id="node8" class="node" pointer-events="visible" data-name="opt1">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-329" rx="93.24" ry="18" style=""/>
+<text text-anchor="middle" x="323.84" y="-324.8" font-family="Times,serif" font-size="14.00" style="">提交才上锁,锁可能被清理</text>
+</g>
+<!-- old1&#45;&gt;opt1 -->
+<g id="edge3" class="edge" data-name="old1-&gt;opt1">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M163.45,-329C180.89,-329 200.04,-329 218.82,-329" style=""/>
+<polygon fill="black" stroke="black" points="218.63,-332.5 228.63,-329 218.63,-325.5 218.63,-332.5" style=""/>
+</g>
+<!-- old2 -->
+<g id="node3" class="node" pointer-events="visible" data-name="old2">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-264" rx="78.27" ry="29.33" style=""/>
+<text text-anchor="middle" x="94.14" y="-268.2" font-family="Times,serif" font-size="14.00" style="">若锁冲突会一直阻塞</text>
+<text text-anchor="middle" x="94.14" y="-251.4" font-family="Times,serif" font-size="14.00" style="">没有上锁失败一说</text>
+</g>
+<!-- opt2 -->
+<g id="node9" class="node" pointer-events="visible" data-name="opt2">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-264" rx="91.15" ry="29.33" style=""/>
+<text text-anchor="middle" x="323.84" y="-268.2" font-family="Times,serif" font-size="14.00" style="">锁冲突txnLock 则失败</text>
+<text text-anchor="middle" x="323.84" y="-251.4" font-family="Times,serif" font-size="14.00" style="">也即事务失败</text>
+</g>
+<!-- old2&#45;&gt;opt2 -->
+<g id="edge5" class="edge" data-name="old2-&gt;opt2">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M172.86,-264C188.46,-264 205.06,-264 221.33,-264" style=""/>
+<polygon fill="black" stroke="black" points="221.01,-267.5 231.01,-264 221.01,-260.5 221.01,-267.5" style=""/>
+</g>
+<!-- old3 -->
+<g id="node4" class="node" pointer-events="visible" data-name="old3">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-199" rx="68.96" ry="18" style=""/>
+<text text-anchor="middle" x="94.14" y="-194.8" font-family="Times,serif" font-size="14.00" style="">事务失败就返回了</text>
+</g>
+<!-- opt3 -->
+<g id="node10" class="node" pointer-events="visible" data-name="opt3">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-199" rx="90.91" ry="18" style=""/>
+<text text-anchor="middle" x="323.84" y="-194.8" font-family="Times,serif" font-size="14.00" style="">隐式事务失败会自动重试</text>
+</g>
+<!-- old3&#45;&gt;opt3 -->
+<g id="edge7" class="edge" data-name="old3-&gt;opt3">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M163.45,-199C181.63,-199 201.66,-199 221.21,-199" style=""/>
+<polygon fill="black" stroke="black" points="221.13,-202.5 231.13,-199 221.13,-195.5 221.13,-202.5" style=""/>
+</g>
+<!-- old4 -->
+<g id="node5" class="node" pointer-events="visible" data-name="old4">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-134" rx="70.92" ry="29.33" style=""/>
+<text text-anchor="middle" x="94.14" y="-138.2" font-family="Times,serif" font-size="14.00" style="">会话可长期持有锁</text>
+<text text-anchor="middle" x="94.14" y="-121.4" font-family="Times,serif" font-size="14.00" style="">除非是会话被kill</text>
+</g>
+<!-- opt4 -->
+<g id="node11" class="node" pointer-events="visible" data-name="opt4">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-134" rx="88.7" ry="29.33" style=""/>
+<text text-anchor="middle" x="323.84" y="-138.2" font-family="Times,serif" font-size="14.00" style="">上锁后即提交,时间短</text>
+<text text-anchor="middle" x="323.84" y="-121.4" font-family="Times,serif" font-size="14.00" style="">但TTL异常可能被清理</text>
+</g>
+<!-- old4&#45;&gt;opt4 -->
+<g id="edge9" class="edge" data-name="old4-&gt;opt4">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M165.31,-134C183.66,-134 203.8,-134 223.36,-134" style=""/>
+<polygon fill="black" stroke="black" points="223.28,-137.5 233.28,-134 223.28,-130.5 223.28,-137.5" style=""/>
+</g>
+<!-- old5 -->
+<g id="node6" class="node" pointer-events="visible" data-name="old5">
+
+<ellipse fill="none" stroke="black" cx="94.14" cy="-57" rx="75.82" ry="29.33" style=""/>
+<text text-anchor="middle" x="94.14" y="-61.2" font-family="Times,serif" font-size="14.00" style="">事务可以很大</text>
+<text text-anchor="middle" x="94.14" y="-44.4" font-family="Times,serif" font-size="14.00" style="">不超过undo表空间</text>
+</g>
+<!-- opt5 -->
+<g id="node12" class="node" pointer-events="visible" data-name="opt5">
+
+<ellipse fill="none" stroke="black" cx="323.84" cy="-57" rx="85.62" ry="29.33" style=""/>
+<text text-anchor="middle" x="323.84" y="-61.2" font-family="Times,serif" font-size="14.00" style="">事务的大小受限</text>
+<text text-anchor="middle" x="323.84" y="-44.4" font-family="Times,serif" font-size="14.00" style="">修改内容都在会话内存</text>
+</g>
+<!-- old5&#45;&gt;opt5 -->
+<g id="edge11" class="edge" data-name="old5-&gt;opt5">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M170.33,-57C188.32,-57 207.79,-57 226.59,-57" style=""/>
+<polygon fill="black" stroke="black" points="226.37,-60.5 236.37,-57 226.37,-53.5 226.37,-60.5" style=""/>
+</g>
+<!-- pess0 -->
+<g id="node13" class="node" pointer-events="visible" data-name="pess0">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-383" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="538.69" y="-378.8" font-family="Times,serif" font-size="14.00" style="">有读写冲突</text>
+</g>
+<!-- opt0&#45;&gt;pess0 -->
+<g id="edge2" class="edge" data-name="opt0-&gt;pess0">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M371.29,-383C403.27,-383 445.98,-383 480.12,-383" style=""/>
+<polygon fill="black" stroke="black" points="479.83,-386.5 489.83,-383 479.83,-379.5 479.83,-386.5" style=""/>
+<text text-anchor="middle" x="451.18" y="-387.2" font-family="Times,serif" font-size="14.00" style="">vs</text>
+</g>
+<!-- pess1 -->
+<g id="node14" class="node" pointer-events="visible" data-name="pess1">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-329" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="538.69" y="-324.8" font-family="Times,serif" font-size="14.00" style="">锁可能被清理</text>
+</g>
+<!-- opt1&#45;&gt;pess1 -->
+<g id="edge4" class="edge" data-name="opt1-&gt;pess1">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M417.27,-329C435.95,-329 455.22,-329 472.72,-329" style=""/>
+<polygon fill="black" stroke="black" points="472.42,-332.5 482.42,-329 472.42,-325.5 472.42,-332.5" style=""/>
+</g>
+<!-- pess2 -->
+<g id="node15" class="node" pointer-events="visible" data-name="pess2">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-264" rx="55.72" ry="29.33" style=""/>
+<text text-anchor="middle" x="538.69" y="-268.2" font-family="Times,serif" font-size="14.00" style="">有等待队列</text>
+<text text-anchor="middle" x="538.69" y="-251.4" font-family="Times,serif" font-size="14.00" style="">但有重试次数</text>
+</g>
+<!-- opt2&#45;&gt;pess2 -->
+<g id="edge6" class="edge" data-name="opt2-&gt;pess2">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M415.42,-264C434.17,-264 453.59,-264 471.28,-264" style=""/>
+<polygon fill="black" stroke="black" points="471.12,-267.5 481.12,-264 471.12,-260.5 471.12,-267.5" style=""/>
+</g>
+<!-- pess3 -->
+<g id="node16" class="node" pointer-events="visible" data-name="pess3">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-199" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="538.69" y="-194.8" font-family="Times,serif" font-size="14.00" style="">同传统事务</text>
+</g>
+<!-- opt3&#45;&gt;pess3 -->
+<g id="edge8" class="edge" data-name="opt3-&gt;pess3">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M415.11,-199C437.08,-199 460,-199 479.99,-199" style=""/>
+<polygon fill="black" stroke="black" points="479.88,-202.5 489.88,-199 479.88,-195.5 479.88,-202.5" style=""/>
+</g>
+<!-- pess4 -->
+<g id="node17" class="node" pointer-events="visible" data-name="pess4">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-134" rx="63.07" ry="29.33" style=""/>
+<text text-anchor="middle" x="538.69" y="-138.2" font-family="Times,serif" font-size="14.00" style="">锁可长期持有</text>
+<text text-anchor="middle" x="538.69" y="-121.4" font-family="Times,serif" font-size="14.00" style="">异常时会被清理</text>
+</g>
+<!-- opt4&#45;&gt;pess4 -->
+<g id="edge10" class="edge" data-name="opt4-&gt;pess4">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M412.95,-134C429.96,-134 447.61,-134 464.09,-134" style=""/>
+<polygon fill="black" stroke="black" points="463.78,-137.5 473.78,-134 463.78,-130.5 463.78,-137.5" style=""/>
+</g>
+<!-- pess5 -->
+<g id="node18" class="node" pointer-events="visible" data-name="pess5">
+
+<ellipse fill="none" stroke="black" cx="538.69" cy="-57" rx="48.37" ry="29.33" style=""/>
+<text text-anchor="middle" x="538.69" y="-61.2" font-family="Times,serif" font-size="14.00" style="">大小受限</text>
+<text text-anchor="middle" x="538.69" y="-44.4" font-family="Times,serif" font-size="14.00" style="">都放在内存</text>
+</g>
+<!-- opt5&#45;&gt;pess5 -->
+<g id="edge12" class="edge" data-name="opt5-&gt;pess5">
+
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M409.88,-57C432.84,-57 457.19,-57 478.4,-57" style=""/>
+<polygon fill="black" stroke="black" points="478.32,-60.5 488.32,-57 478.32,-53.5 478.32,-60.5" style=""/>
+</g>
+</g>
+</svg>

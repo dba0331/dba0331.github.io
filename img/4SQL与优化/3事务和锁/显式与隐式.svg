@@ -1,0 +1,298 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="698pt" height="718pt" viewBox="0.00 0.00 698.12 717.73">
+<g id="graph0" class="graph" transform="translate(4,713.72998046875) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-713.73 694.12,-713.73 694.12,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_txnmode1">
+
+<polygon fill="none" stroke="black" points="90,-447.26 90,-570.89 256,-570.89 256,-447.26 90,-447.26" style=""/>
+<text text-anchor="middle" x="173" y="-554.29" font-family="Times,serif" font-size="14.00" style="">tidb_txn_mode</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_txnmode2">
+
+<polygon fill="none" stroke="black" points="455,-447.26 455,-570.89 621,-570.89 621,-447.26 455,-447.26" style=""/>
+<text text-anchor="middle" x="538" y="-554.29" font-family="Times,serif" font-size="14.00" style="">tidb_txn_mode</text>
+</g>
+<g id="clust7" class="cluster" data-name="cluster_isolation">
+
+<polygon fill="none" stroke="black" points="8,-80 8,-252.8 278,-252.8 278,-80 8,-80" style=""/>
+<text text-anchor="middle" x="143" y="-236.2" font-family="Times,serif" font-size="14.00" style="">隔离级别</text>
+</g>
+<g id="clust10" class="cluster" data-name="cluster_impltune">
+
+<polygon fill="none" stroke="black" points="349,-8 349,-269.6 567,-269.6 567,-8 349,-8" style=""/>
+<text text-anchor="middle" x="458" y="-253" font-family="Times,serif" font-size="14.00" style="">隐式的优化</text>
+<text text-anchor="middle" x="458" y="-236.2" font-family="Times,serif" font-size="14.00" style="">tidb参数pessimistic-auto-commit</text>
+</g>
+<!-- txn_op1 -->
+<g id="node1" class="node" pointer-events="visible" data-name="txn_op1">
+
+<ellipse fill="none" stroke="black" cx="137" cy="-496.68" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="137" y="-500.88" font-family="Times,serif" font-size="14.00" style="">乐观</text>
+<text text-anchor="middle" x="137" y="-484.08" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- DML不检查冲突\n(commit时检查) -->
+<g id="node5" class="node" pointer-events="visible" data-name="DML不检查冲突\n(commit时检查)">
+
+<ellipse fill="none" stroke="black" cx="94" cy="-401.85" rx="70.37" ry="29.33" style=""/>
+<text text-anchor="middle" x="94" y="-406.05" font-family="Times,serif" font-size="14.00" style="">DML不检查冲突</text>
+<text text-anchor="middle" x="94" y="-389.25" font-family="Times,serif" font-size="14.00" style="">(commit时检查)</text>
+</g>
+<!-- txn_op1&#45;&gt;DML不检查冲突\n(commit时检查) -->
+<g id="edge4" class="edge" data-name="txn_op1-&gt;DML不检查冲突\n(commit时检查)">
+
+<path fill="none" stroke="black" d="M125.25,-470.31C121.12,-461.4 116.39,-451.18 111.87,-441.43" style=""/>
+<polygon fill="black" stroke="black" points="115.11,-440.1 107.73,-432.5 108.76,-443.04 115.11,-440.1" style=""/>
+</g>
+<!-- txn_pe1 -->
+<g id="node2" class="node" pointer-events="visible" data-name="txn_pe1">
+
+<ellipse fill="none" stroke="black" cx="209" cy="-496.68" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="209" y="-500.88" font-family="Times,serif" font-size="14.00" style="">悲观</text>
+<text text-anchor="middle" x="209" y="-484.08" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- DML时检查冲突 -->
+<g id="node7" class="node" pointer-events="visible" data-name="DML时检查冲突">
+
+<ellipse fill="none" stroke="black" cx="251" cy="-401.85" rx="68.92" ry="18" style=""/>
+<text text-anchor="middle" x="251" y="-397.65" font-family="Times,serif" font-size="14.00" style="">DML时检查冲突</text>
+</g>
+<!-- txn_pe1&#45;&gt;DML时检查冲突 -->
+<g id="edge6" class="edge" data-name="txn_pe1-&gt;DML时检查冲突">
+
+<path fill="none" stroke="black" d="M220.7,-469.82C226.26,-457.54 232.9,-442.85 238.55,-430.36" style=""/>
+<polygon fill="black" stroke="black" points="241.65,-432 242.58,-421.45 235.27,-429.12 241.65,-432" style=""/>
+</g>
+<!-- Begin事务 -->
+<g id="node3" class="node" pointer-events="visible" data-name="Begin事务">
+
+<ellipse fill="none" stroke="black" cx="173" cy="-691.73" rx="48.68" ry="18" style=""/>
+<text text-anchor="middle" x="173" y="-687.53" font-family="Times,serif" font-size="14.00" style="">Begin事务</text>
+</g>
+<!-- 显式\n事务 -->
+<g id="node4" class="node" pointer-events="visible" data-name="显式\n事务">
+
+<ellipse fill="none" stroke="black" cx="173" cy="-608.31" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="173" y="-612.51" font-family="Times,serif" font-size="14.00" style="">显式</text>
+<text text-anchor="middle" x="173" y="-595.71" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- Begin事务&#45;&gt;显式\n事务 -->
+<g id="edge1" class="edge" data-name="Begin事务-&gt;显式\n事务">
+
+<path fill="none" stroke="black" d="M173,-673.46C173,-666.4 173,-657.91 173,-649.46" style=""/>
+<polygon fill="black" stroke="black" points="176.5,-649.6 173,-639.6 169.5,-649.6 176.5,-649.6" style=""/>
+</g>
+<!-- 显式\n事务&#45;&gt;txn_op1 -->
+<g id="edge2" class="edge" data-name="显式\n事务-&gt;txn_op1">
+
+<path fill="none" stroke="black" d="M164.1,-580.21C159.69,-566.77 154.28,-550.31 149.47,-535.64" style=""/>
+<polygon fill="black" stroke="black" points="152.84,-534.69 146.39,-526.28 146.19,-536.88 152.84,-534.69" style=""/>
+</g>
+<!-- 显式\n事务&#45;&gt;txn_pe1 -->
+<g id="edge3" class="edge" data-name="显式\n事务-&gt;txn_pe1">
+
+<path fill="none" stroke="black" d="M181.9,-580.21C186.31,-566.77 191.72,-550.31 196.53,-535.64" style=""/>
+<polygon fill="black" stroke="black" points="199.81,-536.88 199.61,-526.28 193.16,-534.69 199.81,-536.88" style=""/>
+</g>
+<!-- expl_commit -->
+<g id="node6" class="node" pointer-events="visible" data-name="expl_commit">
+
+<ellipse fill="none" stroke="black" cx="205" cy="-307.02" rx="73.4" ry="29.33" style=""/>
+<text text-anchor="middle" x="205" y="-311.22" font-family="Times,serif" font-size="14.00" style="">显式commit</text>
+<text text-anchor="middle" x="205" y="-294.42" font-family="Times,serif" font-size="14.00" style="">autocommit无效</text>
+</g>
+<!-- DML不检查冲突\n(commit时检查)&#45;&gt;expl_commit -->
+<g id="edge5" class="edge" data-name="DML不检查冲突\n(commit时检查)-&gt;expl_commit">
+
+<path fill="none" stroke="black" d="M124.63,-375.23C137.26,-364.67 152.06,-352.29 165.5,-341.05" style=""/>
+<polygon fill="black" stroke="black" points="167.5,-343.94 172.93,-334.84 163.01,-338.57 167.5,-343.94" style=""/>
+</g>
+<!-- opmode -->
+<g id="node16" class="node" pointer-events="visible" data-name="opmode">
+
+<ellipse fill="none" stroke="black" cx="205" cy="-190" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="205" y="-185.8" font-family="Times,serif" font-size="14.00" style="">乐观模式</text>
+</g>
+<!-- expl_commit&#45;&gt;opmode -->
+<!-- DML时检查冲突&#45;&gt;expl_commit -->
+<g id="edge7" class="edge" data-name="DML时检查冲突-&gt;expl_commit">
+
+<path fill="none" stroke="black" d="M242.56,-383.82C237.36,-373.33 230.48,-359.44 224.03,-346.41" style=""/>
+<polygon fill="black" stroke="black" points="227.23,-345 219.66,-337.59 220.96,-348.1 227.23,-345" style=""/>
+</g>
+<!-- txn_op2 -->
+<g id="node8" class="node" pointer-events="visible" data-name="txn_op2">
+
+<ellipse fill="none" stroke="black" cx="502" cy="-496.68" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="502" y="-500.88" font-family="Times,serif" font-size="14.00" style="">乐观</text>
+<text text-anchor="middle" x="502" y="-484.08" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- DML不检查冲突\n(commit时检查). -->
+<g id="node12" class="node" pointer-events="visible" data-name="DML不检查冲突\n(commit时检查).">
+
+<ellipse fill="none" stroke="black" cx="457" cy="-401.85" rx="72.8" ry="29.33" style=""/>
+<text text-anchor="middle" x="457" y="-406.05" font-family="Times,serif" font-size="14.00" style="">DML不检查冲突</text>
+<text text-anchor="middle" x="457" y="-389.25" font-family="Times,serif" font-size="14.00" style="">(commit时检查).</text>
+</g>
+<!-- txn_op2&#45;&gt;DML不检查冲突\n(commit时检查). -->
+<g id="edge11" class="edge" data-name="txn_op2-&gt;DML不检查冲突\n(commit时检查).">
+
+<path fill="none" stroke="black" d="M489.7,-470.31C485.38,-461.4 480.43,-451.18 475.7,-441.43" style=""/>
+<polygon fill="black" stroke="black" points="478.88,-439.96 471.37,-432.49 472.58,-443.01 478.88,-439.96" style=""/>
+</g>
+<!-- txn_pe2 -->
+<g id="node9" class="node" pointer-events="visible" data-name="txn_pe2">
+
+<ellipse fill="none" stroke="black" cx="574" cy="-496.68" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="574" y="-500.88" font-family="Times,serif" font-size="14.00" style="">悲观</text>
+<text text-anchor="middle" x="574" y="-484.08" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- DML时检查冲突. -->
+<g id="node15" class="node" pointer-events="visible" data-name="DML时检查冲突.">
+
+<ellipse fill="none" stroke="black" cx="619" cy="-401.85" rx="71.25" ry="18" style=""/>
+<text text-anchor="middle" x="619" y="-397.65" font-family="Times,serif" font-size="14.00" style="">DML时检查冲突.</text>
+</g>
+<!-- txn_pe2&#45;&gt;DML时检查冲突. -->
+<g id="edge14" class="edge" data-name="txn_pe2-&gt;DML时检查冲突.">
+
+<path fill="none" stroke="black" d="M586.3,-470.31C592.35,-457.81 599.67,-442.73 605.84,-430" style=""/>
+<polygon fill="black" stroke="black" points="608.83,-431.86 610.04,-421.33 602.53,-428.8 608.83,-431.86" style=""/>
+</g>
+<!-- 直接DML -->
+<g id="node10" class="node" pointer-events="visible" data-name="直接DML">
+
+<ellipse fill="none" stroke="black" cx="538" cy="-691.73" rx="46.96" ry="18" style=""/>
+<text text-anchor="middle" x="538" y="-687.53" font-family="Times,serif" font-size="14.00" style="">直接DML</text>
+</g>
+<!-- 隐式\n事务 -->
+<g id="node11" class="node" pointer-events="visible" data-name="隐式\n事务">
+
+<ellipse fill="none" stroke="black" cx="538" cy="-608.31" rx="27" ry="29.33" style=""/>
+<text text-anchor="middle" x="538" y="-612.51" font-family="Times,serif" font-size="14.00" style="">隐式</text>
+<text text-anchor="middle" x="538" y="-595.71" font-family="Times,serif" font-size="14.00" style="">事务</text>
+</g>
+<!-- 直接DML&#45;&gt;隐式\n事务 -->
+<g id="edge8" class="edge" data-name="直接DML-&gt;隐式\n事务">
+
+<path fill="none" stroke="black" d="M538,-673.46C538,-666.4 538,-657.91 538,-649.46" style=""/>
+<polygon fill="black" stroke="black" points="541.5,-649.6 538,-639.6 534.5,-649.6 541.5,-649.6" style=""/>
+</g>
+<!-- 隐式\n事务&#45;&gt;txn_op2 -->
+<g id="edge9" class="edge" data-name="隐式\n事务-&gt;txn_op2">
+
+<path fill="none" stroke="black" d="M529.1,-580.21C524.69,-566.77 519.28,-550.31 514.47,-535.64" style=""/>
+<polygon fill="black" stroke="black" points="517.84,-534.69 511.39,-526.28 511.19,-536.88 517.84,-534.69" style=""/>
+</g>
+<!-- 隐式\n事务&#45;&gt;txn_pe2 -->
+<g id="edge10" class="edge" data-name="隐式\n事务-&gt;txn_pe2">
+
+<path fill="none" stroke="black" d="M546.9,-580.21C551.31,-566.77 556.72,-550.31 561.53,-535.64" style=""/>
+<polygon fill="black" stroke="black" points="564.81,-536.88 564.61,-526.28 558.16,-534.69 564.81,-536.88" style=""/>
+</g>
+<!-- autocommit=1\n隐式commit -->
+<g id="node13" class="node" pointer-events="visible" data-name="autocommit=1\n隐式commit">
+
+<ellipse fill="none" stroke="black" cx="458" cy="-307.02" rx="69.27" ry="29.33" style=""/>
+<text text-anchor="middle" x="458" y="-311.22" font-family="Times,serif" font-size="14.00" style="">autocommit=1</text>
+<text text-anchor="middle" x="458" y="-294.42" font-family="Times,serif" font-size="14.00" style="">隐式commit</text>
+</g>
+<!-- DML不检查冲突\n(commit时检查).&#45;&gt;autocommit=1\n隐式commit -->
+<g id="edge12" class="edge" data-name="DML不检查冲突\n(commit时检查).-&gt;autocommit=1\n隐式commit">
+
+<path fill="none" stroke="black" d="M457.31,-372.24C457.39,-364.56 457.48,-356.12 457.57,-347.95" style=""/>
+<polygon fill="black" stroke="black" points="461.07,-348.24 457.67,-338.2 454.07,-348.17 461.07,-348.24" style=""/>
+</g>
+<!-- autocommit=0\n显式commit. -->
+<g id="node14" class="node" pointer-events="visible" data-name="autocommit=0\n显式commit.">
+
+<ellipse fill="none" stroke="black" cx="617" cy="-307.02" rx="69.27" ry="29.33" style=""/>
+<text text-anchor="middle" x="617" y="-311.22" font-family="Times,serif" font-size="14.00" style="">autocommit=0</text>
+<text text-anchor="middle" x="617" y="-294.42" font-family="Times,serif" font-size="14.00" style="">显式commit.</text>
+</g>
+<!-- DML不检查冲突\n(commit时检查).&#45;&gt;autocommit=0\n显式commit. -->
+<g id="edge13" class="edge" data-name="DML不检查冲突\n(commit时检查).-&gt;autocommit=0\n显式commit.">
+
+<path fill="none" stroke="black" d="M497.79,-377.18C518.82,-364.98 544.67,-349.98 566.91,-337.08" style=""/>
+<polygon fill="black" stroke="black" points="568.64,-340.12 575.53,-332.08 565.12,-334.07 568.64,-340.12" style=""/>
+</g>
+<!-- 隐式&amp;autocommit=1 -->
+<g id="node20" class="node" pointer-events="visible" data-name="隐式&amp;autocommit=1">
+
+<ellipse fill="none" stroke="black" cx="458" cy="-190" rx="89.38" ry="18" style=""/>
+<text text-anchor="middle" x="458" y="-185.8" font-family="Times,serif" font-size="14.00" style="">隐式&amp;autocommit=1</text>
+</g>
+<!-- autocommit=1\n隐式commit&#45;&gt;隐式&amp;autocommit=1 -->
+<!-- DML时检查冲突.&#45;&gt;autocommit=1\n隐式commit -->
+<g id="edge15" class="edge" data-name="DML时检查冲突.-&gt;autocommit=1\n隐式commit">
+
+<path fill="none" stroke="black" d="M591.32,-384.89C568.5,-371.73 535.54,-352.73 508.1,-336.9" style=""/>
+<polygon fill="black" stroke="black" points="510,-333.96 499.58,-331.99 506.5,-340.02 510,-333.96" style=""/>
+</g>
+<!-- DML时检查冲突.&#45;&gt;autocommit=0\n显式commit. -->
+<g id="edge16" class="edge" data-name="DML时检查冲突.-&gt;autocommit=0\n显式commit.">
+
+<path fill="none" stroke="black" d="M618.62,-383.39C618.41,-373.44 618.13,-360.53 617.87,-348.22" style=""/>
+<polygon fill="black" stroke="black" points="621.37,-348.15 617.65,-338.22 614.37,-348.3 621.37,-348.15" style=""/>
+</g>
+<!-- 隔离级别RR -->
+<g id="node18" class="node" pointer-events="visible" data-name="隔离级别RR">
+
+<ellipse fill="none" stroke="black" cx="205" cy="-118" rx="52.78" ry="18" style=""/>
+<text text-anchor="middle" x="205" y="-113.8" font-family="Times,serif" font-size="14.00" style="">隔离级别RR</text>
+</g>
+<!-- opmode&#45;&gt;隔离级别RR -->
+<g id="edge18" class="edge" data-name="opmode-&gt;隔离级别RR">
+
+<path fill="none" stroke="black" d="M205,-171.7C205,-164.41 205,-155.73 205,-147.54" style=""/>
+<polygon fill="black" stroke="black" points="208.5,-147.62 205,-137.62 201.5,-147.62 208.5,-147.62" style=""/>
+</g>
+<!-- pemode -->
+<g id="node17" class="node" pointer-events="visible" data-name="pemode">
+
+<ellipse fill="none" stroke="black" cx="94" cy="-190" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="94" y="-185.8" font-family="Times,serif" font-size="14.00" style="">悲观模式</text>
+</g>
+<!-- pemode&#45;&gt;隔离级别RR -->
+<g id="edge19" class="edge" data-name="pemode-&gt;隔离级别RR">
+
+<path fill="none" stroke="black" d="M116.46,-174.83C132.18,-164.92 153.45,-151.51 171.2,-140.31" style=""/>
+<polygon fill="black" stroke="black" points="172.77,-143.46 179.36,-135.17 169.04,-137.54 172.77,-143.46" style=""/>
+</g>
+<!-- 隔离级别RC -->
+<g id="node19" class="node" pointer-events="visible" data-name="隔离级别RC">
+
+<ellipse fill="none" stroke="black" cx="81" cy="-118" rx="52.78" ry="18" style=""/>
+<text text-anchor="middle" x="81" y="-113.8" font-family="Times,serif" font-size="14.00" style="">隔离级别RC</text>
+</g>
+<!-- pemode&#45;&gt;隔离级别RC -->
+<g id="edge20" class="edge" data-name="pemode-&gt;隔离级别RC">
+
+<path fill="none" stroke="black" d="M90.79,-171.7C89.42,-164.32 87.78,-155.52 86.25,-147.25" style=""/>
+<polygon fill="black" stroke="black" points="89.72,-146.79 84.45,-137.59 82.84,-148.06 89.72,-146.79" style=""/>
+</g>
+<!-- 先用乐观模式提交 -->
+<g id="node21" class="node" pointer-events="visible" data-name="先用乐观模式提交">
+
+<ellipse fill="none" stroke="black" cx="458" cy="-118" rx="68.96" ry="18" style=""/>
+<text text-anchor="middle" x="458" y="-113.8" font-family="Times,serif" font-size="14.00" style="">先用乐观模式提交</text>
+</g>
+<!-- 隐式&amp;autocommit=1&#45;&gt;先用乐观模式提交 -->
+<g id="edge22" class="edge" data-name="隐式&amp;autocommit=1-&gt;先用乐观模式提交">
+
+<path fill="none" stroke="black" d="M458,-171.7C458,-164.41 458,-155.73 458,-147.54" style=""/>
+<polygon fill="black" stroke="black" points="461.5,-147.62 458,-137.62 454.5,-147.62 461.5,-147.62" style=""/>
+</g>
+<!-- 失败后用悲观事务重试 -->
+<g id="node22" class="node" pointer-events="visible" data-name="失败后用悲观事务重试">
+
+<ellipse fill="none" stroke="black" cx="458" cy="-46" rx="83.43" ry="18" style=""/>
+<text text-anchor="middle" x="458" y="-41.8" font-family="Times,serif" font-size="14.00" style="">失败后用悲观事务重试</text>
+</g>
+<!-- 先用乐观模式提交&#45;&gt;失败后用悲观事务重试 -->
+<g id="edge23" class="edge" data-name="先用乐观模式提交-&gt;失败后用悲观事务重试">
+
+<path fill="none" stroke="black" d="M458,-99.7C458,-92.41 458,-83.73 458,-75.54" style=""/>
+<polygon fill="black" stroke="black" points="461.5,-75.62 458,-65.62 454.5,-75.62 461.5,-75.62" style=""/>
+</g>
+</g>
+</svg>

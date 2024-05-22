@@ -1,0 +1,444 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="863pt" height="728pt" viewBox="0.00 0.00 863.49 727.63">
+<g id="graph0" class="graph" transform="translate(4,723.6300048828125) scale(1)" data-name="demo">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-723.63 859.49,-723.63 859.49,4 -4,4" style=""/>
+<g id="clust3" class="cluster" data-name="cluster_jointype">
+
+<polygon fill="none" stroke="black" points="282.49,-276 282.49,-352 693.49,-352 693.49,-276 282.49,-276" style=""/>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_tablesize">
+
+</g>
+<g id="clust5" class="cluster" data-name="cluster_fix1">
+
+</g>
+<g id="clust10" class="cluster" data-name="cluster_exists">
+
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="624.49,-454.83 624.49,-531.63 847.49,-531.63 847.49,-454.83 624.49,-454.83" style=""/>
+<text text-anchor="middle" x="735.99" y="-515.03" font-family="Times,serif" font-size="14.00" style="">exists子句</text>
+</g>
+<!-- 统计信息不准 -->
+<g id="node1" class="node" pointer-events="visible" data-name="统计信息不准">
+
+<ellipse fill="none" stroke="black" cx="54.49" cy="-162" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="54.49" y="-157.8" font-family="Times,serif" font-size="14.00" style="">统计信息不准</text>
+</g>
+<!-- sql计划差 -->
+<g id="node2" class="node" pointer-events="visible" data-name="sql计划差">
+
+<ellipse fill="none" stroke="black" cx="141.49" cy="-90" rx="44.07" ry="18" style=""/>
+<text text-anchor="middle" x="141.49" y="-85.8" font-family="Times,serif" font-size="14.00" style="">sql计划差</text>
+</g>
+<!-- 统计信息不准&#45;&gt;sql计划差 -->
+<g id="edge1" class="edge" data-name="统计信息不准-&gt;sql计划差">
+
+<path fill="none" stroke="black" d="M74.23,-145.12C85.77,-135.83 100.53,-123.96 113.28,-113.7" style=""/>
+<polygon fill="black" stroke="black" points="115.35,-116.52 120.95,-107.53 110.96,-111.07 115.35,-116.52" style=""/>
+</g>
+<!-- sql执行慢 -->
+<g id="node3" class="node" pointer-events="visible" data-name="sql执行慢">
+
+<ellipse fill="lightpink" stroke="black" cx="379.49" cy="-18" rx="44.07" ry="18" style=""/>
+<text text-anchor="middle" x="379.49" y="-13.8" font-family="Times,serif" font-size="14.00" style="">sql执行慢</text>
+</g>
+<!-- sql计划差&#45;&gt;sql执行慢 -->
+<g id="edge2" class="edge" data-name="sql计划差-&gt;sql执行慢">
+
+<path fill="none" stroke="black" d="M176.61,-78.67C218.3,-66.41 287.94,-45.93 333.79,-32.44" style=""/>
+<polygon fill="black" stroke="black" points="334.56,-35.86 343.17,-29.68 332.59,-29.15 334.56,-35.86" style=""/>
+</g>
+<!-- tikv配置不足 -->
+<g id="node4" class="node" pointer-events="visible" data-name="tikv配置不足">
+
+<ellipse fill="none" stroke="black" cx="202.49" cy="-234" rx="55.06" ry="18" style=""/>
+<text text-anchor="middle" x="202.49" y="-229.8" font-family="Times,serif" font-size="14.00" style="">tikv配置不足</text>
+</g>
+<!-- apply pool cpu高 -->
+<g id="node5" class="node" pointer-events="visible" data-name="apply pool cpu高">
+
+<ellipse fill="none" stroke="black" cx="202.49" cy="-162" rx="75.85" ry="18" style=""/>
+<text text-anchor="middle" x="202.49" y="-157.8" font-family="Times,serif" font-size="14.00" style="">apply pool cpu高</text>
+</g>
+<!-- tikv配置不足&#45;&gt;apply pool cpu高 -->
+<g id="edge3" class="edge" data-name="tikv配置不足-&gt;apply pool cpu高">
+
+<path fill="none" stroke="black" d="M202.49,-215.7C202.49,-208.41 202.49,-199.73 202.49,-191.54" style=""/>
+<polygon fill="black" stroke="black" points="205.99,-191.62 202.49,-181.62 198.99,-191.62 205.99,-191.62" style=""/>
+</g>
+<!-- grpc用时高 -->
+<g id="node6" class="node" pointer-events="visible" data-name="grpc用时高">
+
+<ellipse fill="none" stroke="black" cx="340.49" cy="-90" rx="49.85" ry="18" style=""/>
+<text text-anchor="middle" x="340.49" y="-85.8" font-family="Times,serif" font-size="14.00" style="">grpc用时高</text>
+</g>
+<!-- apply pool cpu高&#45;&gt;grpc用时高 -->
+<g id="edge4" class="edge" data-name="apply pool cpu高-&gt;grpc用时高">
+
+<path fill="none" stroke="black" d="M233.46,-145.29C253.81,-134.97 280.58,-121.39 302.26,-110.39" style=""/>
+<polygon fill="black" stroke="black" points="303.76,-113.56 311.09,-105.91 300.59,-107.32 303.76,-113.56" style=""/>
+</g>
+<!-- grpc用时高&#45;&gt;sql执行慢 -->
+<g id="edge5" class="edge" data-name="grpc用时高-&gt;sql执行慢">
+
+<path fill="none" stroke="black" d="M349.93,-72.05C354.34,-64.14 359.69,-54.54 364.62,-45.69" style=""/>
+<polygon fill="black" stroke="black" points="367.59,-47.55 369.4,-37.11 361.48,-44.14 367.59,-47.55" style=""/>
+</g>
+<!-- 大表全表扫描 -->
+<g id="node7" class="node" pointer-events="visible" data-name="大表全表扫描">
+
+<ellipse fill="none" stroke="black" cx="349.49" cy="-234" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="349.49" y="-229.8" font-family="Times,serif" font-size="14.00" style="">大表全表扫描</text>
+</g>
+<!-- 大表全表扫描&#45;&gt;sql执行慢 -->
+<g id="edge15" class="edge" data-name="大表全表扫描-&gt;sql执行慢">
+
+<path fill="none" stroke="black" d="M370.79,-217.11C381.6,-207.68 393.65,-194.7 399.49,-180 417.21,-135.39 408.11,-119.22 399.49,-72 397.92,-63.35 395,-54.28 391.88,-46.14" style=""/>
+<polygon fill="black" stroke="black" points="395.21,-45.05 388.17,-37.14 388.74,-47.72 395.21,-45.05" style=""/>
+</g>
+<!-- 网络延迟高 -->
+<g id="node8" class="node" pointer-events="visible" data-name="网络延迟高">
+
+<ellipse fill="none" stroke="black" cx="343.49" cy="-162" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="343.49" y="-157.8" font-family="Times,serif" font-size="14.00" style="">网络延迟高</text>
+</g>
+<!-- 大表全表扫描&#45;&gt;网络延迟高 -->
+<g id="edge6" class="edge" data-name="大表全表扫描-&gt;网络延迟高">
+
+<path fill="none" stroke="black" d="M348.01,-215.7C347.38,-208.41 346.64,-199.73 345.94,-191.54" style=""/>
+<polygon fill="black" stroke="black" points="349.43,-191.28 345.09,-181.61 342.45,-191.87 349.43,-191.28" style=""/>
+</g>
+<!-- 网络延迟高&#45;&gt;grpc用时高 -->
+<g id="edge7" class="edge" data-name="网络延迟高-&gt;grpc用时高">
+
+<path fill="none" stroke="black" d="M342.75,-143.7C342.44,-136.41 342.07,-127.73 341.72,-119.54" style=""/>
+<polygon fill="black" stroke="black" points="345.22,-119.46 341.29,-109.62 338.22,-119.76 345.22,-119.46" style=""/>
+</g>
+<!-- sql计划 -->
+<g id="node9" class="node" pointer-events="visible" data-name="sql计划">
+
+<ellipse fill="none" stroke="black" cx="419.49" cy="-701.63" rx="36.58" ry="18" style=""/>
+<text text-anchor="middle" x="419.49" y="-697.43" font-family="Times,serif" font-size="14.00" style="">sql计划</text>
+</g>
+<!-- 优化器已知不足 -->
+<g id="node10" class="node" pointer-events="visible" data-name="优化器已知不足">
+
+<ellipse fill="none" stroke="black" cx="329.49" cy="-629.63" rx="61.97" ry="18" style=""/>
+<text text-anchor="middle" x="329.49" y="-625.43" font-family="Times,serif" font-size="14.00" style="">优化器已知不足</text>
+</g>
+<!-- sql计划&#45;&gt;优化器已知不足 -->
+<g id="edge8" class="edge" data-name="sql计划-&gt;优化器已知不足">
+
+<path fill="none" stroke="black" d="M400.41,-685.79C388.5,-676.53 372.92,-664.41 359.4,-653.89" style=""/>
+<polygon fill="black" stroke="black" points="361.67,-651.23 351.63,-647.85 357.38,-656.75 361.67,-651.23" style=""/>
+</g>
+<!-- 表关联 -->
+<g id="node14" class="node" pointer-events="visible" data-name="表关联">
+
+<ellipse fill="none" stroke="black" cx="414.49" cy="-480.83" rx="32.53" ry="18" style=""/>
+<text text-anchor="middle" x="414.49" y="-476.63" font-family="Times,serif" font-size="14.00" style="">表关联</text>
+</g>
+<!-- sql计划&#45;&gt;表关联 -->
+<g id="edge12" class="edge" data-name="sql计划-&gt;表关联">
+
+<path fill="none" stroke="black" d="M419.1,-683.46C418.24,-646.01 416.2,-556.64 415.15,-510.49" style=""/>
+<polygon fill="black" stroke="black" points="418.65,-510.65 414.92,-500.74 411.65,-510.81 418.65,-510.65" style=""/>
+</g>
+<!-- 指定hint -->
+<g id="node15" class="node" pointer-events="visible" data-name="指定hint">
+
+<ellipse fill="none" stroke="black" cx="495.49" cy="-629.63" rx="40.59" ry="18" style=""/>
+<text text-anchor="middle" x="495.49" y="-625.43" font-family="Times,serif" font-size="14.00" style="">指定hint</text>
+</g>
+<!-- sql计划&#45;&gt;指定hint -->
+<!-- 谓词条件不传播 -->
+<g id="node11" class="node" pointer-events="visible" data-name="谓词条件不传播">
+
+<ellipse fill="none" stroke="black" cx="329.49" cy="-557.63" rx="61.97" ry="18" style=""/>
+<text text-anchor="middle" x="329.49" y="-553.43" font-family="Times,serif" font-size="14.00" style="">谓词条件不传播</text>
+</g>
+<!-- 优化器已知不足&#45;&gt;谓词条件不传播 -->
+<g id="edge9" class="edge" data-name="优化器已知不足-&gt;谓词条件不传播">
+
+<path fill="none" stroke="black" d="M329.49,-611.33C329.49,-604.04 329.49,-595.36 329.49,-587.17" style=""/>
+<polygon fill="black" stroke="black" points="332.99,-587.25 329.49,-577.25 325.99,-587.25 332.99,-587.25" style=""/>
+</g>
+<!-- 高估内表条数 -->
+<g id="node12" class="node" pointer-events="visible" data-name="高估内表条数">
+
+<ellipse fill="none" stroke="black" cx="195.49" cy="-557.63" rx="54.49" ry="18" style=""/>
+<text text-anchor="middle" x="195.49" y="-553.43" font-family="Times,serif" font-size="14.00" style="">高估内表条数</text>
+</g>
+<!-- 优化器已知不足&#45;&gt;高估内表条数 -->
+<g id="edge10" class="edge" data-name="优化器已知不足-&gt;高估内表条数">
+
+<path fill="none" stroke="black" d="M300.42,-613.44C280.84,-603.21 254.81,-589.62 233.58,-578.53" style=""/>
+<polygon fill="black" stroke="black" points="235.42,-575.54 224.94,-574.01 232.18,-581.74 235.42,-575.54" style=""/>
+</g>
+<!-- HashJoin -->
+<g id="node13" class="node" pointer-events="visible" data-name="HashJoin">
+
+<ellipse fill="none" stroke="black" cx="349.49" cy="-314" rx="46.96" ry="18" style=""/>
+<text text-anchor="middle" x="349.49" y="-309.8" font-family="Times,serif" font-size="14.00" style="">HashJoin</text>
+</g>
+<!-- 高估内表条数&#45;&gt;HashJoin -->
+<g id="edge11" class="edge" data-name="高估内表条数-&gt;HashJoin">
+
+<path fill="none" stroke="black" d="M198.91,-539.2C203.52,-518.21 212.98,-482.34 228.49,-454.83 254.24,-409.16 296.39,-364.85 323.53,-338.75" style=""/>
+<polygon fill="black" stroke="black" points="325.82,-341.4 330.67,-331.98 321.01,-336.32 325.82,-341.4" style=""/>
+</g>
+<!-- HashJoin&#45;&gt;大表全表扫描 -->
+<g id="edge14" class="edge" data-name="HashJoin-&gt;大表全表扫描">
+
+<path fill="none" stroke="black" d="M349.49,-295.69C349.49,-286.3 349.49,-274.45 349.49,-263.71" style=""/>
+<polygon fill="black" stroke="black" points="352.99,-263.78 349.49,-253.78 345.99,-263.78 352.99,-263.78" style=""/>
+</g>
+<!-- 表关联&#45;&gt;HashJoin -->
+<g id="edge13" class="edge" data-name="表关联-&gt;HashJoin">
+
+<path fill="none" stroke="black" d="M395.39,-465.81C383.84,-456.21 369.94,-442.42 362.49,-426.83 349.93,-400.55 347.59,-366.97 347.83,-343.5" style=""/>
+<polygon fill="black" stroke="black" points="351.32,-343.84 348.1,-333.75 344.32,-343.64 351.32,-343.84" style=""/>
+</g>
+<!-- Apply标量子查询 -->
+<g id="node16" class="node" pointer-events="visible" data-name="Apply标量子查询">
+
+<ellipse fill="none" stroke="black" cx="485.49" cy="-314" rx="71.28" ry="18" style=""/>
+<text text-anchor="middle" x="485.49" y="-309.8" font-family="Times,serif" font-size="14.00" style="">Apply标量子查询</text>
+</g>
+<!-- 表关联&#45;&gt;Apply标量子查询 -->
+<g id="edge17" class="edge" data-name="表关联-&gt;Apply标量子查询">
+
+<path fill="none" stroke="black" d="M406.51,-463.11C396.81,-440.15 383.69,-398.28 400.49,-368 408.37,-353.81 421.8,-342.92 435.69,-334.81" style=""/>
+<polygon fill="black" stroke="black" points="437.32,-337.91 444.48,-330.1 434.01,-331.74 437.32,-337.91" style=""/>
+</g>
+<!-- IndexJoin -->
+<g id="node17" class="node" pointer-events="visible" data-name="IndexJoin">
+
+<ellipse fill="none" stroke="black" cx="624.49" cy="-314" rx="49.24" ry="18" style=""/>
+<text text-anchor="middle" x="624.49" y="-309.8" font-family="Times,serif" font-size="14.00" style="">IndexJoin</text>
+</g>
+<!-- 表关联&#45;&gt;IndexJoin -->
+<g id="edge18" class="edge" data-name="表关联-&gt;IndexJoin">
+
+<path fill="none" stroke="black" d="M411.74,-462.58C408.87,-437.81 407.84,-392.46 433.49,-368 454.88,-347.61 537.64,-361.86 565.49,-352 575.7,-348.38 585.99,-342.77 595.06,-336.99" style=""/>
+<polygon fill="black" stroke="black" points="596.74,-340.08 603.09,-331.6 592.84,-334.27 596.74,-340.08" style=""/>
+</g>
+<!-- 不能IndexJoin -->
+<g id="node18" class="node" pointer-events="visible" data-name="不能IndexJoin">
+
+<ellipse fill="none" stroke="black" cx="506.49" cy="-397.42" rx="63.72" ry="18" style=""/>
+<text text-anchor="middle" x="506.49" y="-393.22" font-family="Times,serif" font-size="14.00" style="">不能IndexJoin</text>
+</g>
+<!-- 表关联&#45;&gt;不能IndexJoin -->
+<g id="edge19" class="edge" data-name="表关联-&gt;不能IndexJoin">
+
+<path fill="none" stroke="black" d="M430.94,-465.28C444.37,-453.39 463.63,-436.34 479.35,-422.44" style=""/>
+<polygon fill="black" stroke="black" points="481.35,-425.34 486.52,-416.09 476.71,-420.1 481.35,-425.34" style=""/>
+</g>
+<!-- 表关联的hint -->
+<g id="node25" class="node" pointer-events="visible" data-name="表关联的hint">
+
+<ellipse fill="none" stroke="black" cx="502.49" cy="-557.63" rx="55.06" ry="18" style=""/>
+<text text-anchor="middle" x="502.49" y="-553.43" font-family="Times,serif" font-size="14.00" style="">表关联的hint</text>
+</g>
+<!-- 指定hint&#45;&gt;表关联的hint -->
+<g id="edge24" class="edge" data-name="指定hint-&gt;表关联的hint">
+
+<path fill="none" stroke="black" d="M497.22,-611.33C497.95,-604.04 498.82,-595.36 499.64,-587.17" style=""/>
+<polygon fill="black" stroke="black" points="503.12,-587.54 500.63,-577.24 496.15,-586.84 503.12,-587.54" style=""/>
+</g>
+<!-- 外表记录多 -->
+<g id="node19" class="node" pointer-events="visible" data-name="外表记录多">
+
+<ellipse fill="none" stroke="black" cx="491.49" cy="-234" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="491.49" y="-229.8" font-family="Times,serif" font-size="14.00" style="">外表记录多</text>
+</g>
+<!-- Apply标量子查询&#45;&gt;外表记录多 -->
+<g id="edge33" class="edge" data-name="Apply标量子查询-&gt;外表记录多">
+
+<path fill="none" stroke="black" d="M486.82,-295.69C487.55,-286.3 488.46,-274.45 489.28,-263.71" style=""/>
+<polygon fill="black" stroke="black" points="492.77,-264.01 490.05,-253.77 485.79,-263.47 492.77,-264.01" style=""/>
+</g>
+<!-- 外表记录少 -->
+<g id="node20" class="node" pointer-events="visible" data-name="外表记录少">
+
+<ellipse fill="none" stroke="black" cx="605.49" cy="-234" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="605.49" y="-229.8" font-family="Times,serif" font-size="14.00" style="">外表记录少</text>
+</g>
+<!-- Apply标量子查询&#45;&gt;外表记录少 -->
+<g id="edge31" class="edge" data-name="Apply标量子查询-&gt;外表记录少">
+
+<path fill="none" stroke="black" d="M510.36,-296.84C528.45,-285.08 553.11,-269.05 572.79,-256.25" style=""/>
+<polygon fill="black" stroke="black" points="574.54,-259.29 581.02,-250.91 570.73,-253.42 574.54,-259.29" style=""/>
+</g>
+<!-- IndexJoin&#45;&gt;外表记录多 -->
+<g id="edge34" class="edge" data-name="IndexJoin-&gt;外表记录多">
+
+<path fill="none" stroke="black" d="M602.48,-297.53C591.67,-290.37 578.25,-282.12 565.49,-276 555.74,-271.32 552.22,-272.75 542.49,-268 535.62,-264.64 528.54,-260.53 521.93,-256.37" style=""/>
+<polygon fill="black" stroke="black" points="524.21,-253.68 513.93,-251.15 520.39,-259.55 524.21,-253.68" style=""/>
+</g>
+<!-- IndexJoin&#45;&gt;外表记录少 -->
+<g id="edge32" class="edge" data-name="IndexJoin-&gt;外表记录少">
+
+<path fill="none" stroke="black" d="M620.28,-295.69C617.96,-286.2 615.04,-274.19 612.4,-263.37" style=""/>
+<polygon fill="black" stroke="black" points="615.82,-262.62 610.06,-253.73 609.02,-264.28 615.82,-262.62" style=""/>
+</g>
+<!-- 不能IndexJoin&#45;&gt;HashJoin -->
+<g id="edge30" class="edge" data-name="不能IndexJoin-&gt;HashJoin">
+
+<path fill="none" stroke="black" d="M470.26,-382.23C450.7,-374.14 426.35,-363.37 405.49,-352 397.13,-347.44 388.39,-342.02 380.38,-336.75" style=""/>
+<polygon fill="black" stroke="black" points="382.54,-333.99 372.29,-331.32 378.64,-339.8 382.54,-333.99" style=""/>
+</g>
+<!-- 外表记录多&#45;&gt;sql执行慢 -->
+<g id="edge35" class="edge" data-name="外表记录多-&gt;sql执行慢">
+
+<path fill="none" stroke="black" d="M484.75,-216.07C472.6,-186.19 445.59,-122.5 416.49,-72 411.26,-62.91 404.92,-53.4 398.97,-44.98" style=""/>
+<polygon fill="black" stroke="black" points="401.84,-42.98 393.15,-36.92 396.17,-47.08 401.84,-42.98" style=""/>
+</g>
+<!-- sql执行正常 -->
+<g id="node21" class="node" pointer-events="visible" data-name="sql执行正常">
+
+<ellipse fill="greenyellow" stroke="black" cx="605.49" cy="-162" rx="51.05" ry="18" style=""/>
+<text text-anchor="middle" x="605.49" y="-157.8" font-family="Times,serif" font-size="14.00" style="">sql执行正常</text>
+</g>
+<!-- 外表记录少&#45;&gt;sql执行正常 -->
+<g id="edge20" class="edge" data-name="外表记录少-&gt;sql执行正常">
+
+<path fill="none" stroke="black" d="M605.49,-215.7C605.49,-208.41 605.49,-199.73 605.49,-191.54" style=""/>
+<polygon fill="black" stroke="black" points="608.99,-191.62 605.49,-181.62 601.99,-191.62 608.99,-191.62" style=""/>
+</g>
+<!-- sql调整 -->
+<g id="node22" class="node" pointer-events="visible" data-name="sql调整">
+
+<ellipse fill="none" stroke="black" cx="596.49" cy="-701.63" rx="36.58" ry="18" style=""/>
+<text text-anchor="middle" x="596.49" y="-697.43" font-family="Times,serif" font-size="14.00" style="">sql调整</text>
+</g>
+<!-- sql调整&#45;&gt;指定hint -->
+<g id="edge21" class="edge" data-name="sql调整-&gt;指定hint">
+
+<path fill="none" stroke="black" d="M576.05,-686.47C561.6,-676.45 541.98,-662.85 525.72,-651.58" style=""/>
+<polygon fill="black" stroke="black" points="528.05,-648.94 517.84,-646.12 524.07,-654.69 528.05,-648.94" style=""/>
+</g>
+<!-- 手工改写 -->
+<g id="node23" class="node" pointer-events="visible" data-name="手工改写">
+
+<ellipse fill="none" stroke="black" cx="696.49" cy="-629.63" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="696.49" y="-625.43" font-family="Times,serif" font-size="14.00" style="">手工改写</text>
+</g>
+<!-- sql调整&#45;&gt;手工改写 -->
+<g id="edge22" class="edge" data-name="sql调整-&gt;手工改写">
+
+<path fill="none" stroke="black" d="M616.73,-686.47C631.04,-676.45 650.47,-662.85 666.57,-651.58" style=""/>
+<polygon fill="black" stroke="black" points="668.17,-654.73 674.36,-646.13 664.16,-648.99 668.17,-654.73" style=""/>
+</g>
+<!-- 绑定plan -->
+<g id="node24" class="node" pointer-events="visible" data-name="绑定plan">
+
+<ellipse fill="none" stroke="black" cx="596.49" cy="-629.63" rx="42.3" ry="18" style=""/>
+<text text-anchor="middle" x="596.49" y="-625.43" font-family="Times,serif" font-size="14.00" style="">绑定plan</text>
+</g>
+<!-- sql调整&#45;&gt;绑定plan -->
+<g id="edge23" class="edge" data-name="sql调整-&gt;绑定plan">
+
+<path fill="none" stroke="black" d="M596.49,-683.33C596.49,-676.04 596.49,-667.36 596.49,-659.17" style=""/>
+<polygon fill="black" stroke="black" points="599.99,-659.25 596.49,-649.25 592.99,-659.25 599.99,-659.25" style=""/>
+</g>
+<!-- 提示inl_join -->
+<g id="node26" class="node" pointer-events="visible" data-name="提示inl_join">
+
+<ellipse fill="none" stroke="black" cx="520.49" cy="-480.83" rx="55.64" ry="18" style=""/>
+<text text-anchor="middle" x="520.49" y="-476.63" font-family="Times,serif" font-size="14.00" style="">提示inl_join</text>
+</g>
+<!-- 表关联的hint&#45;&gt;提示inl_join -->
+<g id="edge25" class="edge" data-name="表关联的hint-&gt;提示inl_join">
+
+<path fill="none" stroke="black" d="M506.67,-539.28C508.76,-530.6 511.34,-519.86 513.71,-510.03" style=""/>
+<polygon fill="black" stroke="black" points="517.05,-511.1 515.99,-500.56 510.24,-509.46 517.05,-511.1" style=""/>
+</g>
+<!-- 提示hash_join -->
+<g id="node27" class="node" pointer-events="visible" data-name="提示hash_join">
+
+<ellipse fill="none" stroke="black" cx="300.49" cy="-480.83" rx="63.15" ry="18" style=""/>
+<text text-anchor="middle" x="300.49" y="-476.63" font-family="Times,serif" font-size="14.00" style="">提示hash_join</text>
+</g>
+<!-- 表关联的hint&#45;&gt;提示hash_join -->
+<g id="edge28" class="edge" data-name="表关联的hint-&gt;提示hash_join">
+
+<path fill="none" stroke="black" d="M453.08,-549.29C422.69,-544.36 386.9,-537.68 372.49,-531.63 356.97,-525.11 341.4,-514.91 328.73,-505.44" style=""/>
+<polygon fill="black" stroke="black" points="330.9,-502.69 320.85,-499.33 326.61,-508.22 330.9,-502.69" style=""/>
+</g>
+<!-- 提示inl_join&#45;&gt;IndexJoin -->
+<g id="edge26" class="edge" data-name="提示inl_join-&gt;IndexJoin">
+
+<path fill="none" stroke="black" d="M542.7,-463.93C554.87,-454.31 569.46,-441.16 579.49,-426.83 597.56,-401.02 609.94,-366.89 617.08,-343.15" style=""/>
+<polygon fill="black" stroke="black" points="620.44,-344.13 619.83,-333.55 613.71,-342.2 620.44,-344.13" style=""/>
+</g>
+<!-- 提示inl_join&#45;&gt;不能IndexJoin -->
+<g id="edge27" class="edge" data-name="提示inl_join-&gt;不能IndexJoin">
+
+<path fill="none" stroke="black" d="M517.52,-462.57C515.74,-452.2 513.43,-438.77 511.39,-426.87" style=""/>
+<polygon fill="black" stroke="black" points="514.86,-426.41 509.71,-417.15 507.96,-427.6 514.86,-426.41" style=""/>
+</g>
+<!-- 提示hash_join&#45;&gt;HashJoin -->
+<g id="edge29" class="edge" data-name="提示hash_join-&gt;HashJoin">
+
+<path fill="none" stroke="black" d="M302.96,-462.45C306.4,-440.17 313.49,-400.54 324.49,-368 327.44,-359.29 331.42,-350.12 335.34,-341.91" style=""/>
+<polygon fill="black" stroke="black" points="338.39,-343.64 339.69,-333.13 332.11,-340.53 338.39,-343.64" style=""/>
+</g>
+<!-- 外表大时HashJoin -->
+<g id="node28" class="node" pointer-events="visible" data-name="外表大时HashJoin">
+
+<ellipse fill="none" stroke="black" cx="756.49" cy="-234" rx="75.9" ry="18" style=""/>
+<text text-anchor="middle" x="756.49" y="-229.8" font-family="Times,serif" font-size="14.00" style="">外表大时HashJoin</text>
+</g>
+<!-- 外表大时HashJoin&#45;&gt;sql执行正常 -->
+<g id="edge36" class="edge" data-name="外表大时HashJoin-&gt;sql执行正常">
+
+<path fill="none" stroke="black" d="M722.98,-217.46C700.2,-206.9 669.94,-192.88 645.83,-181.7" style=""/>
+<polygon fill="black" stroke="black" points="647.5,-178.62 636.96,-177.59 644.56,-184.97 647.5,-178.62" style=""/>
+</g>
+<!-- 外表是大表 -->
+<g id="node29" class="node" pointer-events="visible" data-name="外表是大表">
+
+<ellipse fill="none" stroke="black" cx="679.49" cy="-480.83" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="679.49" y="-476.63" font-family="Times,serif" font-size="14.00" style="">外表是大表</text>
+</g>
+<!-- 外表是大表&#45;&gt;HashJoin -->
+<g id="edge38" class="edge" data-name="外表是大表-&gt;HashJoin">
+
+<path fill="none" stroke="black" d="M670.12,-462.97C654.87,-437.37 622.06,-389.43 579.49,-368 510.13,-333.08 478.76,-377.74 405.49,-352 395.85,-348.61 386.25,-343.21 377.78,-337.56" style=""/>
+<polygon fill="black" stroke="black" points="379.85,-334.74 369.67,-331.8 375.8,-340.44 379.85,-334.74" style=""/>
+</g>
+<!-- 提示\nsemi_xxx -->
+<g id="node31" class="node" pointer-events="visible" data-name="提示\nsemi_xxx">
+
+<ellipse fill="none" stroke="black" cx="714.49" cy="-397.42" rx="49.62" ry="29.33" style=""/>
+<text text-anchor="middle" x="714.49" y="-401.62" font-family="Times,serif" font-size="14.00" style="">提示</text>
+<text text-anchor="middle" x="714.49" y="-384.82" font-family="Times,serif" font-size="14.00" style="">semi_xxx</text>
+</g>
+<!-- 外表是大表&#45;&gt;提示\nsemi_xxx -->
+<g id="edge39" class="edge" data-name="外表是大表-&gt;提示\nsemi_xxx">
+
+<path fill="none" stroke="black" d="M686.92,-462.57C690.17,-454.98 694.14,-445.75 698.04,-436.69" style=""/>
+<polygon fill="black" stroke="black" points="701.2,-438.19 701.94,-427.62 694.77,-435.42 701.2,-438.19" style=""/>
+</g>
+<!-- 外表是小表 -->
+<g id="node30" class="node" pointer-events="visible" data-name="外表是小表">
+
+<ellipse fill="none" stroke="black" cx="792.49" cy="-480.83" rx="47" ry="18" style=""/>
+<text text-anchor="middle" x="792.49" y="-476.63" font-family="Times,serif" font-size="14.00" style="">外表是小表</text>
+</g>
+<!-- 外表是小表&#45;&gt;IndexJoin -->
+<g id="edge37" class="edge" data-name="外表是小表-&gt;IndexJoin">
+
+<path fill="none" stroke="black" d="M794.56,-462.49C796.42,-438.42 796.04,-394.84 773.49,-368 751.16,-341.41 714.53,-328.16 683.18,-321.56" style=""/>
+<polygon fill="black" stroke="black" points="683.87,-318.12 673.39,-319.69 682.56,-325 683.87,-318.12" style=""/>
+</g>
+<!-- 提示\nsemi_xxx&#45;&gt;IndexJoin -->
+<g id="edge40" class="edge" data-name="提示\nsemi_xxx-&gt;IndexJoin">
+
+<path fill="none" stroke="black" d="M687.98,-372.43C676.24,-361.81 662.48,-349.36 650.77,-338.77" style=""/>
+<polygon fill="black" stroke="black" points="653.17,-336.23 643.41,-332.11 648.48,-341.42 653.17,-336.23" style=""/>
+</g>
+</g>
+</svg>

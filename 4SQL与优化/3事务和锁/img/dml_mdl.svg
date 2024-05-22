@@ -1,0 +1,73 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="482pt" height="267pt" viewBox="0.00 0.00 481.75 266.5">
+<g id="graph0" class="graph" transform="translate(4,262.5) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-262.5 477.75,-262.5 477.75,4 -4,4"/>
+<!-- D -->
+<g id="node4" class="node" pointer-events="visible" data-name="DML\n数据修改语句" data-comment="D">
+
+<ellipse fill="none" stroke="black" cx="83" cy="-157.5" rx="55.72" ry="29.33"/>
+<text text-anchor="middle" x="83" y="-161.7" font-family="Times,serif" font-size="14.00">DML</text>
+<text text-anchor="middle" x="83" y="-144.9" font-family="Times,serif" font-size="14.00">数据修改语句</text>
+</g>
+<!-- g -->
+<g id="node5" class="node" pointer-events="visible" data-name="MDL表锁\n防止事务过程中\n表结构被修改" data-comment="g">
+
+<ellipse fill="none" stroke="black" cx="286.29" cy="-157.5" rx="63.07" ry="41.09"/>
+<text text-anchor="middle" x="286.29" y="-170.1" font-family="Times,serif" font-size="14.00">MDL表锁</text>
+<text text-anchor="middle" x="286.29" y="-153.3" font-family="Times,serif" font-size="14.00">防止事务过程中</text>
+<text text-anchor="middle" x="286.29" y="-136.5" font-family="Times,serif" font-size="14.00">表结构被修改</text>
+</g><g id="node1" class="node" pointer-events="visible" data-name="DML" data-comment="g">
+
+<ellipse fill="none" stroke="black" cx="83" cy="-240.5" rx="32.49" ry="18"/>
+<text text-anchor="middle" x="83" y="-236.3" font-family="Times,serif" font-size="14.00">DML</text>
+</g>
+<!-- DML语句&#45;&gt;表 -->
+<g id="edge3" class="edge" data-name="DML\n数据修改语句-&gt;MDL表锁\n防止事务过程中\n表结构被修改" data-comment="DML语句-&gt;表">
+
+<path fill="none" stroke="black" d="M139,-157.5C161.41,-157.5 187.65,-157.5 211.67,-157.5"/>
+<polygon fill="black" stroke="black" points="211.38,-161 221.38,-157.5 211.38,-154 211.38,-161"/>
+<text text-anchor="middle" x="194.5" y="-161.7" font-family="Times,serif" font-size="14.00">产生</text>
+</g><g id="node2" class="node" pointer-events="visible" data-name="MDL" data-comment="DML语句-&gt;表">
+
+<ellipse fill="none" stroke="black" cx="286.29" cy="-240.5" rx="32.49" ry="18"/>
+<text text-anchor="middle" x="286.29" y="-236.3" font-family="Times,serif" font-size="14.00">MDL</text>
+</g>
+
+<!-- 表上多了MDL锁&#45;&gt; --><g id="node6" class="node" pointer-events="visible" data-name="DDL\n被阻塞" data-comment="表上多了MDL锁-&gt;">
+
+<ellipse fill="none" stroke="black" cx="440.16" cy="-157.5" rx="33.68" ry="29.33"/>
+<text text-anchor="middle" x="440.16" y="-161.7" font-family="Times,serif" font-size="14.00">DDL</text>
+<text text-anchor="middle" x="440.16" y="-144.9" font-family="Times,serif" font-size="14.00">被阻塞</text>
+</g>
+<!-- 表上多了MDL锁&#45;&gt;D -->
+<!-- MDL表锁\n防止事务过程中\n表结构被修改&#45;&gt;DDL\n被阻塞 -->
+<!-- MDL表锁\n防止事务过程中\n表结构被修改&#45;&gt;DDL\n被阻塞 -->
+<!-- MDL表锁\n防止事务过程中\n表结构被修改&#45;&gt;DDL\n被阻塞 --><g id="edge4" class="edge" data-name="MDL表锁\n防止事务过程中\n表结构被修改-&gt;DDL\n被阻塞">
+
+<path fill="none" stroke="black" d="M349.5,-157.5C364.73,-157.5 380.72,-157.5 394.92,-157.5"/>
+<polygon fill="black" stroke="black" points="394.85,-161 404.85,-157.5 394.85,-154 394.85,-161"/>
+<text text-anchor="middle" x="378.07" y="-161.7" font-family="Times,serif" font-size="14.00">导致</text>
+</g><g id="node3" class="node" pointer-events="visible" data-name="DDL" data-comment="MDL表锁\n防止事务过程中\n表结构被修改-&gt;DDL\n被阻塞">
+
+<ellipse fill="none" stroke="black" cx="440.16" cy="-240.5" rx="30.77" ry="18"/>
+<text text-anchor="middle" x="440.16" y="-236.3" font-family="Times,serif" font-size="14.00">DDL</text>
+</g>
+
+<!-- MDL表锁\n防止事务过程中\n表结构被修改&#45;&gt;DDL\n被阻塞 -->
+
+
+<!-- MDL表锁\n防止事务过程中\n表结构被修改&#45;&gt;DDL\n被阻塞 -->
+
+<!-- note -->
+
+<!-- note --><g id="node7" class="node" pointer-events="visible" data-name="note">
+
+<polygon fill="none" stroke="black" points="0,-0.5 0,-92.5 166,-92.5 166,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-75.9" font-family="Times,serif" font-size="14.00">DML语句会阻塞DDL</text>
+<text text-anchor="start" x="8" y="-59.1" font-family="Times,serif" font-size="14.00">频繁修改的表,DDL用时长</text>
+<text text-anchor="start" x="8" y="-42.3" font-family="Times,serif" font-size="14.00">DDL不阻塞事务和查询</text>
+<text text-anchor="start" x="8" y="-25.5" font-family="Times,serif" font-size="14.00">DDL不锁表</text>
+<text text-anchor="start" x="8" y="-8.7" font-family="Times,serif" font-size="14.00">DDL只会阻塞DDL</text>
+</g>
+</g>
+</svg>

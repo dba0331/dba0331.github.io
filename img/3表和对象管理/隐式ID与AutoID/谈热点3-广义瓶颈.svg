@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="555pt" height="544pt" viewBox="0.00 0.00 554.62 544.49">
+<g id="graph0" class="graph" transform="translate(4,540.489990234375) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-540.49 550.62,-540.49 550.62,4 -4,4" style=""/>
+<!-- 写入瓶颈 -->
+<g id="node1" class="node" pointer-events="visible" data-name="写入瓶颈">
+
+<ellipse fill="none" stroke="black" cx="322.62" cy="-518.49" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="322.62" y="-514.29" font-family="Times,serif" font-size="14.00" style="">写入瓶颈</text>
+</g>
+<!-- Scheduler -->
+<g id="node2" class="node" pointer-events="visible" data-name="Scheduler">
+
+<ellipse fill="none" stroke="black" cx="140.62" cy="-446.49" rx="49.8" ry="18" style=""/>
+<text text-anchor="middle" x="140.62" y="-442.29" font-family="Times,serif" font-size="14.00" style="">Scheduler</text>
+</g>
+<!-- 写入瓶颈&#45;&gt;Scheduler -->
+<g id="edge1" class="edge" data-name="写入瓶颈-&gt;Scheduler">
+
+<path fill="none" stroke="black" d="M292.98,-506.09C263.53,-494.77 218.03,-477.27 184.42,-464.34" style=""/>
+<polygon fill="black" stroke="black" points="185.96,-461.18 175.37,-460.86 183.45,-467.72 185.96,-461.18" style=""/>
+</g>
+<!-- L0文件多 -->
+<g id="node3" class="node" pointer-events="visible" data-name="L0文件多">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-446.49" rx="43.48" ry="18" style=""/>
+<text text-anchor="middle" x="251.62" y="-442.29" font-family="Times,serif" font-size="14.00" style="">L0文件多</text>
+</g>
+<!-- 写入瓶颈&#45;&gt;L0文件多 -->
+<g id="edge2" class="edge" data-name="写入瓶颈-&gt;L0文件多">
+
+<path fill="none" stroke="black" d="M306.51,-501.61C297.43,-492.66 285.92,-481.3 275.78,-471.31" style=""/>
+<polygon fill="black" stroke="black" points="278.32,-468.91 268.75,-464.38 273.41,-473.89 278.32,-468.91" style=""/>
+</g>
+<!-- sst等待compaction -->
+<g id="node4" class="node" pointer-events="visible" data-name="sst等待compaction">
+
+<ellipse fill="none" stroke="black" cx="393.62" cy="-446.49" rx="80.54" ry="18" style=""/>
+<text text-anchor="middle" x="393.62" y="-442.29" font-family="Times,serif" font-size="14.00" style="">sst等待compaction</text>
+</g>
+<!-- 写入瓶颈&#45;&gt;sst等待compaction -->
+<g id="edge3" class="edge" data-name="写入瓶颈-&gt;sst等待compaction">
+
+<path fill="none" stroke="black" d="M338.73,-501.61C347.55,-492.91 358.68,-481.94 368.61,-472.16" style=""/>
+<polygon fill="black" stroke="black" points="370.84,-474.87 375.51,-465.35 365.93,-469.88 370.84,-474.87" style=""/>
+</g>
+<!-- 流控 -->
+<g id="node5" class="node" pointer-events="visible" data-name="流控">
+
+<ellipse fill="none" stroke="black" cx="519.62" cy="-446.49" rx="27" ry="18" style=""/>
+<text text-anchor="middle" x="519.62" y="-442.29" font-family="Times,serif" font-size="14.00" style="">流控</text>
+</g>
+<!-- 写入瓶颈&#45;&gt;流控 -->
+<g id="edge4" class="edge" data-name="写入瓶颈-&gt;流控">
+
+<path fill="none" stroke="black" d="M355.73,-507.9C388.58,-498.08 440.16,-481.83 483.62,-464.49 485.15,-463.89 486.7,-463.24 488.26,-462.58" style=""/>
+<polygon fill="black" stroke="black" points="489.41,-465.9 497.11,-458.62 486.55,-459.51 489.41,-465.9" style=""/>
+</g>
+<!-- load_data -->
+<g id="node6" class="node" pointer-events="visible" data-name="load_data">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-363.08" rx="86.81" ry="29.33" style=""/>
+<text text-anchor="middle" x="251.62" y="-367.28" font-family="Times,serif" font-size="14.00" style="">load data又快又多,</text>
+<text text-anchor="middle" x="251.62" y="-350.48" font-family="Times,serif" font-size="14.00" style="">导致L0积压, 成为瓶颈</text>
+</g>
+<!-- L0文件多&#45;&gt;load_data -->
+<g id="edge5" class="edge" data-name="L0文件多-&gt;load_data">
+
+<path fill="none" stroke="black" d="M251.62,-428.23C251.62,-421.17 251.62,-412.68 251.62,-404.23" style=""/>
+<polygon fill="black" stroke="black" points="255.12,-404.37 251.62,-394.37 248.12,-404.37 255.12,-404.37" style=""/>
+</g>
+<!-- 读取瓶颈 -->
+<g id="node7" class="node" pointer-events="visible" data-name="读取瓶颈">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-279.66" rx="40.01" ry="18" style=""/>
+<text text-anchor="middle" x="251.62" y="-275.46" font-family="Times,serif" font-size="14.00" style="">读取瓶颈</text>
+</g>
+<!-- load_data&#45;&gt;读取瓶颈 -->
+<!-- 全表扫描\nunified pool cpu高 -->
+<g id="node8" class="node" pointer-events="visible" data-name="全表扫描\nunified pool cpu高">
+
+<ellipse fill="none" stroke="black" cx="83.62" cy="-196.25" rx="83.74" ry="29.33" style=""/>
+<text text-anchor="middle" x="83.62" y="-200.45" font-family="Times,serif" font-size="14.00" style="">全表扫描</text>
+<text text-anchor="middle" x="83.62" y="-183.65" font-family="Times,serif" font-size="14.00" style="">unified pool cpu高</text>
+</g>
+<!-- 读取瓶颈&#45;&gt;全表扫描\nunified pool cpu高 -->
+<g id="edge6" class="edge" data-name="读取瓶颈-&gt;全表扫描\nunified pool cpu高">
+
+<path fill="none" stroke="black" d="M225,-265.76C202.75,-254.98 170.22,-239.21 141.96,-225.52" style=""/>
+<polygon fill="black" stroke="black" points="143.66,-222.45 133.14,-221.24 140.61,-228.75 143.66,-222.45" style=""/>
+</g>
+<!-- 全表扫描\n网络或IO带宽满 -->
+<g id="node9" class="node" pointer-events="visible" data-name="全表扫描\n网络或IO带宽满">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-196.25" rx="66.11" ry="29.33" style=""/>
+<text text-anchor="middle" x="251.62" y="-200.45" font-family="Times,serif" font-size="14.00" style="">全表扫描</text>
+<text text-anchor="middle" x="251.62" y="-183.65" font-family="Times,serif" font-size="14.00" style="">网络或IO带宽满</text>
+</g>
+<!-- 读取瓶颈&#45;&gt;全表扫描\n网络或IO带宽满 -->
+<g id="edge7" class="edge" data-name="读取瓶颈-&gt;全表扫描\n网络或IO带宽满">
+
+<path fill="none" stroke="black" d="M251.62,-261.4C251.62,-254.34 251.62,-245.85 251.62,-237.39" style=""/>
+<polygon fill="black" stroke="black" points="255.12,-237.54 251.62,-227.54 248.12,-237.54 255.12,-237.54" style=""/>
+</g>
+<!-- leader集中导致\n单个tikv忙, cop wait高 -->
+<g id="node10" class="node" pointer-events="visible" data-name="leader集中导致\n单个tikv忙, cop wait高">
+
+<ellipse fill="none" stroke="black" cx="430.62" cy="-196.25" rx="95.35" ry="29.33" style=""/>
+<text text-anchor="middle" x="430.62" y="-200.45" font-family="Times,serif" font-size="14.00" style="">leader集中导致</text>
+<text text-anchor="middle" x="430.62" y="-183.65" font-family="Times,serif" font-size="14.00" style="">单个tikv忙, cop wait高</text>
+</g>
+<!-- 读取瓶颈&#45;&gt;leader集中导致\n单个tikv忙, cop wait高 -->
+<g id="edge8" class="edge" data-name="读取瓶颈-&gt;leader集中导致\n单个tikv忙, cop wait高">
+
+<path fill="none" stroke="black" d="M279.2,-266.12C302.81,-255.38 337.7,-239.51 368.04,-225.71" style=""/>
+<polygon fill="black" stroke="black" points="369.11,-229.07 376.76,-221.75 366.21,-222.7 369.11,-229.07" style=""/>
+</g>
+<!-- 找出region热点 -->
+<g id="node11" class="node" pointer-events="visible" data-name="找出region热点">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-112.83" rx="64.86" ry="18" style=""/>
+<text text-anchor="middle" x="251.62" y="-108.63" font-family="Times,serif" font-size="14.00" style="">找出region热点</text>
+</g>
+<!-- 全表扫描\n网络或IO带宽满&#45;&gt;找出region热点 -->
+<!-- dashboard\n流量可视化 -->
+<g id="node12" class="node" pointer-events="visible" data-name="dashboard\n流量可视化">
+
+<ellipse fill="none" stroke="black" cx="112.62" cy="-29.42" rx="52" ry="29.33" style=""/>
+<text text-anchor="middle" x="112.62" y="-33.62" font-family="Times,serif" font-size="14.00" style="">dashboard</text>
+<text text-anchor="middle" x="112.62" y="-16.82" font-family="Times,serif" font-size="14.00" style="">流量可视化</text>
+</g>
+<!-- 找出region热点&#45;&gt;dashboard\n流量可视化 -->
+<g id="edge10" class="edge" data-name="找出region热点-&gt;dashboard\n流量可视化">
+
+<path fill="none" stroke="black" d="M224.82,-96.13C205.94,-85.07 180.19,-69.99 158.12,-57.07" style=""/>
+<polygon fill="black" stroke="black" points="159.99,-54.1 149.59,-52.07 156.45,-60.14 159.99,-54.1" style=""/>
+</g>
+<!-- pd&#45;ctl\nregion topread -->
+<g id="node13" class="node" pointer-events="visible" data-name="pd-ctl\nregion topread">
+
+<ellipse fill="none" stroke="black" cx="251.62" cy="-29.42" rx="68.53" ry="29.33" style=""/>
+<text text-anchor="middle" x="251.62" y="-33.62" font-family="Times,serif" font-size="14.00" style="">pd-ctl</text>
+<text text-anchor="middle" x="251.62" y="-16.82" font-family="Times,serif" font-size="14.00" style="">region topread</text>
+</g>
+<!-- 找出region热点&#45;&gt;pd&#45;ctl\nregion topread -->
+<g id="edge11" class="edge" data-name="找出region热点-&gt;pd-ctl\nregion topread">
+
+<path fill="none" stroke="black" d="M251.62,-94.57C251.62,-87.51 251.62,-79.02 251.62,-70.56" style=""/>
+<polygon fill="black" stroke="black" points="255.12,-70.7 251.62,-60.7 248.12,-70.7 255.12,-70.7" style=""/>
+</g>
+<!-- 查视图\ntikv_region_status -->
+<g id="node14" class="node" pointer-events="visible" data-name="查视图\ntikv_region_status">
+
+<ellipse fill="none" stroke="black" cx="422.62" cy="-29.42" rx="84.41" ry="29.33" style=""/>
+<text text-anchor="middle" x="422.62" y="-33.62" font-family="Times,serif" font-size="14.00" style="">查视图</text>
+<text text-anchor="middle" x="422.62" y="-16.82" font-family="Times,serif" font-size="14.00" style="">tikv_region_status</text>
+</g>
+<!-- 找出region热点&#45;&gt;查视图\ntikv_region_status -->
+<g id="edge12" class="edge" data-name="找出region热点-&gt;查视图\ntikv_region_status">
+
+<path fill="none" stroke="black" d="M283.38,-96.71C305.91,-85.98 336.8,-71.28 363.77,-58.44" style=""/>
+<polygon fill="black" stroke="black" points="364.99,-61.73 372.52,-54.27 361.98,-55.41 364.99,-61.73" style=""/>
+</g>
+</g>
+</svg>

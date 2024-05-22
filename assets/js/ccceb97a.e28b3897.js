@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjitdba_site=self.webpackChunkjitdba_site||[]).push([[3990],{7383:s=>{s.exports=JSON.parse('{"label":"TiDB","permalink":"/blog/tags/ti-db","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
