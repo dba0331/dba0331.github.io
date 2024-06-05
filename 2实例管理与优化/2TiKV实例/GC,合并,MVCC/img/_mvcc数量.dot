@@ -1,0 +1,25 @@
+digraph {
+    graph[nodesep=0.5, rankdir="LR"]
+    "mvcc保留10分钟" -> "查询用时10ms";
+    "mvcc保留6 小时" -> "查询用时80ms";
+    {rank=same;"mvcc保留10分钟" -> "mvcc保留6 小时"[style=dotted, dir=none]};
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

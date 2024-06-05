@@ -3,8 +3,13 @@ sidebar_position: 11
 ---
 带limit的计划
 ![带limit](./img/Limit问题1-1.jpg)
+```sql
+select ... from a, b
+where ...
+limit 200;
+```
 
-不带limit的计划
+不带limit的计划   
 ![带limit](./img/Limit问题1-2.jpg)
 
 

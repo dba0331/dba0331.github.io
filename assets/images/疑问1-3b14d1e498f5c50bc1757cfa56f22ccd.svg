@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="531pt" height="476pt" viewBox="0.00 0.00 530.78 476.42">
+<g id="graph0" class="graph" transform="translate(4,472.4200134277344) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-472.42 526.78,-472.42 526.78,4 -4,4"/>
+<!-- 收集大表很慢\n不是采样11万吗? -->
+<g id="node9" class="node" pointer-events="visible" data-name="收集大表很慢\n不是采样11万吗?">
+
+<ellipse fill="none" stroke="black" cx="75.68" cy="-362" rx="70.31" ry="29.33"/>
+<text text-anchor="middle" x="75.68" y="-366.2" font-family="Times,serif" font-size="14.00">收集大表很慢</text>
+<text text-anchor="middle" x="75.68" y="-349.4" font-family="Times,serif" font-size="14.00">不是采样11万吗?</text>
+</g><g id="node1" class="node" pointer-events="visible" data-name="不想收集某些列" data-comment="收集大表很慢\n不是采样11万吗?">
+
+<ellipse fill="none" stroke="black" cx="75.68" cy="-18" rx="61.97" ry="18"/>
+<text text-anchor="middle" x="75.68" y="-13.8" font-family="Times,serif" font-size="14.00">不想收集某些列</text>
+</g>
+<!-- 别把11万当真 -->
+<g id="node10" class="node" pointer-events="visible" data-name="别把11万当真">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-439" rx="56.81" ry="18"/>
+<text text-anchor="middle" x="251.51" y="-434.8" font-family="Times,serif" font-size="14.00">别把11万当真</text>
+</g><g id="node2" class="node" pointer-events="visible" data-name="可以按列收集" data-comment="别把11万当真">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-18" rx="54.49" ry="18"/>
+<text text-anchor="middle" x="251.51" y="-13.8" font-family="Times,serif" font-size="14.00">可以按列收集</text>
+</g>
+<!-- 收集大表很慢\n不是采样11万吗?&#45;&gt;别把11万当真 -->
+<g id="edge5" class="edge" data-name="收集大表很慢\n不是采样11万吗?-&gt;别把11万当真">
+
+<path fill="none" stroke="black" d="M123.98,-383.62C143.56,-392.51 166.51,-402.84 187.36,-412 193.37,-414.64 199.72,-417.4 205.98,-420.1"/>
+<polygon fill="black" stroke="black" points="204.41,-423.23 214.98,-423.96 207.17,-416.8 204.41,-423.23"/>
+</g><g id="edge1" class="edge" data-name="不想收集某些列-&gt;可以按列收集" data-comment="收集大表很慢\n不是采样11万吗?-&gt;别把11万当真">
+
+<path fill="none" stroke="black" d="M137.96,-18C153.38,-18 169.98,-18 185.57,-18"/>
+<polygon fill="black" stroke="black" points="185.19,-21.5 195.19,-18 185.19,-14.5 185.19,-21.5"/>
+</g>
+<!-- 用信号处理理论\n采样率不可能低\n采样也并非抽样 -->
+<g id="node11" class="node" pointer-events="visible" data-name="用信号处理理论\n采样率不可能低\n采样也并非抽样">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-362" rx="63.07" ry="41.09"/>
+<text text-anchor="middle" x="251.51" y="-374.6" font-family="Times,serif" font-size="14.00">用信号处理理论</text>
+<text text-anchor="middle" x="251.51" y="-357.8" font-family="Times,serif" font-size="14.00">采样率不可能低</text>
+<text text-anchor="middle" x="251.51" y="-341" font-family="Times,serif" font-size="14.00">采样也并非抽样</text>
+</g><g id="node3" class="node" pointer-events="visible" data-name="lock stats功能" data-comment="用信号处理理论\n采样率不可能低\n采样也并非抽样">
+
+<ellipse fill="none" stroke="black" cx="75.68" cy="-83" rx="61.96" ry="18"/>
+<text text-anchor="middle" x="75.68" y="-78.8" font-family="Times,serif" font-size="14.00">lock stats功能</text>
+</g>
+<!-- 收集大表很慢\n不是采样11万吗?&#45;&gt;用信号处理理论\n采样率不可能低\n采样也并非抽样 -->
+<!-- 收集大表很慢\n不是采样11万吗?&#45;&gt;用信号处理理论\n采样率不可能低\n采样也并非抽样 -->
+<g id="edge6" class="edge" data-name="收集大表很慢\n不是采样11万吗?-&gt;用信号处理理论\n采样率不可能低\n采样也并非抽样">
+
+<path fill="none" stroke="black" d="M146.38,-362C156.4,-362 166.74,-362 176.83,-362"/>
+<polygon fill="black" stroke="black" points="176.58,-365.5 186.58,-362 176.58,-358.5 176.58,-365.5"/>
+</g><g id="node4" class="node" pointer-events="visible" data-name="查看文档\nv8高版本可用" data-comment="收集大表很慢\n不是采样11万吗?-&gt;用信号处理理论\n采样率不可能低\n采样也并非抽样">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-83" rx="58.17" ry="29.33"/>
+<text text-anchor="middle" x="251.51" y="-87.2" font-family="Times,serif" font-size="14.00">查看文档</text>
+<text text-anchor="middle" x="251.51" y="-70.4" font-family="Times,serif" font-size="14.00">v8高版本可用</text>
+</g>
+<!-- 标准话术 -->
+
+<!-- 标准话术 -->
+<g id="node12" class="node" pointer-events="visible" data-name="标准话术">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-279" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="251.51" y="-274.8" font-family="Times,serif" font-size="14.00">标准话术</text>
+</g><g id="edge2" class="edge" data-name="lock stats功能-&gt;查看文档\nv8高版本可用" data-comment="标准话术">
+
+<path fill="none" stroke="black" d="M137.96,-83C152.08,-83 167.18,-83 181.6,-83"/>
+<polygon fill="black" stroke="black" points="181.46,-86.5 191.46,-83 181.46,-79.5 181.46,-86.5"/>
+</g>
+<!-- 收集大表很慢\n不是采样11万吗?&#45;&gt;标准话术 -->
+
+<!-- 收集大表很慢\n不是采样11万吗?&#45;&gt;标准话术 -->
+<g id="edge7" class="edge" data-name="收集大表很慢\n不是采样11万吗?-&gt;标准话术">
+
+<path fill="none" stroke="black" d="M122.81,-339.98C150.92,-326.55 186.39,-309.61 212.81,-297"/>
+<polygon fill="black" stroke="black" points="214.29,-300.17 221.81,-292.7 211.28,-293.85 214.29,-300.17"/>
+</g><g id="node5" class="node" pointer-events="visible" data-name="分区表新增分区" data-comment="收集大表很慢\n不是采样11万吗?-&gt;标准话术">
+
+<ellipse fill="none" stroke="black" cx="75.68" cy="-160" rx="61.97" ry="18"/>
+<text text-anchor="middle" x="75.68" y="-155.8" font-family="Times,serif" font-size="14.00">分区表新增分区</text>
+</g>
+<!-- 可以认为基本上\n把表都扫了一遍 -->
+
+<!-- 可以认为基本上\n把表都扫了一遍 -->
+<g id="node14" class="node" pointer-events="visible" data-name="可以认为基本上\n把表都扫了一遍">
+
+<ellipse fill="none" stroke="black" cx="437.22" cy="-439" rx="63.07" ry="29.33"/>
+<text text-anchor="middle" x="437.22" y="-443.2" font-family="Times,serif" font-size="14.00">可以认为基本上</text>
+<text text-anchor="middle" x="437.22" y="-426.4" font-family="Times,serif" font-size="14.00">把表都扫了一遍</text>
+</g><g id="node6" class="node" pointer-events="visible" data-name="v8以前会收集\nv8用老分区的" data-comment="可以认为基本上\n把表都扫了一遍">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-160" rx="58.17" ry="29.33"/>
+<text text-anchor="middle" x="251.51" y="-164.2" font-family="Times,serif" font-size="14.00">v8以前会收集</text>
+<text text-anchor="middle" x="251.51" y="-147.4" font-family="Times,serif" font-size="14.00">v8用老分区的</text>
+</g>
+<!-- 别把11万当真&#45;&gt;可以认为基本上\n把表都扫了一遍 -->
+
+<!-- 别把11万当真&#45;&gt;可以认为基本上\n把表都扫了一遍 -->
+<g id="edge9" class="edge" data-name="别把11万当真-&gt;可以认为基本上\n把表都扫了一遍">
+
+<path fill="none" stroke="black" d="M308.62,-439C325.58,-439 344.47,-439 362.4,-439"/>
+<polygon fill="black" stroke="black" points="362.2,-442.5 372.2,-439 362.2,-435.5 362.2,-442.5"/>
+</g><g id="edge3" class="edge" data-name="分区表新增分区-&gt;v8以前会收集\nv8用老分区的" data-comment="别把11万当真-&gt;可以认为基本上\n把表都扫了一遍">
+
+<path fill="none" stroke="black" d="M137.96,-160C152.08,-160 167.18,-160 181.6,-160"/>
+<polygon fill="black" stroke="black" points="181.46,-163.5 191.46,-160 181.46,-156.5 181.46,-163.5"/>
+</g>
+<!-- 千万级表条数误差几十\n这可能是抽样来的吗? -->
+
+<!-- 千万级表条数误差几十\n这可能是抽样来的吗? -->
+<g id="node15" class="node" pointer-events="visible" data-name="千万级表条数误差几十\n这可能是抽样来的吗?">
+
+<ellipse fill="none" stroke="black" cx="437.22" cy="-362" rx="85.62" ry="29.33"/>
+<text text-anchor="middle" x="437.22" y="-366.2" font-family="Times,serif" font-size="14.00">千万级表条数误差几十</text>
+<text text-anchor="middle" x="437.22" y="-349.4" font-family="Times,serif" font-size="14.00">这可能是抽样来的吗?</text>
+</g><g id="node7" class="node" pointer-events="visible" data-name="分区表是全表11万?" data-comment="千万级表条数误差几十\n这可能是抽样来的吗?">
+
+<ellipse fill="none" stroke="black" cx="75.68" cy="-225" rx="75.86" ry="18"/>
+<text text-anchor="middle" x="75.68" y="-220.8" font-family="Times,serif" font-size="14.00">分区表是全表11万?</text>
+</g>
+<!-- 用信号处理理论\n采样率不可能低\n采样也并非抽样&#45;&gt;千万级表条数误差几十\n这可能是抽样来的吗? -->
+
+<!-- 用信号处理理论\n采样率不可能低\n采样也并非抽样&#45;&gt;千万级表条数误差几十\n这可能是抽样来的吗? -->
+<g id="edge10" class="edge" data-name="用信号处理理论\n采样率不可能低\n采样也并非抽样-&gt;千万级表条数误差几十\n这可能是抽样来的吗?">
+
+<path fill="none" stroke="black" d="M314.96,-362C322.97,-362 331.31,-362 339.71,-362"/>
+<polygon fill="black" stroke="black" points="339.65,-365.5 349.65,-362 339.65,-358.5 339.65,-365.5"/>
+</g><g id="node8" class="node" pointer-events="visible" data-name="每个分区11万条" data-comment="用信号处理理论\n采样率不可能低\n采样也并非抽样-&gt;千万级表条数误差几十\n这可能是抽样来的吗?">
+
+<ellipse fill="none" stroke="black" cx="251.51" cy="-225" rx="64.3" ry="18"/>
+<text text-anchor="middle" x="251.51" y="-220.8" font-family="Times,serif" font-size="14.00">每个分区11万条</text>
+</g>
+<!-- 为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+
+<!-- 为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+<g id="node13" class="node" pointer-events="visible" data-name="为了更高精确度\n有更多mvcc数据\n采样计算更复杂">
+
+<ellipse fill="none" stroke="black" cx="437.22" cy="-273" rx="69.75" ry="41.09"/>
+<text text-anchor="middle" x="437.22" y="-285.6" font-family="Times,serif" font-size="14.00">为了更高精确度</text>
+<text text-anchor="middle" x="437.22" y="-268.8" font-family="Times,serif" font-size="14.00">有更多mvcc数据</text>
+<text text-anchor="middle" x="437.22" y="-252" font-family="Times,serif" font-size="14.00">采样计算更复杂</text>
+</g><g id="edge4" class="edge" data-name="分区表是全表11万?-&gt;每个分区11万条" data-comment="为了更高精确度\n有更多mvcc数据\n采样计算更复杂">
+
+<path fill="none" stroke="black" d="M151.91,-225C159.74,-225 167.7,-225 175.53,-225"/>
+<polygon fill="black" stroke="black" points="175.35,-228.5 185.35,-225 175.35,-221.5 175.35,-228.5"/>
+</g>
+<!-- 标准话术&#45;&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+
+<!-- 标准话术&#45;&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+<!-- 标准话术&#45;&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+<g id="edge8" class="edge" data-name="标准话术-&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂">
+
+<path fill="none" stroke="black" d="M291.92,-277.71C310.59,-277.1 333.61,-276.35 355.74,-275.63"/>
+<polygon fill="black" stroke="black" points="355.81,-279.13 365.69,-275.3 355.58,-272.13 355.81,-279.13"/>
+</g>
+
+<!-- 标准话术&#45;&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+
+
+<!-- 标准话术&#45;&gt;为了更高精确度\n有更多mvcc数据\n采样计算更复杂 -->
+
+</g>
+</svg>

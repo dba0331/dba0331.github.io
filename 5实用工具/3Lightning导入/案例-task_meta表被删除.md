@@ -1,7 +1,7 @@
 ---
 # sidebar_position: 1
+sidebar_class_name: my_nop_item
 ---
-## 说明
 
 这是有可能的, 一般发生在并发跑多个lightning物理导入脚本时。
 
@@ -9,3 +9,8 @@
 -   每个lightning进程配置自己的metadata库;
 -   在task_meta中插入一行特殊的状态值, 防止表被删除, 这个办法不推荐;
 
+#
+
+## 说明
+
+待完善...

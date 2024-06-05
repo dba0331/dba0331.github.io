@@ -1,0 +1,34 @@
+digraph {
+    graph[rankdir="LR"]
+    node[margin=0]
+
+
+    "key_skipped_count\n包含" -> {"total_keys" "delete_skipped_count" };
+    tomb[label="gc标记为\ntombstone\n仍在磁盘", shape=cylinder, margin=0.1]
+    "delete_skipped_count" -> tomb ;
+
+    "total_keys" -> {"total_procssed_keys\nsql需要的版本" " MVCC老版本 "}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

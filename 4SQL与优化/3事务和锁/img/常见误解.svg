@@ -1,0 +1,89 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="575pt" height="298pt" viewBox="0.00 0.00 574.77 297.83">
+<g id="graph0" class="graph" transform="translate(4,293.8299865722656) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-293.83 570.77,-293.83 570.77,4 -4,4"/>
+<!-- rf -->
+<g id="node1" class="node" pointer-events="visible" data-name="持有锁超过1小时会失败\n为什么update跑了几小时?" data-comment="rf">
+
+<ellipse fill="none" stroke="black" cx="101.49" cy="-112.42" rx="101.48" ry="29.33"/>
+<text text-anchor="middle" x="101.49" y="-116.62" font-family="Times,serif" font-size="14.00">持有锁超过1小时会失败</text>
+<text text-anchor="middle" x="101.49" y="-99.82" font-family="Times,serif" font-size="14.00">为什么update跑了几小时?</text>
+</g>
+
+<!-- 持有锁超过1小时会失败\n为什么update跑了几小时?&#45;&gt; --><g id="node4" class="node" pointer-events="visible" data-name="tidb只在后台把行锁清除\n不会主动kill事务或会话" data-comment="持有锁超过1小时会失败\n为什么update跑了几小时?-&gt;">
+
+<ellipse fill="none" stroke="black" cx="460.88" cy="-260.42" rx="93.57" ry="29.33"/>
+<text text-anchor="middle" x="460.88" y="-264.62" font-family="Times,serif" font-size="14.00">tidb只在后台把行锁清除</text>
+<text text-anchor="middle" x="460.88" y="-247.82" font-family="Times,serif" font-size="14.00">不会主动kill事务或会话</text>
+</g><g id="node2" class="node" pointer-events="visible" data-name="持有锁" data-comment="持有锁超过1小时会失败\n为什么update跑了几小时?-&gt;">
+
+<ellipse fill="none" stroke="black" cx="278.99" cy="-156.42" rx="32.53" ry="18"/>
+<text text-anchor="middle" x="278.99" y="-152.22" font-family="Times,serif" font-size="14.00">持有锁</text>
+</g>
+<!-- 持有锁超过1小时会失败\n为什么update跑了几小时?&#45;&gt;t -->
+<g id="edge1" class="edge" data-name="持有锁超过1小时会失败\n为什么update跑了几小时?-&gt;持有锁" data-comment="持有锁超过1小时会失败\n为什么update跑了几小时?-&gt;t">
+
+<path fill="none" stroke="black" d="M179.21,-131.65C199.49,-136.73 220.57,-142.02 238.02,-146.39"/>
+<polygon fill="black" stroke="black" points="236.9,-149.72 247.45,-148.76 238.6,-142.93 236.9,-149.72"/>
+</g>
+
+<!-- update语句会一直跑着 --><g id="node3" class="node" pointer-events="visible" data-name="未持有锁" data-comment="update语句会一直跑着">
+
+<ellipse fill="none" stroke="black" cx="278.99" cy="-85.42" rx="40.01" ry="18"/>
+<text text-anchor="middle" x="278.99" y="-81.22" font-family="Times,serif" font-size="14.00">未持有锁</text>
+</g>
+
+<!-- update语句会一直跑着 -->
+<!-- update语句会一直跑着 -->
+<!-- update语句会一直跑着 -->
+<g id="edge2" class="edge" data-name="持有锁超过1小时会失败\n为什么update跑了几小时?-&gt;未持有锁" data-comment="update语句会一直跑着">
+
+<path fill="none" stroke="black" d="M191.78,-98.68C204.74,-96.69 217.65,-94.7 229.39,-92.89"/>
+<polygon fill="black" stroke="black" points="229.84,-96.36 239.19,-91.38 228.78,-89.45 229.84,-96.36"/>
+</g>
+<!-- update语句会一直跑着 -->
+<g id="edge3" class="edge" data-name="持有锁-&gt;tidb只在后台把行锁清除\n不会主动kill事务或会话" data-comment="update语句会一直跑着">
+
+<path fill="none" stroke="black" d="M294.73,-172.45C308.96,-187.14 331.71,-208.63 355,-222.42 363.35,-227.36 372.46,-231.83 381.7,-235.81"/>
+<polygon fill="black" stroke="black" points="380.18,-238.97 390.76,-239.53 382.84,-232.5 380.18,-238.97"/>
+</g>
+<g id="node5" class="node" pointer-events="visible" data-name="update边查询边上锁" data-comment="update语句会一直跑着">
+
+<ellipse fill="none" stroke="black" cx="460.88" cy="-195.42" rx="80.47" ry="18"/>
+<text text-anchor="middle" x="460.88" y="-191.22" font-family="Times,serif" font-size="14.00">update边查询边上锁</text>
+</g>
+<!-- 持有锁&#45;&gt;update语句会一直跑着 -->
+<g id="edge4" class="edge" data-name="持有锁-&gt;update边查询边上锁" data-comment="持有锁-&gt;update语句会一直跑着">
+
+<path fill="none" stroke="black" d="M309.7,-162.86C331.72,-167.63 362.67,-174.34 390.75,-180.43"/>
+<polygon fill="black" stroke="black" points="389.76,-183.79 400.27,-182.49 391.24,-176.95 389.76,-183.79"/>
+</g>
+
+<!-- 持有锁&#45;&gt; --><g id="node6" class="node" pointer-events="visible" data-name="update完成后, 提交事务\n此时发现锁被清理了\n才报错" data-comment="持有锁-&gt;">
+
+<ellipse fill="none" stroke="black" cx="460.88" cy="-118.42" rx="94.75" ry="41.09"/>
+<text text-anchor="middle" x="460.88" y="-131.02" font-family="Times,serif" font-size="14.00">update完成后, 提交事务</text>
+<text text-anchor="middle" x="460.88" y="-114.22" font-family="Times,serif" font-size="14.00">此时发现锁被清理了</text>
+<text text-anchor="middle" x="460.88" y="-97.42" font-family="Times,serif" font-size="14.00">才报错</text>
+</g>
+<!-- 持有锁&#45;&gt;t -->
+<g id="edge5" class="edge" data-name="持有锁-&gt;update完成后, 提交事务\n此时发现锁被清理了\n才报错" data-comment="持有锁-&gt;t">
+
+<path fill="none" stroke="black" d="M309.7,-150.14C324.85,-146.94 344.23,-142.85 364,-138.67"/>
+<polygon fill="black" stroke="black" points="364.45,-142.15 373.51,-136.66 363,-135.3 364.45,-142.15"/>
+</g>
+
+<!-- 未持有锁&#45;&gt; --><g id="node7" class="node" pointer-events="visible" data-name="update join (slowquery)\n还没查到数据，未上锁" data-comment="未持有锁-&gt;">
+
+<ellipse fill="none" stroke="black" cx="460.88" cy="-29.42" rx="105.77" ry="29.33"/>
+<text text-anchor="middle" x="460.88" y="-33.62" font-family="Times,serif" font-size="14.00">update join (slowquery)</text>
+<text text-anchor="middle" x="460.88" y="-16.82" font-family="Times,serif" font-size="14.00">还没查到数据，未上锁</text>
+</g>
+<!-- 未持有锁&#45;&gt;u -->
+<g id="edge6" class="edge" data-name="未持有锁-&gt;update join (slowquery)\n还没查到数据，未上锁" data-comment="未持有锁-&gt;u">
+
+<path fill="none" stroke="black" d="M312.57,-75.27C331.18,-69.48 355.42,-61.93 378.85,-54.64"/>
+<polygon fill="black" stroke="black" points="379.58,-58.08 388.09,-51.77 377.5,-51.4 379.58,-58.08"/>
+</g>
+</g>
+</svg>

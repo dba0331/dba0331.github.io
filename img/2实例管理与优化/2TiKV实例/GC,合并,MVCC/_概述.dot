@@ -1,0 +1,37 @@
+ digraph {
+
+    graph [rankdir="LR"]
+
+
+    subgraph cluster_t2 {
+        label="开启Compaction Filter后\ndelete数据的生命周期\n  "
+        t2_mvcc[label="作为mvcc数据\n仍在region中", shape=cylinder];
+        t2_clear[label="直接从磁盘\n中删除", shape=cylinder, style=filled, fillcolor=lightgreen];
+
+        t2_mvcc -> t2_clear [label="超出gc时间\nLSM正好有合并", style=dashed];
+        // t2_tomb -> t2_clear [label="rocksdb做合并\ncompaction", style=dashed]
+        t2_mvcc2[label="作为mvcc数据\n仍在region中", shape=cylinder];
+        t2_temp[label="未清理\n仍在region中", shape=cylinder,style=filled, fillcolor=lightpink];
+        t2_clear2[label="从磁盘\n中删除", shape=cylinder];
+        t2_mvcc2 -> t2_temp [label="超出gc时间\nDML少,无合并", style=dashed];
+        t2_temp -> t2_clear2 [label="等到LSM合并\n或gc回收流程", style=dashed];
+
+    }
+
+    subgraph cluster_t1 {
+        label="传统GC流程\ndelete数据的生命周期\n  "
+        t1_mvcc[label="作为mvcc数据\n仍在region中", shape=cylinder];
+        t1_tomb[label="标记为tombstone\n仍在region中", shape=cylinder];
+        t1_clear[label="彻底从磁盘\n中删除", shape=cylinder];
+
+        t1_mvcc -> t1_tomb [label="超出gc时间\ngc回收", style=dashed];
+        t1_tomb -> t1_clear [label="rocksdb做合并\ncompaction", style=dashed]
+    }
+
+
+}
+
+
+
+
+

@@ -1,6 +1,10 @@
 ---
 sidebar_position: 7
 ---
+这里unionscan时间长, 也许是条数多?
+
+![计划-UnionScan](./img/计划-UnionScan.jpg)
+
 好象这些事务kv, 都会存放在tidb memBuffer中?
 @_@《tidb:基础知识》memBuffer
 

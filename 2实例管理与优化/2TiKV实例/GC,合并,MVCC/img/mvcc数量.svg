@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="307pt" height="116pt" viewBox="0.00 0.00 307.02 116">
+<g id="graph0" class="graph" transform="translate(4,112) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 303.02,-112 303.02,4 -4,4"/>
+<!-- mvcc保留10分钟 -->
+<g id="node1" class="node" pointer-events="visible" data-name="mvcc保留10分钟">
+
+<ellipse fill="none" stroke="black" cx="70.58" cy="-90" rx="70.65" ry="18"/>
+<text text-anchor="middle" x="70.58" y="-85.8" font-family="Times,serif" font-size="14.00">mvcc保留10分钟</text>
+</g>
+<!-- 查询用时10ms -->
+<g id="node2" class="node" pointer-events="visible" data-name="查询用时10ms">
+
+<ellipse fill="none" stroke="black" cx="238.09" cy="-90" rx="60.87" ry="18"/>
+<text text-anchor="middle" x="238.09" y="-85.8" font-family="Times,serif" font-size="14.00">查询用时10ms</text>
+</g>
+<!-- mvcc保留10分钟&#45;&gt;查询用时10ms -->
+<g id="edge1" class="edge" data-name="mvcc保留10分钟-&gt;查询用时10ms">
+
+<path fill="none" stroke="black" d="M141.29,-90C149.33,-90 157.55,-90 165.62,-90"/>
+<polygon fill="black" stroke="black" points="165.38,-93.5 175.38,-90 165.38,-86.5 165.38,-93.5"/>
+</g>
+<!-- mvcc保留6 小时 -->
+<g id="node3" class="node" pointer-events="visible" data-name="mvcc保留6 小时">
+
+<ellipse fill="none" stroke="black" cx="70.58" cy="-18" rx="68.33" ry="18"/>
+<text text-anchor="middle" x="70.58" y="-13.8" font-family="Times,serif" font-size="14.00">mvcc保留6 小时</text>
+</g>
+<!-- mvcc保留10分钟&#45;&gt;mvcc保留6 小时 -->
+<g id="edge3" class="edge" data-name="mvcc保留10分钟-&gt;mvcc保留6 小时">
+
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M70.58,-71.53C70.58,-59.78 70.58,-48.03 70.58,-36.28"/>
+</g>
+<!-- 查询用时80ms -->
+<g id="node4" class="node" pointer-events="visible" data-name="查询用时80ms">
+
+<ellipse fill="none" stroke="black" cx="238.09" cy="-18" rx="60.87" ry="18"/>
+<text text-anchor="middle" x="238.09" y="-13.8" font-family="Times,serif" font-size="14.00">查询用时80ms</text>
+</g>
+<!-- mvcc保留6 小时&#45;&gt;查询用时80ms -->
+<g id="edge2" class="edge" data-name="mvcc保留6 小时-&gt;查询用时80ms">
+
+<path fill="none" stroke="black" d="M139.37,-18C148,-18 156.85,-18 165.54,-18"/>
+<polygon fill="black" stroke="black" points="165.31,-21.5 175.31,-18 165.31,-14.5 165.31,-21.5"/>
+</g>
+</g>
+</svg>

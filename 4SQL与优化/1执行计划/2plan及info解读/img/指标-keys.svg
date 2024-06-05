@@ -1,0 +1,77 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="533pt" height="216pt" viewBox="0.00 0.00 532.55 216.03">
+<g id="graph0" class="graph" transform="translate(4,212.02999877929688) scale(1)" data-name="">
+<polygon fill="white" stroke="none" points="-4,4 -4,-212.03 528.55,-212.03 528.55,4 -4,4"/>
+<!-- key_skipped_count\n包含 -->
+<g id="node1" class="node" pointer-events="visible" data-name="key_skipped_count\n包含">
+
+<ellipse fill="none" stroke="black" cx="76.98" cy="-84.28" rx="76.96" ry="23.52"/>
+<text text-anchor="middle" x="76.98" y="-88.48" font-family="Times,serif" font-size="14.00">key_skipped_count</text>
+<text text-anchor="middle" x="76.98" y="-71.68" font-family="Times,serif" font-size="14.00">包含</text>
+</g>
+<!-- total_keys -->
+<g id="node2" class="node" pointer-events="visible" data-name="total_keys">
+
+<ellipse fill="none" stroke="black" cx="258.98" cy="-124.28" rx="32.56" ry="18"/>
+<text text-anchor="middle" x="258.98" y="-120.08" font-family="Times,serif" font-size="14.00">total_keys</text>
+</g>
+<!-- key_skipped_count\n包含&#45;&gt;total_keys -->
+<g id="edge1" class="edge" data-name="key_skipped_count\n包含-&gt;total_keys">
+
+<path fill="none" stroke="black" d="M140.18,-98.1C165.74,-103.78 194.61,-110.19 217.37,-115.25"/>
+<polygon fill="black" stroke="black" points="216.35,-118.61 226.87,-117.36 217.86,-111.78 216.35,-118.61"/>
+</g>
+<!-- delete_skipped_count -->
+<g id="node3" class="node" pointer-events="visible" data-name="delete_skipped_count">
+
+<ellipse fill="none" stroke="black" cx="258.98" cy="-57.28" rx="69.03" ry="18"/>
+<text text-anchor="middle" x="258.98" y="-53.08" font-family="Times,serif" font-size="14.00">delete_skipped_count</text>
+</g>
+<!-- key_skipped_count\n包含&#45;&gt;delete_skipped_count -->
+<g id="edge2" class="edge" data-name="key_skipped_count\n包含-&gt;delete_skipped_count">
+
+<path fill="none" stroke="black" d="M146.8,-73.95C160.06,-71.96 173.97,-69.88 187.29,-67.88"/>
+<polygon fill="black" stroke="black" points="187.44,-71.4 196.81,-66.45 186.4,-64.47 187.44,-71.4"/>
+</g>
+<!-- total_procssed_keys\n需要的版本 -->
+<g id="node5" class="node" pointer-events="visible" data-name="total_procssed_keys\nsql需要的版本" data-comment="total_procssed_keys\n需要的版本">
+
+<ellipse fill="none" stroke="black" cx="444.27" cy="-184.28" rx="80.06" ry="23.52" style=""/>
+<text text-anchor="middle" x="444.27" y="-188.48" font-family="Times,serif" font-size="14.00" style="">total_procssed_keys</text>
+<text text-anchor="middle" x="444.27" y="-171.68" font-family="Times,serif" font-size="14.00" style="">sql需要的版本</text>
+</g>
+<!-- total_keys&#45;&gt;total_procssed_keys\n需要的版本 -->
+<g id="edge4" class="edge" data-name="total_keys-&gt;total_procssed_keys\nsql需要的版本" data-comment="total_keys-&gt;total_procssed_keys\n需要的版本">
+
+<path fill="none" stroke="black" d="M287.42,-133.26C311.54,-141.15 347.58,-152.95 378.94,-163.22"/>
+<polygon fill="black" stroke="black" points="377.77,-166.52 388.36,-166.3 379.95,-159.86 377.77,-166.52"/>
+</g>
+<!--  MVCC老版本  -->
+<g id="node6" class="node" pointer-events="visible" data-name=" MVCC老版本 " data-comment="MVCC老版本">
+
+<ellipse fill="none" stroke="black" cx="444.27" cy="-124.28" rx="45.15" ry="18"/>
+<text text-anchor="middle" x="444.27" y="-120.08" font-family="Times,serif" font-size="14.00"> MVCC老版本 </text>
+</g>
+<!-- total_keys&#45;&gt; MVCC老版本  -->
+<g id="edge5" class="edge" data-name="total_keys-&gt; MVCC老版本 " data-comment="total_keys-&gt; MVCC老版本">
+
+<path fill="none" stroke="black" d="M291.91,-124.28C318.21,-124.28 356.15,-124.28 387.46,-124.28"/>
+<polygon fill="black" stroke="black" points="387.15,-127.78 397.15,-124.28 387.15,-120.78 387.15,-127.78"/>
+</g>
+<!-- tomb -->
+<g id="node4" class="node" pointer-events="visible" data-name="tomb">
+
+<path fill="none" stroke="black" d="M480.6,-80.32C480.6,-84.74 464.32,-88.33 444.27,-88.33 424.22,-88.33 407.94,-84.74 407.94,-80.32 407.94,-80.32 407.94,-8.23 407.94,-8.23 407.94,-3.81 424.22,-0.22 444.27,-0.22 464.32,-0.22 480.6,-3.81 480.6,-8.23 480.6,-8.23 480.6,-80.32 480.6,-80.32"/>
+<path fill="none" stroke="black" d="M480.6,-80.32C480.6,-75.9 464.32,-72.31 444.27,-72.31 424.22,-72.31 407.94,-75.9 407.94,-80.32"/>
+<text text-anchor="middle" x="444.27" y="-56.88" font-family="Times,serif" font-size="14.00">gc标记为</text>
+<text text-anchor="middle" x="444.27" y="-40.08" font-family="Times,serif" font-size="14.00">tombstone</text>
+<text text-anchor="middle" x="444.27" y="-23.28" font-family="Times,serif" font-size="14.00">仍在磁盘</text>
+</g>
+<!-- delete_skipped_count&#45;&gt;tomb -->
+<g id="edge3" class="edge" data-name="delete_skipped_count-&gt;tomb">
+
+<path fill="none" stroke="black" d="M326.15,-52.58C349.34,-50.94 374.89,-49.12 396.19,-47.61"/>
+<polygon fill="black" stroke="black" points="396.31,-51.11 406.04,-46.92 395.82,-44.13 396.31,-51.11"/>
+</g>
+</g>
+</svg>
